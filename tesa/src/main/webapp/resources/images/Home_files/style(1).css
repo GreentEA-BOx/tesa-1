@@ -1,0 +1,45 @@
+.sub_menu2 {
+  list-style-type: none;
+  position: absolute;
+  z-index: 1100;
+  top:100%;
+  right:40px;
+  width: 225px;
+  background: whitesmoke
+  /* opacity: 0;
+  visibility: hidden; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+/*SUB VISUAL*/
+.join {background:url(../images/bus_sub1.jpg) no-repeat 50% 50%}
+.sub-bus {background:url(../images/bus_sub1.jpg) no-repeat 50% 50%}
+
+
+
+
+.header-icons2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.join-mail::after{content:'';clear:both;display:block}
+.join-tel::after{content:'';clear:both;display:block}

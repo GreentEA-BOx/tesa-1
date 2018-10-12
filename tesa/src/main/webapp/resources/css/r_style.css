@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+.con-items{width:100%}
+.con-item {position:relative;border:1px solid #eee;}
+.con-item1 {position:relative;}
+.con-item::after{content:'';clear:both;display:block;}
+.con-img {float:left}
+.con-text {float:left;padding:50px;margin-left:18px;}
+.con-title {font-weight:bold;font-size:32px;color:black}
+.con-subject {font-weight:bold;font-size:20px;color:black;margin-right:20px}
+.con-detail{padding:24px;display:block;background:lightgray;width:120px;height:79px;position:absolute;bottom:0;right:0}
+.con-date{margin-left:7%; margin-bottom:9%;}
+.con-tc{background-color:white; color:black;}
+.con-rad {border-radius: 70px; border:1px solid lightgray; font-size:20px; margin-bottom:5%;}
+.con-rad3 {border-radius: 70px; border:1px solid lightgray; font-size:15px; margin-bottom:5%; margin-right:3%; margin-top:2%;}
+.con-rad2 {border-radius: 70px; font-size:15px; margin-bottom:5%;}
+.con-cardbtn {border-radius: 70px; font-size:15px; margin-bottom:5%; font-weight:bold; border:2px solid #000; background:#fff;display:inline-block;}
+.con-cardbtn2 {border-radius: 70px; font-size:15px; margin-bottom:5%; font-weight:bold; border:2px solid #e65540; background:#fff;display:inline-block;}
+.con-hash{float:left;font-weight:bold; font-size:15px; margin-top:10%;}
+.con-sub > a {margin-left:3%;}
+.con-sub > a:nth-of-type(1){font-weight:bold;border-bottom:4px solid #e65540; color:#e65540;}
+.con-sub{text-align:center; margin-bottom:4%; }
+.sizefullb {width: 110px;height: 110px;}
+.sizefullbb {width: 100px;height: 30px;border:2px solid #e65540}
+.sizefullbbb {width: 100px;height: 30px;}
+.sizefullbbbb {width: 150px;height: 45px; text-align:center;}
+.sizefullbbbbb {width: 245px;height: 65px;border:2px solid #e65540;font-size:20px;margin-right:5%;}
+.con-list{margin-top:13%; margin-left:25%;}
+.l-text5 {
+	font-family: Montserrat-Bold;
+	font-weight: bold;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-right:2%;
+	font-size:40px;
+}
+.l-text7 {
+	font-family: Montserrat-Bold;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-right:2%;
+	font-size:40px;
+}
+.s-text6 {
+	font-family: Montserrat-Regular;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	line-height: 1;
+}
+.l-text3 {
+	font-family: Montserrat-Bold;
+	font-size: 60px;
+	font-weight: bold;
+	color: white;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+.l-text4 {
+	font-family: Montserrat-Bold;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+.l-texth {
+	font-family: Montserrat-Bold;
+	font-size: 30px;
+	font-weight: bold;
+	color: #e65540;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-right:3%;
+}
+.l-texthh {
+	font-family: Montserrat-Bold;
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-right:3%;
+}
+.p-t-399{padding-top:400px;}
+.p-b-399{padding-bottom:400px;}
+.size100 {
+	width: 110px;
+	height: 15px;
+	float:left;
+}
+.btn2{
+	margin-left:4%;
+}
+.btnw{
+	width:350px;
+	text-aling:center;
+}
+.btnw1{
+	width:700px;
+	text-aling:center;
+}
+.btnw2{
+	width:875px;
+	text-aling:center;
+}
+.l-text6 {
+	font-family: Montserrat-Bold;
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+.card{
+	background:#fff;
+	padding:75px;
+	margin-right:10%;
+	width:350px;
+	height:435px;
+	text-align: center;
+}
+.card1{
+	padding-left:10%;
+	background:#fff;
+	padding:75px;
+	width:775px;
+	height:395px;
+	text-align: left;
+}
+.carddate{
+	text-align:center;
+	font-size:25px;
+	line-height:26px;
+	font-weight:bold;
+	color:black;
+}
+.cardtitle{
+	margin-bottom:30%;
+	text-align:center;
+	margin-top:30%;
+	font-size:22px;
+	color:#000;
+}
+.cardtitle1{
+	text-align:center;
+	font-size:22px;
+	color:#000;
+	padding-bottom:40px;
+}
+.cardbig{
+	padding-top:30px;
+	margin-top:5%;
+	display:flex;
+	margin-right: 2%;
+}
+.cardimg{
+	margin-bottom:3%;
+}
+.cartdate1{
+	
+	text-align:left;
+	font-size:25px;
+	line-height:26px;
+	color:black;
+}
+.cardbig1{
+	padding-left:100px;
+	padding-top:30px;
+	width: 980px;
+	margin-top:5%;
+	display:flex;
+}
+.cardbig div:last-child {margin-right:0;}
+.re_btn{
+    width: 347px;
+}
+.c{color:#e65540;font-weight:bold;}
+.d{color:black;font-weight:bold;}
+.text1{
+	color:white;
+	font-size:15px;
+}
+.color{
+	background:#e65540;
+	font-weight:bold;
+}

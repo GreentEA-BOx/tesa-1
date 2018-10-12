@@ -1,0 +1,88 @@
+/* [베스트상품]
+ */
+.block2-labelbest_d::before 
+{
+  z-index: 100;
+  font-family: Montserrat-Regular;
+  font-size: 12px;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 22px;
+  border-radius: 11px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.block2-labelbest_d::before {
+  background-color: #66a8a6;
+  content: 'Best';
+}
+
+
+/* 타이틀이미지 */
+
+.bg-title-page_d {
+  width: 100%;
+  min-height: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+}
+
+.bg-title-page2_d {
+  width: 100%;
+  min-height: 300px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+}
+
+/* 타이틀 글씨 */
+.l-text2_d {
+	font-family: Montserrat-Bold;
+	font-size: 70px;
+	color: white;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.l-text100_d {
+	font-family: Montserrat-Bold;
+	font-size: 50px;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.l-text101_d {
+	font-family: Montserrat-Bold;
+	font-size: 20px;
+	color: black;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.flex-w_d {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
