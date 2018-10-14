@@ -1,4 +1,7 @@
-
+<link rel="stylesheet" href="../vendor/dh_support/chat/css/custom.css">
+	<link rel="stylesheet" href="../vendor/dh_support/chat/css/bootstrap3.css">
+	<link href="../vendor/dh_support/suggest/css/style.css" rel="stylesheet" />
+	<link href="../vendor/dh_support/suggest/css/font-awesome.min.css" rel="stylesheet" />
 
 <!-- 인터넷을 통해 제이쿼리 가져오기 -->
 <script src="js/bootstrap.js"></script>

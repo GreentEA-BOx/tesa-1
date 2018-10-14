@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="../vendor/dh_support/chat/css/custom.css">
+	<link rel="stylesheet" href="../vendor/dh_support/chat/css/bootstrap3.css">
+	<link href="../vendor/dh_support/suggest/css/style.css" rel="stylesheet" />
+	<link href="../vendor/dh_support/suggest/css/font-awesome.min.css" rel="stylesheet" />
 <center>
  <div style="width:500px;">
                     <div class="alert alert-info">

@@ -1,4 +1,8 @@
-    <center>
+<link rel="stylesheet" href="../vendor/dh_support/chat/css/custom.css">
+	<link rel="stylesheet" href="../vendor/dh_support/chat/css/bootstrap3.css">
+	<link href="../vendor/dh_support/suggest/css/style.css" rel="stylesheet" />
+	<link href="../vendor/dh_support/suggest/css/font-awesome.min.css" rel="stylesheet" />
+	    <center>
     <section id="main">
         <div class="container">
             <div class="row">

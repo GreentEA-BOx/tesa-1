@@ -1,4 +1,20 @@
+<!-- hotel  -->
+<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/h_icomoon.css">
 
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/h_magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/h_flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="../css/h_owl.theme.default.min.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="../fonts/h_flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/h_style.css">
 
 	<div class="colorlib-loader"></div>
 

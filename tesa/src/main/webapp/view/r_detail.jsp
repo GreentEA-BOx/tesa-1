@@ -92,7 +92,7 @@
 
 	<script>
 		function r_list(){
-			location.href="r_list.jsp";
+			location.href="r_show.jsp";
 		}
 	</script>
 	<script>
