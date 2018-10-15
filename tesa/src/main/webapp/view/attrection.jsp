@@ -1,5 +1,5 @@
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-40 p-b-50 sub-attrmain flex-col-c-m"">
+	<section class="bg-title-page p-t-40 p-b-50 sub-attrmain flex-col-c-m">
 		<h2 class="l-text2 t-center">
 			Attrection
 		</h2>
@@ -57,6 +57,10 @@
 </div>
 <p>160cm</p>
 							</div>
+							  <div class="size25 trans-0-4 m-b-10 dis-inline-block">
+                        <!-- Button -->
+                      <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">버튼</button>
+                    </div>
 							
 							
 							
@@ -72,14 +76,12 @@
 			<div class="row">
 				<div class="col-md-4 p-b-30">
 					<div class="hov-img-zoom">
-						<img src="../images/attr/attr1.png" alt="IMG-ABOUT">
+					<a href="attr_deteil.jsp"><img src="../images/attr/attr1.png" alt="IMG-ABOUT"></a>
 					</div>
 				</div>
 
 				<div class="col-md-8 p-b-30">
-					<h3 class="m-text26 p-t-15 p-b-16">
-						거울의집
-					</h3>
+					<h3 class="m-text26 p-t-15 p-b-16">거울의집</h3>
 
 					<p class="p-b-28">
 						설명 들어가는 칸

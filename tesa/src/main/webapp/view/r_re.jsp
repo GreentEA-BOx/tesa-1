@@ -39,17 +39,17 @@
 		</div>
 	</div>
 </section>
-<section style="margin-left:3%;" class="bg-title-page p-t-50 p-b-50 flex-col-c-m">
+<section class="bg-title-page p-t-50 p-b-50 flex-col-c-m">
 	<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw2">
 					<button
-						class="flex-c-m sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color"
+						class="sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color"
 						onclick="javascript:r_reserve()">
 						좌석 신청하기</button>
 					<button
-						class="flex-c-m sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4">
+						class="sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4" onclick="location.href='r_show.jsp'">
 						공연 스케줄 확인하기</button>
 							<button
-						class="flex-c-m sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4">
+						class="sizefullbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4">
 						좌석 배치도 보기</button>
 						</div>
 
@@ -57,6 +57,8 @@
 
 <script>
 function r_reserve(){
-	window.open("${pageContext.request.contextPath}/r_reserve/r_reserve.jsp","좌석 예약","width=730,height=600,resizable=no;")
+	var popupX = (window.screen.width / 3) - (200 / 2);
+	var popupY = (window.screen.height /3) - (300 / 2);
+	window.open("${pageContext.request.contextPath}/r_reserve/r_reserve.jsp","좌석 예약","width=670,height=600, left="+ popupX + ", top="+ popupY + ", screenX="+ popupX + ", screenY= "+ popupY)
 }
 </script>

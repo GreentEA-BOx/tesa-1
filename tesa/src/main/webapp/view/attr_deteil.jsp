@@ -15,7 +15,25 @@
 					
 						<!-- item blog -->
 						<div class="item-blog p-b-80">
-								<img src="../images/dattr/d1.png" alt="IMG-BLOG">
+								<!-- test -->
+								
+									<!-- Slide1 -->
+	<section class="slide1">
+		<div class="wrap-slick1">
+			<div class="slick1">
+				<div class="item-slick1 item1-slick1" style="background-image: url(../images/dattr/aa1.png);">
+				</div>
+
+				<div class="item-slick1 item2-slick1" style="background-image: url(../images/dattr/aa2.png);">
+				</div>
+
+				<div class="item-slick1 item3-slick1" style="background-image: url(../images/dattr/aa3.png);">
+				</div>
+
+			</div>
+		</div>
+	</section>
+								
 							<div class="item-blog-txt p-t-33">
 								<h4 class="p-b-11">
 									
@@ -43,10 +61,12 @@
 									설명좀 길게 적어봅시다.
 								</p>
 
-								<a href="blog-detail.html" class="s-text20">
+								<a href="#" class="s-text20" onmouseup="att_map()">
 									누르면 간략한 지도(이미지 맵 한부분) 보여주기 자바스크립트 이용!
 									<i class="fa fa-long-arrow-right m-l-8" aria-hidden="true"></i>
 								</a>
+								<div id="att_map">
+								</div>
 							</div>
 						</div>
 					</div>

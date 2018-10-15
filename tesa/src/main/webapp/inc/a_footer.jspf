@@ -1,0 +1,53 @@
+ <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendor/admin/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendor/admin/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendor/admin/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendor/admin/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendor/admin/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendor/admin/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendor/admin/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendor/admin/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendor/admin/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendor/admin/Flot/jquery.flot.js"></script>
+    <script src="../vendor/admin/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendor/admin/Flot/jquery.flot.time.js"></script>
+    <script src="../vendor/admin/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendor/admin/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendor/admin/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendor/admin/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendor/admin/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendor/admin/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="../vendor/admin/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="../vendor/admin/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="../vendor/admin/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendor/admin/moment/min/moment.min.js"></script>
+    <script src="../vendor/admin/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../js/custom.min.js"></script>
+	
+  </body>
+</html>

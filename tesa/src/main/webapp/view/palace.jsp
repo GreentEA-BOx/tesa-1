@@ -12,9 +12,9 @@
 <meta name="viewport" content="width=375, user-scalable=no, minimal-ui, target-densitydpi=device-dpi" />
 <meta name="format-detection" content="telephone=no" />
 <link href="../css/global.css" rel="stylesheet" type="text/css" /> 
-<script src="../js/jquery-1.9.1.min.js"></script>
-<script src="../js/gnbJs.js"></script>	
-<script src="../js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../js/gnbJs.js"></script>	
+<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
 
 <!-- for mobile -->
 <script src="/common/js/m_front_js.js"></script>
@@ -24,9 +24,9 @@
 
 <title>문화재청 경복궁</title>
  <!-- renew -->
-<script src="../js/slide.js"></script>
+<script type="text/javascript" src="../js/slide.js"></script>
 <script type="text/javascript" src="../js/jquery.bxslider.js"></script>
-<script src="../js/jquery.flexisel.js"></script>
+<script type="text/javascript" src="../js/jquery.flexisel.js"></script>
 
 <script type = "text/javascript">
 	/* 쿠키 관련 */
@@ -338,7 +338,7 @@
 	<div class="container">
 		<nav>
 			<ul>
-				<li class=" m-r-10"><a href="../view/palace.jsp">HOME</a></li>
+				<li class=" m-r-10"><a href="../view/palace.jsp">PALACE</a></li>
 				<li class=" m-r-10 p-l-10 p-r-10 bo2"><a href="../view/palace_res.jsp">Narration</a></li>
 				<li class=" m-r-10 p-r-10 bo17"><a href="../view/palace_hanbok.jsp">Hanbok</a></li>
 				<li class=""><a href="javascript:void(0)">Check&Cancel</a></li>
@@ -377,7 +377,7 @@
 			<div class="m_bookLink">
 				<ul>
 					<!-- <li><a href="/content/guide/guide30.asp">궁중회화특강 신청<span>예약바로가기</span></a></li> -->
-					<li><a href="/content/guide/guide01_tab01.asp">관람시간 및 요금 <span>휴궁일 : 매주 화요일</span></a></li>
+					<li><a href="/content/guide/guide01_tab01.asp">관람시간 및 주의사항 <span>휴궁일 : 매주 화요일</span></a></li>
                     <!-- <li><a href="/content/guide/childrenstory.asp">구연동화 교육신청<span>유치원대상 경복궁 이야기</span></a></li> -->
 					<li><a href="../view/palace_res.jsp">단체해설관람 <em>예약</em><span>단체해설관람 예약 안내 및 신청</span></a></li>
 					<li><a href="../view/palace_hanbok.jsp">무료한복대여 <em>예약</em><span>무료한복대여 예약 안내 및 신청</span></a></li>

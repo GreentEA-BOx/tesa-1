@@ -48,6 +48,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
       <include-prelude>/inc/header.jspf</include-prelude>
       <include-coda>/inc/footer.jspf</include-coda>
     </jsp-property-group>
+    <jsp-property-group>
+      <url-pattern>/admin/*</url-pattern>
+      <include-prelude>/inc/a_header.jspf</include-prelude>
+      <include-coda>/inc/a_footer.jspf</include-coda>
+    </jsp-property-group>
   </jsp-config>
   <filter>
   <filter-name>EncodingFilter</filter-name>

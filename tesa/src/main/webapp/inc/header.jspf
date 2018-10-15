@@ -65,17 +65,17 @@
 							<li>
 								<a href="javascript:void(0)">Enjoying</a>
 								<ul class="sub_menu">
-								<li><a href="attrection.jsp">Attraction</a>
+									<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">Attraction</a>
 										<ul class="sub_menu">
 											<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">attrection</a></li>
-											<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">attrection</a></li>
+											<li><a href="${pageContext.request.contextPath}/view/attr_map.jsp">map</a></li>
 											<li><a href="${pageContext.request.contextPath}/view/attr_deteil.jsp">attr_deteil</a></li>
 										</ul>
 									</li>
 									<li><a href="${pageContext.request.contextPath}/view/sam1.jsp">Leisure</a>
 										<ul class="sub_menu">
-											<li><a href="index.html">Homepage V1</a></li>
-											<li><a href="home-02.html">Homepage V2</a></li>
+											<li><a href="${pageContext.request.contextPath}/view/yys_sub_1.jsp">Leisure 소개</a></li>
+											<li><a href="${pageContext.request.contextPath}/view/yys_sub_2.jsp">Leisure 예약</a></li>
 											<li><a href="home-03.html">Homepage V3</a></li>
 										</ul>
 									</li>
@@ -95,7 +95,7 @@
 							</li>
 
 							<li>
-								<a href="${pageContext.request.contextPath}/view/dining.jsp">Dining</a>
+								<a href="${pageContext.request.contextPath}/view/d_dining.jsp">Dining</a>
 							</li>
 
 							<li>

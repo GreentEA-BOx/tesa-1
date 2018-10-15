@@ -219,5 +219,31 @@
 	<script src="../js/h_magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="../js/h_main.js"></script>
+	<script>
+	function att_map(){
+		var test = document.getElementById('att_map');
+		test.innerHTML = "<img src='../images/map/ad1.png'>"
+	}
+	function map1(){
+		var test = document.getElementById('map_map');
+		test.innerHTML = "<img src='../images/map/ad1.png'>"
+	}
+	function map2(){
+		var test = document.getElementById('map_map');
+		test.innerHTML = "<img src='../images/map/ad2.png'>"
+	}
+	function map3(){
+		var test = document.getElementById('map_map');
+		test.innerHTML = "<img src='../images/map/ad3.png'>"
+	}
+	function map4(){
+		var test = document.getElementById('map_map');
+		test.innerHTML = "<img src='../images/map/ma.png'>"
+	}
+	function map5(){
+		var test = document.getElementById('map_map');
+		test.innerHTML = "<img src='../images/map/kiz.png'>"
+	}
+	</script>
 </body>
 </html>
