@@ -1,3 +1,22 @@
+<head>
+<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/h_icomoon.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/h_magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/h_flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="../css/h_owl.theme.default.min.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="../fonts/h_flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/h_style.css">
+</head>	
+
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
@@ -8,9 +27,9 @@
 						<div class="col-xs-10 text-right menu-1 margin-auto">
 							<ul>
 								<li><a href="hotel.jsp">Hotel</a></li>
-								<li><a href="rooms-suites.jsp"><b>Rooms</b></a></li>
-								<li><a href="aminities.jsp">Aminities</a></li>
-								<li><a href="about.jsp">About</a></li>
+								<li><a href="h_rooms-suites.jsp"><b>Rooms</b></a></li>
+								<li><a href="h_aminities.jsp">Aminities</a></li>
+								<li><a href="h_about.jsp">About</a></li>
 							</ul>
 						</div>
 					</div>
@@ -39,6 +58,58 @@
 
 		<div id="colorlib-rooms" class="colorlib-light-grey">
 			<div class="container">
+			
+<div class="row">
+	<div class="col-md-4">
+		<ul class="p-b-54">
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13 active1">Suite</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+	
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13">Double Room</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13">Classic Double Room</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+	
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13">Superior Double Room</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+	
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13">Family Room</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+			<li class="flex-sb-m">
+				<a href="#" class="s-text13">Superior Family Room</a>
+				<span class="s-text13">
+					(>>)
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div class="col-md-8 room-calendar">
+	<input type="text" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" value="yyyy-mm-dd">
+	</div>
+</div>
+				
+				
+				
 				<div class="row">
 					<div class="col-md-4 room-wrap animate-box">
 						<a href="images/room-1.jpg" class="room image-popup-link" style="background-image: url(../images/hotel/room-1.jpg);"></a>
@@ -55,7 +126,7 @@
 								<li><i class="icon-check"></i> Breakfast included</li>
 								<li><i class="icon-check"></i> Price does not include VAT &amp; services fee</li>
 							</ul>
-							<p class="rooms-button"><a class="btn btn-primary">Book now!</a></p>
+							<p class="rooms-button"><a class="btn btn-primary btn-book">Book now!</a></p>
 						</div>
 					</div>
 					<div class="col-md-4 room-wrap animate-box">

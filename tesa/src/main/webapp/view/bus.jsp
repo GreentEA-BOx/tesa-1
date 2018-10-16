@@ -11,7 +11,7 @@
 			<ul>
 				<li class=" m-r-10"><a href="javascript:void(0)">HOME</a></li>
 				<li class=" m-r-10 p-l-10 p-r-10 bo2"><a href="javascript:void(0)">Reservation</a></li>
-				<li class=" m-r-10 p-r-10"><a href="javascript:void(0)">Time Table</a></li>
+				<li class=" m-r-10 p-r-10"><a href="timetable.jsp">Time Table</a></li>
 			</ul>
 		</nav>
 	</div>

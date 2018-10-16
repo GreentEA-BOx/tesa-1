@@ -3,10 +3,10 @@
 	<!-- Title Page -->
 	<section class="bg-title-page_d p-t-50 p-b-40 flex-col-c-m" style="background-image: url(${pageContext.request.contextPath}/images/dining/mainimg.jpg);">
 		<h2 class="l-text2_d t-center">
-			Best New Dining
+			Tesa Restaurant
 		</h2>
 	</section>
-<section class="sub-menu p-t-10 p-b-10">
+<section class="sub-menu p-t-10 p-b-10 t-center">
 	<div class="container">
 		<nav>
 			<ul>
@@ -77,42 +77,13 @@
 					</div>
 				</div>
 
-				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
-					<!--  -->
-					<div class="flex-sb-m flex-w p-b-35">
-						<div class="flex-w">
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-1" name="sorting">
-									<option>분류</option>
-									<option>Best</option>
-									<option>New</option>
-								</select>
-							</div>
-
-							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-1" name="sorting">
-									<option>가격</option>
-									<option>10000원 미만</option>
-									<option>10000원 ~ 30000원</option>
-									<option>30000원 ~ 50000원</option>
-									<option>50000원 ~ 100000원</option>
-									<option>100000원 이상</option>
-
-								</select>
-							</div>
-						</div>
-
-						<span class="s-text8 p-t-5 p-b-5">
-						</span>
-					</div>
-
 					<!-- Product -->
-					<div class="row">
+					<div style="width:77%"class="row">
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="../images/dining/bnd/kyu.jpg"  alt="IMG-DINING">
+									<img src="../images/dining/rest/victoria.jpg"  alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -131,12 +102,8 @@
 
 								<div class="block2-txt p-t-20 t-center">
 									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										규동(수사)
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										8000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -145,7 +112,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelbest_d">
-									<img src="../images/dining/bnd/bur.jpg" alt="IMG-DINNING">
+									<img src="../images/dining/rest/oreo.jpg" alt="IMG-DINNING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -163,13 +130,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										스파이스 치킨버거 Set(Hols 수제버거)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										7000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -178,7 +141,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="../images/dining/bnd/coco.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/treeble.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -196,13 +159,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										바나나 코코넛(Slow Cafe)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										7000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -211,7 +170,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelbest_d">
-									<img src="../images/dining/bnd/don.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/natuur.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -229,14 +188,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										규카츠(하지메마시떼)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										10000원
-									</span>
-
 								</div>
 							</div>
 						</div>
@@ -245,7 +199,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelbest_d">
-									<img src="../images/dining/bnd/ke.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/rotirori.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -263,13 +217,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										치킨케밥Set(메이드인터키)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										9000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -278,7 +228,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="../images/dining/bnd/ore.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/staffhotdog.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -296,13 +246,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										오레오 츄러스 SET(츄러스킹)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										7000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -311,7 +257,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="../images/dining/bnd/ozing.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/acuapraza.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -329,13 +275,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										오징어 꽃이 피었습니다(신당동떡볶이)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										12000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -344,7 +286,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="../images/dining/bnd/sal.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/arabianbazaar.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -362,15 +304,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										샐러드바(Salad In My Life)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										성인 : 12000원
-										5세이하 : 5000원							
-									</span>
-									
 								</div>
 							</div>
 						</div>
@@ -379,7 +315,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="../images/dining/bnd/sset.jpg" alt="IMG-DINING">
+									<img src="../images/dining/rest/cafed'azur.jpg" alt="IMG-DINING">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -397,13 +333,9 @@
 								</div>
 
 								<div class="block2-txt p-t-20 t-center">
-									<a href="ddetail.jsp" class="block2-name dis-block s-text3 p-b-5">
-										스시 커플세트(이쿠죠)
+									<a href="d_detail.jsp" class="block2-name dis-block s-text3 p-b-5">
+										음식점명
 									</a>
-
-									<span class="block2-price m-text6 p-r-5">
-										25000원
-									</span>
 								</div>
 							</div>
 						</div>
@@ -515,11 +447,9 @@
 					<!-- Pagination -->
 					<div class="pagination flex-m flex-w p-t-26">
 						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
-					</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>	
+		</div>
 	</section>

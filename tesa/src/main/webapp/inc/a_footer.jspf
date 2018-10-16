@@ -1,3 +1,4 @@
+</div>
  <footer>
           <div class="pull-right">
             Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
@@ -45,7 +46,7 @@
     <!-- bootstrap-daterangepicker -->
     <script src="../vendor/admin/moment/min/moment.min.js"></script>
     <script src="../vendor/admin/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+ 	<script src="../vendor/admin/switchery/dist/switchery.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../js/custom.min.js"></script>
 	

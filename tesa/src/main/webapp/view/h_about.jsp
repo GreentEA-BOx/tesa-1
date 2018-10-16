@@ -1,3 +1,22 @@
+<head>
+<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../css/h_icomoon.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../css/h_magnific-popup.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="../css/h_flexslider.css">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="../css/h_owl.theme.default.min.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="../fonts/h_flaticon/font/flaticon.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="../css/h_style.css">
+</head>	
+
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
@@ -8,9 +27,9 @@
 						<div class="col-xs-10 text-right menu-1 margin-auto">
 							<ul>
 								<li><a href="hotel.jsp">Hotel</a></li>
-								<li><a href="rooms-suites.jsp">Rooms</a></li>
-								<li><a href="aminities.jsp">Aminities</a></li>
-								<li><a href="about.jsp"><b>About</b></a></li>
+								<li><a href="h_rooms-suites.jsp">Rooms</a></li>
+								<li><a href="h_aminities.jsp">Aminities</a></li>
+								<li><a href="h_about.jsp"><b>About</b></a></li>
 							</ul>
 						</div>
 					</div>

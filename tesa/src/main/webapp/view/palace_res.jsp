@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- Title Page -->
-	<!-- <section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" >
-		<h2 class="tit6 t-center">
-			
-		</h2>
-	</section> -->
+	
 	<section class="sub-menu p-t-10 p-b-10">
 	<div class="container">
 		<nav>
@@ -17,6 +13,11 @@
 			</ul>
 		</nav>
 	</div>
+	</section>
+	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/5b0e429af320a96377541.jpg); min-height:428px">
+		<h2 class="tit6 t-center">
+			
+		</h2>
 	</section>
 	
 	<!-- Reservation -->

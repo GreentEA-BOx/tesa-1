@@ -11,11 +11,7 @@
 </body>
 
 <!-- Title Page -->
-	<!-- <section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" >
-		<h2 class="tit6 t-center">
-			
-		</h2>
-	</section> -->
+	 
 	<section class="sub-menu p-t-10 p-b-10">
 	<div class="container">
 		<nav>
@@ -27,6 +23,12 @@
 			</ul>
 		</nav>
 	</div>
+	</section>
+	
+	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/9b089f95-b4c5-4b80-a8c5-781c3d98516d2.jpg); min-height:428px">
+		<h2 class="tit6 t-center">
+			
+		</h2>
 	</section>
 	
 	<!-- Reservation -->

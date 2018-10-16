@@ -184,6 +184,7 @@
 	<script type="text/javascript" src="../vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="../vendor/lightbox2/js/lightbox.min.js"></script>
+	
 <!--===============================================================================================-->
 	<script type="text/javascript" src="../vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
@@ -206,7 +207,7 @@
 	<script src="../js/main.js"></script>
 	<!-- hotel -->
 	<script type="text/javascript" src="../js/h_owl.carousel.min.js"></script>
-
+	<script type="text/javascript" src="../js/h_cal.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="../js/h_bootstrap-datepicker.js"></script>
 	<script src="../js/h_jquery.easing.1.3.js"></script>

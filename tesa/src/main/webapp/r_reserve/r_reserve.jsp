@@ -10,9 +10,13 @@
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../css/r_style.css">
+
+<!-- ==========select============= -->
+
 </head>
 <title>좌석 예약</title>
 <!-- Title Page -->
+<body class="r_reservebody">
 <section class="bg-title-page p-t-40 p-b-40 flex-col-c-m reser_titlesec">
 	<h5 style="margin-bottom: 2%" class="reser_title">스테이지 좌석 예약</h5>
 </section>
@@ -67,26 +71,29 @@
 	</p>
 	<ul>
 		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
-		<li class="reser_li">예약정보</li>
+		<li class="reser_li">예약 정보</li>
 	</ul>
 	<hr class="hrtitle" />
 	<ul >
 		<li class="reser_con_li"><p class="reser_con_p">공연명&nbsp;</p>
 			<p>
-				<select class="selection-1">
+		        <select class="reser_select">
 					<option value="0">[공연선택]</option>
-					<option value="1">[드라큐라의 사랑]</option>
+					<option value="1">드라큐라의 사랑</option>
 				</select>
 			</p></li>
 			<hr />
 		<li class="reser_con_li"><p class="reser_con_p">공연일&nbsp;</p>
-			<p>2018년 10월 14일</p></li>
+			<p class="reser_date">2018년 10월 14일</p></li>
 			<hr />
 		<li class="reser_con_li"><p class="reser_con_p">공연시간</p>
 			<p>
-				<select class="selection-1">
-					<option value="0">[2018.01.01]</option>
-					<option value="1">[2018.10.10]</option>
+				<!-- <select class="reser_select" id="seldate" onchange="consert_time(this)"> -->
+				<select class="reser_select" id="seldate" onchange="javascript:consert_date(this.options[this.selectedIndex].text)"> 
+				
+					<option value="0">[공연시간]</option>
+					<option value="1">15:30</option>
+					<option value="2">20:30</option>
 				</select>
 			</p></li>
 			<hr />
@@ -94,7 +101,7 @@
 	<ul>
 		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
 		<li class="reser_li">좌석 선택</li>
-		<hr />
+		<hr class="hrtitle" />
 	</ul>
 </section>
 <div class="content">
@@ -113,42 +120,23 @@
 				</tr>
 				<tr>
 					<th>공연시간  : </th>
-					<td>2018.01.01</td>
+					<td id="condate"></td>
 				</tr>
 				<tr>
 					<th>티켓장수  : </th>
-					<td><span id="counter">1</span></td>
+					<td><span id="counter"></span></td>
 				</tr>
 				<tr>
 					<th>결제금액  : </th>
-					<td><b><i>\</i><span id="total">8000</span></b></td>
+					<td><b><span id="total"></span></b></td>
 				</tr>
 				<tr>
-					<th>선택좌석</th>
-				</tr>
-				<tr>
+					<th id="tath"colspan="2">선택좌석</th>
+					
 				</tr>
 			</table>
 			</div>
-				<div id="selected-seats" class="scrollbar scrollbar1"></div>
-			<!-- <div class="booking-details">
-				<ul class="book-left">
-					<li>공연제목</li>
-					<li>공연시간</li>
-					<li>티켓장수</li>
-					<li>결제금액</li>
-					<li>선택좌석</li>
-				</ul>
-				<ul class="book-right">
-					<li>: 드라큐라의 사랑</li>
-					<li>: 2018.01.01</li>
-					<li>: <span id="counter">1</span></li>
-					<li>: <b><i>\</i><span id="total">8000</span></b></li>
-				</ul>
-				<div class="clear"></div>
-				<ul id="selected-seats" class="scrollbar scrollbar1"></ul>
-				
-			</div> -->
+				<div id="selected-seats"></div>
 			<div style="clear:both"></div>
 	    </div>
 
@@ -165,7 +153,7 @@
 			취소</button>
 	</div>
 </section>
-
+</body>
 <!--=====================seats===================================-->
 <script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
@@ -199,27 +187,28 @@
 						legend : { //Definition legend
 							node : $('#legend'),
 							items : [
-								[ 'a', 'available',   'Available' ],
-								[ 'a', 'unavailable', 'Sold'],
-								[ 'a', 'selected', 'Selected']
+								[ 'a', 'available',   '선택가능' ],
+								[ 'a', 'unavailable', '선택불가'],
+								[ 'a', 'selected', '선택좌석']
 							]					
 						},
 						click: function () { //Click event
 							if (this.status() == 'available') { //optional seat
-								$('<li style="list-style-type : none;">Row'+(this.settings.row+1)+' Seat'+this.settings.label+'</li>')
+								$('<li style="margin-left: 28%;">'+(this.settings.row+1)+'행'+this.settings.label+'열'+'</li>')
 									.attr('id', 'cart-item-'+this.settings.id)
+									.attr('class', 'con-list2')
 									.data('seatId', this.settings.id)
 									.appendTo($cart);
 
 								$counter.text(sc.find('selected').length+1);
-								$total.text(recalculateTotal(sc)+price);
+								$total.text(recalculateTotal(sc)+price+"원");
 											
 								return 'selected';
 							} else if (this.status() == 'selected') { //Checked
 									//Update Number
 									$counter.text(sc.find('selected').length-1);
 									//update totalnum
-									$total.text(recalculateTotal(sc)-price);
+									$total.text(recalculateTotal(sc)-price+"원");
 										
 									//Delete reservation
 									$('#cart-item-'+this.settings.id).remove();
@@ -242,7 +231,6 @@
 					sc.find('selected').each(function () {
 						total += price;
 					});
-							
 					return total;
 				}
 			</script>
@@ -254,4 +242,13 @@
 		minimumResultsForSearch : 20,
 		dropdownParent : $('#dropDownSelect1')
 	});
+</script>
+<script>
+function consert_date(value){
+	alert(value);
+
+	
+	$('#condate').empty();
+	$('#condate').append(value);
+}
 </script>

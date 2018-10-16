@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.container-table {box-sizing:border-box;}
+.bus-col1{text-align:center;width:15%;}
+.bus-col2{text-align:center;width:45%;}
+.bus-col3{text-align:center;width:20%;}
+.bus-col4{text-align:center;width:20%;}
+.bus-row{border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;}

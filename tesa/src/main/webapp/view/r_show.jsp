@@ -92,7 +92,7 @@
 								onclick="location.href='r_re.jsp'">좌석예약</button>
 							<!-- Button -->
 							<button
-								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4 btn2">
+								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4 btn2" onclick="location.href='r_join.jsp'">
 								참여신청</button>
 						</div>
 						<div class="con-hash">
