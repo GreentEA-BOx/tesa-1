@@ -209,7 +209,7 @@ body{width:100%;-webkit-text-size-adjust:none; overflow-y: scroll;}
 .Left_menu_txt li:hover{background:url(../../images/palace/sub/bg_left_ov.gif) no-repeat}
 .Left_menu_txt li li:hover{background:none}
 .Left_menu_txt li li:hover a{text-decoration:underline}
-.Left_menu_txt li:hover a{color:#FFF}
+.Left_menu_txt li:hover a{color:black}
 .Left_menu_txt li li:hover a{color:#c0495d;background:url(../../images/palace/sub/dot01.gif) no-repeat 20px 8px}
 .Left_menu_txt li li a{font-size:12px;padding-left:30px}
 .Left_menu_txt li li a:hover{color:#796537}
@@ -218,7 +218,7 @@ body{width:100%;-webkit-text-size-adjust:none; overflow-y: scroll;}
 .Left_menu_txt li li a:active{color:#796537}
 .Left_menu_txt a{display:block;height:100%;}
 .Left_menu_txt .menu_select{background:url(../../images/palace/sub/bg_left_ov.gif) no-repeat}
-.Left_menu_txt .menu_select strong a{display:block;height:100%;color:#fff}
+.Left_menu_txt .menu_select strong a{display:block;height:100%;color:black}
 .menu_depth3{background-color:#f8f8f8;margin-left:-18px}
 .menu_depth3 li{margin-left:-18px;background:url(../../images/palace/sub/dot01.gif) no-repeat 38px 13px;line-height:26px;border-bottom:1px dotted #7f7f7f}
 .menu_depth3 li:first-child{border-top:1px solid #d9d9d9}

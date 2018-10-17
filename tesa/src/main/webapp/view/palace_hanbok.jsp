@@ -1,3 +1,13 @@
+
+ <script type="text/javascript">
+    function cancle() {
+        self.close();
+    }
+    function goSubmit() {
+        $("#palace_com.jsp").submit();
+    }
+</script>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -178,13 +188,15 @@
 
 						</div>
 
-						<div class="wrap-btn-booking flex-c-m m-t-6">
+						
+					</form>
+					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
-							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4">
+							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
+							onclick="location.href='palace_hanbok_com.jsp'">
 								Submit
 							</button>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>

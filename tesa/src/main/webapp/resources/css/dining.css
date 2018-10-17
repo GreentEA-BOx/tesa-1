@@ -86,3 +86,14 @@
 	-o-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
+
+/* new dining */
+
+.item-slick1,
+.item-slick2,
+.item-slick3,
+.item-slick_d {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

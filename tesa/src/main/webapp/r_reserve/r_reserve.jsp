@@ -28,7 +28,7 @@
 	<hr class="hrtitle" />
 
 	<p>
-		<textarea>익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
+		<textarea class="wintextarea">익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
 
 1매 2좌석 이용 가능합니다.
 
@@ -56,7 +56,7 @@
 	</ul>
 	<hr class="hrtitle" />
 	<p>
-		<textarea>이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
+		<textarea  class="wintextarea">이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
 
 1. 개인정보의 수집 및 이용 목적
 공연관람 참가 신청시 본인 확인을 위해 개인정보를 수집하고 있습니다.
@@ -144,7 +144,7 @@
 </div>
 <section style="margin-left: 3%;"
 	class="bg-title-page p-t-50 p-b-50 flex-col-c-m">
-	<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw2 padding-left31">
+	<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 padding-left31">
 		<button
 			class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color">
 			신청</button>

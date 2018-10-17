@@ -24,7 +24,11 @@
 
 /* 반장 */
 /* .wrap-form-reservation {display:none} */
+.shuttle {display:none}
+.safari {display:none}
 .on {display:block}
+footer {position:relative}
+footer .logo {position:static}
 
 .header-icons2 {
   display: -webkit-box;

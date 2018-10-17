@@ -243,5 +243,15 @@
         $('.video-mo-01').children('iframe')[0].src = srcOld;
         $('.video-mo-01').css('opacity','0');
     });
+    $('.shu').on('click',function(){
+    	$('.shuttle').removeClass('on');
+    	$('.shuttle').addClass('on');
+    	$('.safari').removeClass('on');
+    });
+    
+    $('.safa').on('click',function(){
+    	$('.safari').addClass('on');
+    	$('.shuttle').removeClass('on');
+    });
 
 })(jQuery);

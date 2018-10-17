@@ -195,8 +195,8 @@ function drawcalendars() {
 document.all?window.attachEvent('onload',drawcalendars):window.addEventListener('load',drawcalendars,false);
 
 // Calendar buttons
-document.write('<div id="b_s" style="z-index:1000;position:absolute;cursor:pointer;float:left;width:20px;height:21px" onclick="csubm()"><img src="http://dev.capetown-direct.com/arrowleft-g.gif"></div>');
-document.write('<div id="b_a" style="z-index:1000;position:absolute;cursor:pointer;float:right;width:20px;height:21px" onclick="caddm()"><img src="http://dev.capetown-direct.com/arrowright-g.gif"></div>');
+$('.room-calendar').append('<div id="b_s" style="z-index:1000;cursor:pointer;position:absolute;left:1%;float:left;visibility:hidden;" onclick="csubm()"><img src="http://dev.capetown-direct.com/arrowleft-g.gif"></div>');
+$('.room-calendar').append('<div id="b_a" style="z-index:1000;cursor:pointer;position:absolute;right:1%;float:right;" onclick="caddm()"><img src="http://dev.capetown-direct.com/arrowright-g.gif"></div>');
 
 //document.all?document.attachEvent('onclick',checkClick):document.addEventListener('click',checkClick,false);
 
@@ -227,11 +227,7 @@ function positioncals() {
 		g_o('fc_all').style.left=Left(updobj)+'px';
 	
 	
-	g_o('b_s').style.left=Left(g_o('fc_all'))+4+'px';
-	g_o('b_s').style.top=Top(g_o('fc_all'))+6+'px';
-	g_o('b_a').style.left=Left(g_o('fc_all'))+g_o('fc_all').offsetWidth-g_o('b_s').offsetWidth-1+'px';
-	g_o('b_a').style.top=Top(g_o('fc_all'))+6+'px';
-	
+
 	if (_calcurrent==0)
 		g_o('b_s').style.visibility='hidden';
 	else
@@ -322,6 +318,7 @@ function cs_out(e) {
 			f_cps(evtTgt(EvtObj(e)));
 	}
 }
+/*
 function cs_click(e) {
 	if (evtTgt(EvtObj(e)).id.substring(0,1)=='b') {
 		EvtObj(e).cancelBubble=true;
@@ -333,7 +330,7 @@ function cs_click(e) {
 	
 		hss(1,'');
 	}
-}
+}*/
 
 var _dow=new Array('일','월','화','수','목','금','토');
 var _mn=new Array('1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월');

@@ -103,8 +103,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="col-md-8 room-calendar">
-	<input type="text" onfocus="this.select();lcs(this)" onclick="event.cancelBubble=true;this.select();lcs(this)" value="yyyy-mm-dd">
+	<div class="room-calendar position-relative">
 	</div>
 </div>
 				

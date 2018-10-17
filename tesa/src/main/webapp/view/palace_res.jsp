@@ -100,8 +100,6 @@
 										<option>8 people</option>
 										<option>9 people</option>
 										<option>10 people</option>
-										<option>11 people</option>
-										<option>12 people</option>
 									</select>
 								</div>
 							</div>
@@ -142,14 +140,14 @@
 							</div>
 
 						</div>
-
-						<div class="wrap-btn-booking flex-c-m m-t-6">
+					</form>
+					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
-							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4">
+							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
+							onclick="location.href='palace_res_com.jsp'">
 								Submit
 							</button>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>

@@ -377,7 +377,7 @@
 			<div class="m_bookLink">
 				<ul>
 					<!-- <li><a href="/content/guide/guide30.asp">궁중회화특강 신청<span>예약바로가기</span></a></li> -->
-					<li><a href="/content/guide/guide01_tab01.asp">관람시간 및 주의사항 <span>휴궁일 : 매주 화요일</span></a></li>
+					<li><a href="../view/palace_rule.jsp">관람규칙 및 규정 <span>휴궁일 : 매주 화요일</span></a></li>
                     <!-- <li><a href="/content/guide/childrenstory.asp">구연동화 교육신청<span>유치원대상 경복궁 이야기</span></a></li> -->
 					<li><a href="../view/palace_res.jsp">단체해설관람 <em>예약</em><span>단체해설관람 예약 안내 및 신청</span></a></li>
 					<li><a href="../view/palace_hanbok.jsp">무료한복대여 <em>예약</em><span>무료한복대여 예약 안내 및 신청</span></a></li>
@@ -423,9 +423,9 @@
 			<div class="m_popzone">
 				<h2>알림판</h2>
 				<!-- <div id="sliderPopUpZone" class="popup_img" style="display:none; overflow:hidden;">	 -->
-				<div id="sliderPopUpZone" class="popup_img" style="overflow:hidden;">					
+				 <div id="sliderPopUpZone" class="popup_img" style="overflow:hidden;">	 				
 					<div class="owl-dots">
-						<!-- <span>
+						 <!-- <span>
 							<a class='control_prev_sliderPopUpZone' href='#none'><img src='../images/palace/icon_mPrev2.png' alt="이전버튼"></a>
 							<a class='control_next_sliderPopUpZone' href='#none'><img src='../images/palace/icon_mNxt2.png' alt="다음버튼"></a>
 							<a class='control_stop_sliderPopUpZone' href='#none'><img src='../images/palace/icon_mPause.png' alt="정지버튼"></a>
@@ -434,9 +434,9 @@
 					</div>
 					<ul class="enterleave_sliderPopUpZone" style="position:relative; margin:0; padding:0; list-style: none;">						
 						<li style="position:relative; display:block; float:left; margin:0; padding:0;" inum="1">
-							<a href="/content/guide/guide32.asp"><img src="../images/palace/pop_16021201.jpg" alt="문화재관람예절" /></a>
+							<a href="http://www.royalpalace.go.kr/upload/eti.pdf"><img src="../images/palace/pop_16021201.jpg" alt="문화재관람예절" /></a>
 						</li>
-						<!-- <li style="position:relative; display:block; float:left; margin:0; padding:0;" inum="2">
+						<!--  <li style="position:relative; display:block; float:left; margin:0; padding:0;" inum="2">
 							<a href="http://www.royalpalace.go.kr/content/board/view.asp?seq=545&page=1&c1=&c2="><img src="../images/palace/pop0405.jpg" alt="경복궁 야간특별관람" /></a>
 						</li>
 						<li style="position:relative; display:block; float:left; margin:0; padding:0;" inum="3">
@@ -462,7 +462,7 @@
 						</li>
 						<li style="position:relative; display:block; float:left; margin:0; padding:0;" inum="9">
 							<a href="http://www.royalpalace.go.kr/upload/popl.pdf" target="_blank"><img src="../images/palace/pop1215.jpg" alt="빈틈없은 신고자 보호" /></a>
-						</li>		 -->		
+						</li>		 		 -->
 					</ul>
 				</div>
 			</div><!-- //알림판 -->

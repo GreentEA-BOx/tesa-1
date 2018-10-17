@@ -1,0 +1,17 @@
+.attr-size1{
+	width:25%
+}
+.attr-size2{
+	width:18%
+}
+.attr-button{
+	width: 100px;
+    height: 30px;
+    border: 2px solid #e65540;
+    color: #e65540;
+    font-size: 14px;
+        border-radius: 70px;
+}
+.attr-item{
+    border:1px solid #e65540;
+}

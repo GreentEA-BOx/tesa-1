@@ -1619,3 +1619,6 @@ article {
     z-index: 2;
   }
   
+  .position-relative{
+  	position: relative;
+  }

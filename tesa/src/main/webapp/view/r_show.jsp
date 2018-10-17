@@ -65,6 +65,7 @@
 
 		<!-- list -->
 		<div class="row">
+			
 			<ul class="con-items">
 				<li class="con-item">
 					<p class="con-img">
@@ -86,14 +87,9 @@
 							</p>
 						</div>
 						<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw">
-							<!-- Button -->
 							<button
 								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4"
 								onclick="location.href='r_re.jsp'">좌석예약</button>
-							<!-- Button -->
-							<button
-								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4 btn2" onclick="location.href='r_join.jsp'">
-								참여신청</button>
 						</div>
 						<div class="con-hash">
 							<p>
@@ -104,7 +100,37 @@
 					<a href="r_detail.jsp" class="con-detail t-center text-white">상세보기</a>
 				</li>
 			</ul>
+			<ul class="con-items">
+				<li class="con-item">
+					<p class="con-img">
+						<img src="../images/rs_2.jpg">
+					</p>
+					<div class="con-text">
+						<p class="con-title">할로윈 빅 밴드 쇼</p>
+						<p class="con-content">경쾌한 POP&ROCK 뮤직과 함께하는 할로윈 콘서트</p>
+						<div class="con-times p-t-20">
+							<p>
+								<span class="con-subject">공연 시간</span><span class="con-time">금일 휴연</span>
+							</p>
+						</div>
+						<div class="con-times">
+							<p>
+								<span class="con-subject">공연 장소</span><span class="con-time">어드벤처 1층 스테이지</span>
+							</p>
+						</div>
+						<div class="flex-w flex-m w-full-sm m-t-10 m-b-10">
+							<button
+								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4" onclick="location.href='r_join.jsp'">
+								참여신청</button>
+						</div>
+						<div class="con-hash">
+							
+						</div>
+					</div> <!-- <a href="javascript:void(0)" class="con-detail t-center text-white">상세보기</a> -->
+					<a href="r_detail.jsp" class="con-detail t-center text-white">상세보기</a>
+				</li>
+			</ul>
 		</div>
-		<div>※위 일정은 공연 사정에 따라 변경 또는 취소될 수 있습니다.</div>
+		<div class="margin-top2">※위 일정은 공연 사정에 따라 변경 또는 취소될 수 있습니다.</div>
 	</div>
 </section>

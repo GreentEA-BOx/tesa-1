@@ -50,7 +50,7 @@
 	<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw">
 					<!-- Button -->
 					<button
-						class="flex-c-m sizefullbbbb con-tc con-cardbtn hov1 s-text1 trans-0-4 dis-inline">
+						class="flex-c-m sizefullbbbb con-tc con-cardbtn hov1 s-text1 trans-0-4 dis-inline" onclick="location.href='r_join.jsp'">
 						참여신청</button>
 					<!-- Button -->
 					<button
