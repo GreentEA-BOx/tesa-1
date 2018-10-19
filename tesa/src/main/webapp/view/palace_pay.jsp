@@ -1,7 +1,9 @@
-</script>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+      
+      <script>
+     
+      </script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,18 +16,6 @@
 
 <!-- Title Page -->
 	 
-	<!-- <section class="sub-menu p-t-10 p-b-10">
-	<div class="container">
-		<nav>
-			<ul>
-				<li class=" m-r-10"><a href="../view/palace.jsp">PALACE</a></li>
-				<li class=" m-r-10 p-l-10 p-r-10 bo2"><a href="../view/palace_res.jsp">Narration</a></li>
-				<li class=" m-r-10 p-r-10 bo17"><a href="../view/palace_hanbok.jsp">Hanbok</a></li>
-				<li class=""><a href="javascript:void(0)">Check&Cancel</a></li>
-			</ul>
-		</nav>
-	</div>
-	</section> -->
 	
 	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/9b089f95-b4c5-4b80-a8c5-781c3d98516d2.jpg); min-height:428px">
 		<h2 class="tit6 t-center">
@@ -57,82 +47,19 @@
 						</span>
 
 						<h3 class="tit3 t-center m-b-35 m-t-2">
-							무료한복대여
+							결제
 						</h3>
 					</div>
-
-					<form class="wrap-form-reservation size22 m-l-r-auto">
-						<div class="row">
-							<div class="col-md-4">
-								<!-- Date -->
-								<span class="txt9">
-									Date
-								</span>
-
-								<div class="wrap-inputdate pos-relative bg-white txt10 size11 bo16 bo-rad-10 m-l-2 m-t-3 m-b-23">
-									<input class="my-calendar bo-rad-10 sizefull txt10 p-l-15" type="text" name="date">
-									<i class="btn-calendar fa fa-calendar ab-r-m hov-pointer m-r-18" aria-hidden="true"></i>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<!-- Time -->
-								<span class="txt9">
-									Pick-up Time
-								</span>
-
-								<div class="wrap-inputtime size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23">
-									<!-- Select2 -->
-									<select class="selection-1" name="time">
-										<option>9:00</option>
-										<option>9:30</option>
-										<option>10:00</option>
-										<option>10:30</option>
-										<option>11:00</option>
-										<option>11:30</option>
-										<option>12:00</option>
-										<option>12:30</option>
-										<option>13:00</option>
-										<option>13:30</option>
-										<option>14:00</option>
-										<option>14:30</option>
-										<option>15:00</option>
-										<option>15:30</option>
-										<option>16:00</option>
-										<option>16:30</option>
-										<option>17:00</option>
-										<option>17:30</option>
-										<option>18:00</option>
-									</select>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<!-- People -->
-								<span class="txt9">
-									Gender
-								</span>
-
-								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23">
-									<!-- Select2 -->
-									<select class="selection-1" name="gender">
-										<option>Man</option>
-										<option>Woman</option>
-										
-									</select>
-								</div>
-							</div>
-						</div>
 
 						<div class="row">
 							<div class="col-md-4">
 								<!-- Name -->
 								<span class="txt9">
-									Name
+									Name(Payment)
 								</span>
 
 								<div class="wrap-inputname size11 bo16 bg-white bo-rad-10 m-l-2 m-t-3 m-b-23">
-									<input class="bo-rad-10 sizefull txt10 p-l-15 p-r-15" type="text" name="name" placeholder="Name">
+									<input class="bo-rad-10 sizefull txt10 p-l-15 p-r-15" type="text" name="name" placeholder="Name(Payment)">
 								</div>
 							</div>
 
@@ -161,16 +88,16 @@
 							<div class="col-md-4">
 								<!-- People -->
 								<span class="txt9">
-									Size
+									Payment method
 								</span>
 
 								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23">
 									<!-- Select2 -->
-									<select class="selection-1" name="size">
-										<option>S</option>
-										<option>M</option>
-										<option>L</option>
-										<option>XL</option>
+									<select class="selection-1" name="p_method">
+									    <option>--결제방법--</option>
+										<option id='o_bank'>무통장입금</option>
+										<option id='o_bank'>계좌이체</option>
+										<option id='o_card'>카드결제</option>
 									</select>
 								</div>
 							</div>
@@ -178,23 +105,34 @@
 							<div class="col-md-4">
 								<!-- People -->
 								<span class="txt9">
-									Style
+									Payment Detail
 								</span>
 
-								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23">
+								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23" id="bank">
 									<!-- Select2 -->
-									<select class="selection-1" name="style">
-										<option>1(한복)</option>
-										<option>2(개량한복)</option>
-										
+									<select class="selection-1" name="p_detail" id="paybank">
+									    <option>--은행--</option>
+										<option>국민은행</option>
+										<option>우리은행</option>
+										<option>하나은행</option>
 									</select>
-								</div>
+									
+									</div>
+									
+								 	 <div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23"  style="display:none" id="card">
+									Select2
+									<select class="selection-1" name="p_detail" id="paycard">
+									    <option>--은행--</option>
+										<option>국민카드</option>
+										<option>우리카드</option>
+										<option>하나카드</option>
+									</select>
+									</div>
 							</div>
 
-						</div>
+						</div> 
 
 						
-					</form>
 					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"

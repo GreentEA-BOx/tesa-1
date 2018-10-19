@@ -15,9 +15,13 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="../css/h_style.css">
+	
 </head>	
-
-	<div class="colorlib-loader"></div>
+    <!-- calenndar -->
+    <script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
+	<script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js'></script>
+	<!-- /calenndar -->
 
 	<div id="page">
 		<nav class="colorlib-nav" role="navigation">
@@ -60,7 +64,7 @@
 			<div class="container">
 			
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<ul class="p-b-54">
 			<li class="flex-sb-m">
 				<a href="#" class="s-text13 active1">Suite</a>
@@ -103,12 +107,77 @@
 			</li>
 		</ul>
 	</div>
-	<div class="room-calendar position-relative">
+	<div class="col-md-6" id="h_calendar"></div>
+	
+	<div class="col-md-3">
+		<div class="p-t-30 respon5">
+				<h4 class="product-detail-name m-text16 p-b-13">
+					Option
+				</h4>
+				<div class="p-t-33 p-b-60">
+
+					<div class="flex-m flex-w">
+						<div class="s-text15 h-width50 t-center">
+							Breakfast
+						</div>
+						<input type="checkbox">
+					</div>
+					
+					<div class="flex-m flex-w">
+						<div class="s-text15 h-width50 t-center">
+							Spa
+						</div>
+						<input type="checkbox">						
+					</div>
+
+					
+					<div class="flex-m flex-w">
+						<div class="s-text15 h-width50 t-center">
+							Conference Room
+						</div>
+						<input type="checkbox">
+					</div>
+					
+					<div class="flex-m flex-w">
+						<div class="s-text15 h-width50 t-center">
+							Adults
+						</div>
+						<input type="checkbox">						
+					</div>
+					
+					<div class="flex-m flex-w">
+						<div class="s-text15 h-width50 t-center">
+							Children
+						</div>
+						<input type="checkbox">						
+					</div>
+					
+					<div class="flex-r-m flex-w p-t-10">
+						<div class="flex-m flex-w">
+							<div class="flex-w bo5 of-hidden margin-5px-auto">
+								<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+									<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
+								</button>
+
+								<input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1">
+
+								<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+									<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
+								</button>
+							</div>
+
+							<div class="btn-addcart-product-detail size9 trans-0-4 margin-5px-auto">
+								<!-- Button -->
+								<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+									Book
+								</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
 	</div>
 </div>
-				
-				
-				
 				<div class="row">
 					<div class="col-md-4 room-wrap animate-box">
 						<a href="images/room-1.jpg" class="room image-popup-link" style="background-image: url(../images/hotel/room-1.jpg);"></a>
@@ -224,3 +293,4 @@
 	
 	</div>
 
+	<script src="../js/h_cal.js"></script>

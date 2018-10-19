@@ -1,26 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<head>
-<link rel="stylesheet" href="../vendor/dh_support/chat/css/cs-pc.min.css">
+<link rel="stylesheet" href="../vendor/dh_support/chat/css/cs-pc.min.css"> 
 <link rel="stylesheet" href="../vendor/dh_support/chat/css/common.min.css">
 <link rel="stylesheet" href="../vendor/dh_support/chat/css/custom.css">
 <link rel="stylesheet" href="../vendor/dh_support/chat/css/bootstrap3.css">
-<script src="../vendor/dh_support/chat/js/bootstrap.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script>
+
+ <script src="../js/support.js"></script>
+
+<!-- <script>
 var lastID = 0;
 function submitFunction() {
 	var chatName = $('#chatName').val();
 	var chatContent = $('#chatContent').val();
 	$.ajax({
 		type : "POST",
-		url : "./chatSubmitServlet",
+		url : "../chatSubmitServlet",
 		data : {
 			chatName : encodeURIComponent(chatName),
 			chatContent : encodeURIComponent(chatContent)
+		
 		},
 		success : function(result) {
+
 			if (result == 1) {
 				autoClosingAlert('#successMessage',2000);
 			} else if (result == 0) {
@@ -41,10 +43,14 @@ function autoClosingAlert(selector, delay){
 function chatListFunction(type){
 	$.ajax({
 		type : "POST",
-		url : "./chatListServlet",
+		url : "../chatListServlet",
 		data : {
-			listType: type,
+			listType:type
 		},
+		 error : function(request,status,error) {
+			/*  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error); */
+			alert(error);
+		    },
 		success : function(data) {
 		if(data == "") return;
 		var parsed = JSON.parse(data);
@@ -52,8 +58,8 @@ function chatListFunction(type){
 		for(var i = 0; i < result.length; i++){
 			addChat(result[i][0].value,result[i][1].value,result[i][2].value);
 		}
+		
 		lastID = Number(parsed.last);
-		/* alert(lastID); */
 		}
 	});
 }
@@ -62,13 +68,13 @@ function addChat(chatName, chatContent, chatTime){
 	$('#chatList').append(
 			'<div class="row">' +
 			'<div class="col-lg-12">' +
-				'<div class="media">' +
+				'<div class="media3">' +
 					'<a class="pull-left" href="#">' +
-						'<img class="media-object img-circle"' +
+						'<img class="media3-object img-circle"' +
 						'src="https://lorempixel.com/30/30/people/1/" alt="">' +
 					'</a>' +
-					'<div class="media-body">' +
-						'<h4 class="media-heading">' +
+					'<div class="media3-body">' +
+						'<h4 class="media3-heading">' +
 							chatName + '<span class="small pull-right">'+ chatTime +'</span>' +
 						'</h4>' +
 					'</div>' +
@@ -82,12 +88,14 @@ function addChat(chatName, chatContent, chatTime){
 		chatListFunction(lastID);
 	},1000);
 } 
-	
+	 $(document).ready(function(){
+		chatListFunction('ten');
+		getInfiniteChat();
+	}); </script> -->
 
-</script>
 
-</head>
-<body>
+
+
 <div class="cs-pqnachat__inq-list" id="csChatInqList">
 
   <div class="cs-pqnachat__inq-list__title-area">
@@ -173,7 +181,7 @@ function addChat(chatName, chatContent, chatTime){
       </span>
 
       <span class="cs-pqnachat__inq-list__item-img-container empty">
-        <img class="cs-pqnachat__inq-list__item-img cs-pqnachat__inq-list__item-img--default" src="https://csmessenger.coupang.com/resources/20181015194545/requirejs/cs-center/pc/image/single-image/inquiry_item_img_placeholder.png" data-type="defaultImage">
+        <img class="cs-pqnachat__inq-list__item-img cs-pqnachat__inq-list__item-img--default" src="#" data-type="defaultImage">
       </span>
 
 
@@ -220,7 +228,7 @@ function addChat(chatName, chatContent, chatTime){
       </span>
 
       <span class="cs-pqnachat__inq-list__item-img-container">
-       <img class="cs-pqnachat__inq-list__item-img cs-pqnachat__inq-list__item-img--default" src="https://csmessenger.coupang.com/resources/20181015194545/requirejs/cs-center/pc/image/single-image/inquiry_item_img_placeholder.png" data-type="defaultImage">
+       <img class="cs-pqnachat__inq-list__item-img cs-pqnachat__inq-list__item-img--default" src="#" data-type="defaultImage">
       </span>
 
 
@@ -284,47 +292,12 @@ function addChat(chatName, chatContent, chatTime){
 							</div>
 							<div class="clearfix"></div>
 						</div>
+						
+						<!-- chatlist -->
 						<div id="chat" class="panel-collapse collapse in">
 							<div id="chatList" class="portlet-body chat-widget"
 								style="overflow-y: auto; width: auto; height: 600px;">
-								<!-- <div class="row">
-									<div class="col-lg-12">
-										<p class="text-center text-muted small">2017년 5월 30일</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="media">
-											<a class="pull-left" href="#"> <img class="media-object img-circle" src="https://lorempixel.com/30/30/people/1/">
-												<img class="media-object img-circle"
-												src="https://lorempixel.com/30/30/people/1/">
-											</a>
-											<div class="media-body">
-												<h4 class="media-heading">
-													홍길동 <span class="small pull-right">오전 12:23</span>
-												</h4>
-											</div>
-											<p>안녕하세요. 오랜만입니다. 홍길동입니다.</p>
-										</div>
-									</div>
-								</div>
-								<hr>
-								<div class="row">
-									<div class="col-lg-12">
-										<div class="media">
-											<a class="pull-left" href="#"> <img class="media-object img-circle" src="images/icon.png">
-												<img class="media-object img-circle"
-												src="https://lorempixel.com/30/30/people/1/">
-											</a>
-											<div class="media-body">
-												<h4 class="media-heading">
-													이순신<span class="small pull-right">오전 12:28</span>
-												</h4>
-											</div>
-											<p>저도 반갑습니다. 오랜만에 뵈니까 반갑네요.</p>
-										</div>
-									</div>
-								</div> -->
+							
 							</div>
 							<div class="portlet-footer">
 								<div class="row">
@@ -341,7 +314,7 @@ function addChat(chatName, chatContent, chatTime){
 									</div>
 									<div class="form-group">
 										<button type="button" class="btn btn-default pull-right"
-											onclick="submitFunction()">전송</button>
+											onclick="javascript:submitFunction()">전송</button>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -364,12 +337,3 @@ function addChat(chatName, chatContent, chatTime){
 			<strong>데이터베이스 오류가 발생했습니다.</strong>
 		</div>
 	</div>
-<script>
-	 $(document).ready(function(){
-		chatListFunction('ten');
-		getInfiniteChat();
-	}); 
-
-	</script>
-</body>
-</html>

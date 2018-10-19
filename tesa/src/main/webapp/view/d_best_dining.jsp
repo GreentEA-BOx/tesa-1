@@ -604,7 +604,6 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="block2-txt p-t-20 t-center">
 							<a href="product-detail.html"
 								class="block2-name dis-block s-text3 p-b-5"> Frayed denim
@@ -615,66 +614,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-
-
-
 	</div>
-
-
 </section>
-
-<<script type="text/javascript">
-
-(function ($) {
-    // USE STRICT
-    "use strict";
-
-$('.slick_d').slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            infinite: true,
-            autoplay: false,
-            autoplaySpeed: 6000,
-            arrows: true,
-            appendArrows: $('.wrap-slick1'),
-            prevArrow:'<button class="arrow-slick2 prev-slick2"><i class="fa  fa-angle-left" aria-hidden="true"></i></button>',
-            nextArrow:'<button class="arrow-slick2 next-slick2"><i class="fa  fa-angle-right" aria-hidden="true"></i></button>',  
-            responsive: [
-                {
-                  breakpoint: 1200,
-                  settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
-                  }
-                },
-                {
-                  breakpoint: 992,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
-                  }
-                },
-                {
-                  breakpoint: 768,
-                  settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                  }
-                },
-                {
-                  breakpoint: 576,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                  }
-                }
-            ]    
-        });
-
-})(jQuery);
-
-
-</script>
-

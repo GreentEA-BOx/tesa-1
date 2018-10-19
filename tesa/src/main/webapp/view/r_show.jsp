@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <head>
 <link rel="stylesheet" type="text/css" href="../css/r_style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="../js/r_script.js"></script>
 </head>
 <!-- Title Page -->
 <section class="bg-title-page p-t-130 p-b-140 flex-col-c-m"
@@ -16,39 +18,38 @@
 		<div class="flex-w flex-m w-full-sm con-date">
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/10</button>
+				<button id="datebtn1" class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/11</button>
+				<button id="datebtn2"
+					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/12</button>
+				<button id="datebtn3"
+					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/13</button>
+				<button id="datebtn4"
+					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/14</button>
+				<button id="datebtn5"
+					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
-				<button
-					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4">
-					10/15</button>
+				<button id="datebtn6"
+					class="flex-c-m sizefullb con-tc con-rad hov1 s-text1 trans-0-4 datebtn">
+					</button>
 			</div>
 		</div>
 		<!-- sub -->

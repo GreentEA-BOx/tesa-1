@@ -25,7 +25,7 @@
 	</div>
 	</section> -->
 	
-	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/9b089f95-b4c5-4b80-a8c5-781c3d98516d2.jpg); min-height:428px">
+	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/5b0e429af320a96377541.jpg); min-height:428px">
 		<h2 class="tit6 t-center">
 			
 		</h2>
@@ -49,14 +49,18 @@
 			<div class="info-reservation p-t-40 p-b-70" style="text-align:center">
 				<div class="w-full-md p-t-40">
 					<h4 class="txt5 m-b-18">
-						예약이 완료되었습니다.
+						결제 방법 선택
 					</h4>
-					<p>예약확인 및 취소</p>
+					<p>즉시결제(무통장입금,계좌이체,카드결제 등)과 현장결제 중 선택 하실 수 있습니다.</p>
 					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
-							onclick="location.href='palace_com.jsp'">
-								Check&Cancel
+							onclick="location.href='palace_pay.jsp'">
+								즉시결제
+							</button>
+							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
+							onclick="location.href='palace_res_com.jsp'">
+								현장결제
 							</button>
 						</div>
 				</div>

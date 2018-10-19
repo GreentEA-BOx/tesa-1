@@ -25,4 +25,5 @@
 	<mvc:resources mapping="/vendor/**" location="/resources/vendor/" /> 
 	<mvc:resources mapping="/fonts/**" location="/resources/fonts/" /> 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<context:component-scan base-package="dh_ctrl"></context:component-scan>
 </beans>

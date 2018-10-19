@@ -71,7 +71,6 @@
 										<ul class="sub_menu">
 											<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">attrection</a></li>
 											<li><a href="${pageContext.request.contextPath}/view/attr_map.jsp">map</a></li>
-											<li><a href="${pageContext.request.contextPath}/view/attr_deteil.jsp">attr_deteil</a></li>
 										</ul>
 									</li>
 									<li><a href="${pageContext.request.contextPath}/view/sam1.jsp">Leisure</a>

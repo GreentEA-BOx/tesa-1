@@ -167,6 +167,21 @@
 	</script>
 
 <!--===============================================================================================-->
+<!-- hotel -->
+  
+   <script type="text/javascript" src="../js/h_owl.carousel.min.js"></script>
+   <script src="../js/h_jquery.easing.1.3.js"></script>
+   <!-- Waypoints -->
+   <script src="../js/h_jquery.waypoints.min.js"></script>
+   <!-- Flexslider -->
+   <script src="../js/h_jquery.flexslider-min.js"></script>
+   <!-- Magnific Popup -->
+   <script src="../js/h_jquery.magnific-popup.min.js"></script>
+   <script src="../js/h_magnific-popup-options.js"></script>
+   <!-- Main -->
+   <script src="../js/h_main.js"></script>
+   <!--===============================================================================================-->
 	<script src="../js/main.js"></script>
+	<script src="../js/attr_main.js"></script>
 </body>
 </html>

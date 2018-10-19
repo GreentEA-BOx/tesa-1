@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  src: url("../fonts/h_icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/h_icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/h_icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/h_icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -259,7 +259,7 @@
 
 #colorlib-hero {
   min-height: 650px;
-  background: #fff url(../images/loader.gif) no-repeat center center;
+  background: #fff url(../images/hotel/loader.gif) no-repeat center center;
   width: 100%;
   float: left; }
   #colorlib-hero .btn {
@@ -381,7 +381,7 @@
 #colorlib-amenities,
 #colorlib-subscribe,
 #colorlib-footer {
-  padding: 6em 0;
+  padding: 3em 0;
   clear: both; }
   @media screen and (max-width: 768px) {
     #colorlib-dining-bar,
@@ -1584,7 +1584,7 @@ article {
   padding: 0 !important;
   margin: 0 !important; }
 
-.colorlib-loader {
+/* .colorlib-loader {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -1592,7 +1592,7 @@ article {
   height: 100%;
   z-index: 9999;
   background: url(../images/loader.gif) center no-repeat #fff; }
-
+ */
 .js .animate-box {
   opacity: 0; }
 
@@ -1622,3 +1622,145 @@ article {
   .position-relative{
   	position: relative;
   }
+  
+  .h-width50{
+  	width: 50%
+  }
+  
+  .margin-5px-auto{
+  	margin:5px auto; 
+  }
+
+
+/* calendar */
+
+.h_calendar {
+ /*  position: absolute; */
+ /*  width: 360px; */
+/*   padding: 15px; */
+  box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.calendar--nav {
+/*   margin: -15px -15px 15px; */
+  padding: 10px 15px;
+  background-color: #b670f4;
+  color: #fff;
+  height: 50px;
+  position: relative;
+}
+.calendar--nav a {
+  position: absolute;
+  cursor: pointer;
+  left: 10px;
+  font-size: 32px;
+  line-height: 1;
+/*   top: 16px; */
+  width: 30px;
+  text-align: center;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calendar--nav a:hover {
+  color: #fff;
+}
+.calendar--nav a:last-child {
+  left: auto;
+  right: 10px;
+}
+.calendar--nav h1 {
+  margin: 0;
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 30px;
+/*   line-height: 66px; */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calendar--nav small {
+  font-weight: 300;
+  font-size: 60%;
+}
+.calendar--days {
+  font-size: 0;
+}
+.calendar--days span {
+  width: 14.28571%;
+  display: inline-block;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  margin: 8px 0;
+  line-height: 34px;
+  position: relative;
+  font-size: 16px;
+}
+.calendar--days span.label {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: initial;
+}
+.calendar--days span.active {
+  font-weight: 700;
+  background-color: rgba(182, 112, 244, 0.05);
+  border-radius: 12px;
+}
+.calendar--days span.muted {
+  color: rgba(0, 0, 0, 0.3);
+}
+.calendar--days span.between {
+  border-radius: 0;
+}
+.calendar--days span.start, .calendar--days span.between, .calendar--days span.end {
+  background-color: #b670f4;
+  color: #fff;
+}
+.calendar--days span.start {
+  border-radius: 12px 0 0 12px;
+}
+.calendar--days span.end {
+  border-radius: 0 12px 12px 0;
+}
+.calendar--days span.start.end {
+  border-radius: 12px;
+}
+.calendar--days span.between:nth-child(7n):after, .calendar--days span.start:nth-child(7n):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  background-color: #b670f4;
+  width: 20px;
+}
+.calendar--days span.between:nth-child(7n + 1):after, .calendar--days span.end:nth-child(7n + 1):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  background-color: #b670f4;
+  width: 20px;
+}
+.calendar--days span.start.end:after {
+  display: none;
+}
+
+
+  

@@ -2,6 +2,24 @@
     pageEncoding="UTF-8"%>
 <!-- Title Page -->
 	
+	<!-- <section class="sub-menu p-t-10 p-b-10">
+	<div class="container">
+		<nav>
+			<ul>
+				<li class=" m-r-10"><a href="../view/palace.jsp">PALACE</a></li>
+				<li class=" m-r-10 p-l-10 p-r-10 bo2"><a href="../view/palace_res.jsp">Narration</a></li>
+				<li class=" m-r-10 p-r-10 bo17"><a href="../view/palace_hanbok.jsp">Hanbok</a></li>
+				<li class=""><a href="javascript:void(0)">Check&Cancel</a></li>
+			</ul>
+		</nav>
+	</div>
+	</section> -->
+	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/5b0e429af320a96377541.jpg); min-height:428px">
+		<h2 class="tit6 t-center">
+			
+		</h2>
+	</section>
+	
 	<section class="sub-menu p-t-10 p-b-10">
 	<div class="container">
 		<nav>
@@ -13,11 +31,6 @@
 			</ul>
 		</nav>
 	</div>
-	</section>
-	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/5b0e429af320a96377541.jpg); min-height:428px">
-		<h2 class="tit6 t-center">
-			
-		</h2>
 	</section>
 	
 	<!-- Reservation -->
@@ -144,7 +157,7 @@
 					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
-							onclick="location.href='palace_res_com.jsp'">
+							onclick="location.href='palace_cho.jsp'">
 								Submit
 							</button>
 						</div>

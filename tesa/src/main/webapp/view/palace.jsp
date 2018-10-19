@@ -334,7 +334,7 @@
 <script>
 	
 </script>renew -->
-<section class="sub-menu p-t-10 p-b-10">
+<!-- <section class="sub-menu p-t-10 p-b-10">
 	<div class="container">
 		<nav>
 			<ul>
@@ -345,7 +345,7 @@
 			</ul>
 		</nav>
 	</div>
-	</section>
+	</section> -->
 	
 	<div class="main_visual" style="height: auto;">
 		<div id="sliderMainTop">
@@ -372,7 +372,18 @@
 		</div>
 	</div>
 	
-
+<section class="sub-menu p-t-10 p-b-10">
+	<div class="container">
+		<nav>
+			<ul>
+				<li class=" m-r-10"><a href="../view/palace.jsp">PALACE</a></li>
+				<li class=" m-r-10 p-l-10 p-r-10 bo2"><a href="../view/palace_res.jsp">Narration</a></li>
+				<li class=" m-r-10 p-r-10 bo17"><a href="../view/palace_hanbok.jsp">Hanbok</a></li>
+				<li class=""><a href="javascript:void(0)">Check&Cancel</a></li>
+			</ul>
+		</nav>
+	</div>
+	</section>
 		 <div id="mContent">
 			<div class="m_bookLink">
 				<ul>

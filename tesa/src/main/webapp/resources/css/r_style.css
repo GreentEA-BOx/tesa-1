@@ -297,6 +297,17 @@ th{
     font-family: 'NotoSans-Light', '맑은 고딕', 'Malgun Gothic', sans-serif;
     margin-right: 5px;
 }
+.joininput2{
+	border: 1px solid gray;
+	width: 500px;
+    height: 65px;
+    padding: 0 20px;
+    line-height: 46px;
+    font-size: 16px;
+    font-family: 'NotoSans-Light', '맑은 고딕', 'Malgun Gothic', sans-serif;
+    margin-right: 5px;
+    margin-bottom:5%;
+}
 .joinselect{
 	width: 138px;
     height: 52px;
@@ -381,4 +392,17 @@ th{
     font-family: 'NotoSans-Bold', '맑은 고딕', 'Malgun Gothic', sans-serif;
     color: #000;
     font-weight:bold;
+}
+.topsolid{
+	border-top: 1px solid lightgray;
+}
+.bottomsolid{
+	border-bottom: 1px solid lightgray;
+}
+.findArea{
+	padding-left: 235px;
+}
+.loginUtil{
+	display:flex;
+	margin-bottom:3%;
 }

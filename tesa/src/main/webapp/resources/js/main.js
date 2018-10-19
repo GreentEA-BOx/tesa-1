@@ -7,8 +7,8 @@
     $(".animsition").animsition({
         inClass: 'fade-in',
         outClass: 'fade-out',
-        inDuration: 1500,
-        outDuration: 800,
+        inDuration: 700,
+        outDuration: 700,
         linkElement: '.animsition-link',
         loading: true,
         loadingParentElement: 'html',
@@ -186,7 +186,8 @@
     /*[ Calendar 01]
     ===========================================================*/
     
-    $('.my-calendar').daterangepicker({
+
+$('.my-calendar').daterangepicker({
         "singleDatePicker": true,
         "showDropdowns": true,
         locale: {
@@ -252,6 +253,11 @@
     $('.safa').on('click',function(){
     	$('.safari').addClass('on');
     	$('.shuttle').removeClass('on');
+    });
+    
+    $('.datebtn').on('click',function(){
+    	$('.datebtn').removeClass('color');
+    	$(this).addClass('color');
     });
 
 })(jQuery);

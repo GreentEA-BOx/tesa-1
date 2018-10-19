@@ -1,542 +1,215 @@
-// Javascript date picker from Accommodation Direct
-// v1.0 - April 2009
-// By Oliver Bryant
-// Feel free to use and distribute.  Link back to www.CapeTown-Direct.com if you find it useful!
+'use strict';
 
-cl_n=1;
-_nc=18;
-if (typeof caldaystart=='undefined')
-	caldaystart=0;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// calformat = 1 : dd/mm/yyyy
-// calformat = 2 : yyyy-mm-dd
-if (typeof calformat=='undefined')
-	calformat=2;
-else {
-	if (calformat=='dd/mm/yyyy')
-		calformat=1;
-	if (calformat=='yyyy-mm-dd')
-		calformat=2;
-	}
-	
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function doscroll(ww) {
-	doscrollhelper(ww,0);
-}
-s_i=10;
-function doscrollhelper(ww,_scr) {
-	if (_scr<210) {
-		_scr+=s_i;
-		if (ww=='l')
-			g_o('fc_all').scrollLeft=g_o('fc_all').scrollLeft+s_i;
-		else
-			g_o('fc_all').scrollLeft=g_o('fc_all').scrollLeft-s_i;
-			
-		setTimeout('doscrollhelper(\'' + ww + '\',' + _scr + ')',10);	
-	}
-	else {
-		if (ww=='l')
-			g_o('fc_all').scrollLeft=g_o('fc_all').scrollLeft+1;
-		else
-			g_o('fc_all').scrollLeft=g_o('fc_all').scrollLeft-1;	
-	}
-}
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function g_o(objID)
-{
-    if (document.getElementById) {return document.getElementById(objID);}
-    else if (document.all) {return document.all[objID];}
-    else if (document.layers) {return document.layers[objID];}
-}
+var Heading = function Heading(_ref) {
+  var date = _ref.date;
+  var changeMonth = _ref.changeMonth;
+  var resetDate = _ref.resetDate;
+  return React.createElement(
+    'nav',
+    { className: 'calendar--nav' },
+    React.createElement(
+      'a',
+      { onClick: function onClick() {
+          return changeMonth(date.month() - 1);
+        } },
+      '‹'
+    ),
+    React.createElement(
+      'h1',
+      { onClick: function onClick() {
+          return resetDate();
+        } },
+      date.format('MMMM'),
+      ' ',
+      React.createElement(
+        'small',
+        null,
+        date.format('YYYY')
+      )
+    ),
+    React.createElement(
+      'a',
+      { onClick: function onClick() {
+          return changeMonth(date.month() + 1);
+        } },
+      '›'
+    )
+  );
+};
 
-/*function checkClick(e) {
-	e?evt=e:evt=event;
-	CSE=evt.target?evt.target:evt.srcElement;
-	musthide=true;
-	for(var tj=0;tj<_nc;tj++) {
-		if (g_o('fc_'+tj))
-				if (isChild(CSE,g_o('fc_'+tj))) {
-					musthide=false;
-					break;
-				}
-	}
-	
-	if (isChild(CSE,g_o('b_a'))|isChild(CSE,g_o('b_s')))
-		musthide=false;
-	
-	if (musthide) {
-		if (g_o('fc_all'))
-			g_o('fc_all').style.visibility='hidden';
-		g_o('b_a').style.visibility='hidden';
-		g_o('b_s').style.visibility='hidden';
-		hss(1,'');
-	}
-}
-*/
-var _sl=new Array(_nc);
+var Day = function Day(_ref2) {
+  var currentDate = _ref2.currentDate;
+  var date = _ref2.date;
+  var startDate = _ref2.startDate;
+  var endDate = _ref2.endDate;
+  var _onClick = _ref2.onClick;
 
-function isChild(s,d) {
-	while(s) {
-		if (s==d) 
-			return true;
-		s=s.parentNode;
-	}
-	return false;
-}
+  var className = [];
 
-function Left(obj)
-{
-	var curleft = 0;
-	if (obj.offsetParent)
-	{
-		while (obj.offsetParent)
-		{
-			curleft += obj.offsetLeft
-			obj = obj.offsetParent;
-		}
-	}
-	else if (obj.x)
-		curleft += obj.x;
-	return curleft;
-}
+  if (moment().isSame(date, 'day')) {
+    className.push('active');
+  }
 
-function Top(obj)
-{
-	var curtop = 0;
-	if (obj.offsetParent)
-	{
-		while (obj.offsetParent)
-		{
-			curtop += obj.offsetTop
-			obj = obj.offsetParent;
-		}
-	}
-	else if (obj.y)
-		curtop += obj.y;
-	return curtop;
-}
+  if (date.isSame(startDate, 'day')) {
+    className.push('start');
+  }
 
-var css_calmain=verifyStyle('.calmain');
-var css_calheader=verifyStyle('.calheader');
-var css_caldayheader=verifyStyle('.caldayheader');
-var css_caldaynormal=verifyStyle('.caldaynormal');
+  if (date.isBetween(startDate, endDate, 'day')) {
+    className.push('between');
+  }
 
-function drawcalendar() {
-	if (css_calmain)
-		caltext='<div class="calmain" style="float:left;width:211px" id="fc_' + cl_n + '"><div style="border-right:1px solid #DEDEDE">';
-	else
-		caltext='<div style="float:left;width:211px;" id="fc_' + cl_n + '"><div style="border-right:1px solid #DEDEDE;background:#FFFFFF">';
-		
-	caltext+='<div style="cursor:pointer;float:left;width:17px"></div>';
-	caltext+='<div style="cursor:pointer;float:right;width:17px"></div>';
-	
-	if (css_calheader)
-		caltext+='<div class="calheader" id="mns_' + cl_n + '"></div>';
-	else
-		caltext+='<div style="font:bold 14px/18px Arial;text-align:center;color:#FFFFFF;background:#62895d;padding:5px" id="mns_' + cl_n + '"></div>';		 	
+  if (date.isSame(endDate, 'day')) {
+    className.push('end');
+  }
 
-	caltext+='<div class="dvdt"></div>';
-	
-	for(var i=0;i<7;i++)
-		if (css_caldayheader)
-			caltext+='<div class="caldayheader">' + _dow[(i+caldaystart)%7] + '</div>';
-		else
-			caltext+='<div style="font:bold 14px/25px Arial;color:#9abb96;background:#FFFFFF;width:14%;float:left;text-align:center;">' + _dow[(i+caldaystart)%7] + '</div>';
-	
-	caltext+='<div class="dvdt"></div>';
-	for(var kk=1;kk<=6;kk++) {
-		for(var tt=1;tt<=7;tt++) {
-			num=7 * (kk-1) - (-tt);
-			if (css_caldaynormal) 
-				caltext+='<div style="width:14%;height:25px;float:left;text-align:center"><div class"caldaynormal" id="b' + num + '_' + cl_n + '" ></div></div>';
-			else
-				caltext+='<div style="width:14%;height:25px;float:left;text-align:center"><div style="font:bold 11px/25px Arial;background:#FFFFFF;color:#444444;text-decoration:none;text-align:center;width:30px;height:25px" id="b' + num + '_' + cl_n + '" ></div></div>';
-		}
-		caltext+='<div class="dvdt"></div>';
-	}
-	caltext+='</div></div>';
-	cl_n++;
-	
-	return caltext;
-}
+  if (!date.isSame(currentDate, 'month')) {
+    className.push('muted');
+  }
 
+  return React.createElement(
+    'span',
+    { onClick: function onClick() {
+        return _onClick(date);
+      }, currentDate: date, className: className.join(' ') },
+    date.date()
+  );
+};
 
-// Draw 3 calendars
-function drawcalendars() {
-	
-	
-	mydiv=document.createElement('div');
-	mydiv.id='fc_all';
-//	mydiv.style.visibility='hidden';
-//	mydiv.style.position='absolute';
-	mydiv.style.width='420px';
-	mydiv.style.border='1px solid #62895d';
-	mydiv.style.zIndex=500;
-	//mydiv.style.background='#FF6600';
-	mydiv.style.overflow='hidden';
-	$('.room-calendar').append(mydiv);	
-	c_text='';
-	for(var tj=1;tj<_nc;tj++)
-		c_text+=drawcalendar();
-	
-	document.getElementById('fc_all').innerHTML='<div style="width:3587px">' + c_text + '</div>';
-	
-	
-	
-		
-	for(var tj=1;tj<_nc;tj++) {
-//		document.all?g_o('fc_' + tj).attachEvent('onclick',cs_click):g_o('fc_' + tj).addEventListener('click',cs_click,false);
-		document.all?g_o('fc_' + tj).attachEvent('onmouseover',cs_over):g_o('fc_' + tj).addEventListener('mouseover',cs_over,false);
-		document.all?g_o('fc_' + tj).attachEvent('onmouseout',cs_out):g_o('fc_' + tj).addEventListener('mouseout',cs_out,false);
-		prepcalendar('',ccm,ccy,tj);
-		}
-}
+var Days = function Days(_ref3) {
+  var date = _ref3.date;
+  var startDate = _ref3.startDate;
+  var endDate = _ref3.endDate;
+  var _onClick2 = _ref3.onClick;
 
-document.all?window.attachEvent('onload',drawcalendars):window.addEventListener('load',drawcalendars,false);
+  var thisDate = moment(date);
+  var daysInMonth = moment(date).daysInMonth();
+  var firstDayDate = moment(date).startOf('month');
+  var previousMonth = moment(date).subtract(1, 'month');
+  var previousMonthDays = previousMonth.daysInMonth();
+  var nextsMonth = moment(date).add(1, 'month');
+  var days = [];
+  var labels = [];
 
-// Calendar buttons
-$('.room-calendar').append('<div id="b_s" style="z-index:1000;cursor:pointer;position:absolute;left:1%;float:left;visibility:hidden;" onclick="csubm()"><img src="http://dev.capetown-direct.com/arrowleft-g.gif"></div>');
-$('.room-calendar').append('<div id="b_a" style="z-index:1000;cursor:pointer;position:absolute;right:1%;float:right;" onclick="caddm()"><img src="http://dev.capetown-direct.com/arrowright-g.gif"></div>');
+  for (var i = 1; i <= 7; i++) {
+    labels.push(React.createElement(
+      'span',
+      { className: 'label' },
+      moment().day(i).format('ddd')
+    ));
+  }
 
-//document.all?document.attachEvent('onclick',checkClick):document.addEventListener('click',checkClick,false);
+  for (var i = firstDayDate.day(); i > 1; i--) {
+    previousMonth.date(previousMonthDays - i + 2);
 
+    days.push(React.createElement(Day, { key: moment(previousMonth).format('DD MM YYYY'), onClick: function onClick(date) {
+        return _onClick2(date);
+      }, currentDate: date, date: moment(previousMonth), startDate: startDate, endDate: endDate }));
+  }
 
-// Calendar script
-var now = new Date;
-var sccm=now.getMonth();
-var sccy=now.getFullYear();
-var ccm=now.getMonth();
-var ccy=now.getFullYear();
+  for (var i = 1; i <= daysInMonth; i++) {
+    thisDate.date(i);
 
-function positioncals() {
-	hss(1,'');
-	// Decide whether to place above or below input box
-	// Check y-coord of bottom of calendar
-	if ((getWinHeight()+getScrollTop()) < (Top(updobj)+updobj.offsetHeight+g_o('fc_all').offsetHeight)) {
-		g_o('fc_all').style.top=Top(updobj)-g_o('fc_all').offsetHeight+'px';
-		hss(0,'above');
-		}
-	else {
-		g_o('fc_all').style.top=Top(updobj)+updobj.offsetHeight+'px';
-		hss(0,'below');
-		}
-		
-	if ((getWinWidth()+getScrollLeft()) < (Left(updobj)+g_o('fc_all').offsetWidth))
-		g_o('fc_all').style.left=Left(updobj)-g_o('fc_all').offsetWidth+updobj.offsetWidth+'px';		
-	else
-		g_o('fc_all').style.left=Left(updobj)+'px';
-	
-	
+    days.push(React.createElement(Day, { key: moment(thisDate).format('DD MM YYYY'), onClick: function onClick(date) {
+        return _onClick2(date);
+      }, currentDate: date, date: moment(thisDate), startDate: startDate, endDate: endDate }));
+  }
 
-	if (_calcurrent==0)
-		g_o('b_s').style.visibility='hidden';
-	else
-		g_o('b_s').style.visibility='visible';
-	if (_calcurrent==(_nc-3))
-		g_o('b_a').style.visibility='hidden';
-	else
-		g_o('b_a').style.visibility='visible';	
-	
-	g_o('fc_all').style.visibility='visible';
-	
-}
+  var daysCount = days.length;
+  for (var i = 1; i <= 42 - daysCount; i++) {
+    nextsMonth.date(i);
+    days.push(React.createElement(Day, { key: moment(nextsMonth).format('DD MM YYYY'), onClick: function onClick(date) {
+        return _onClick2(date);
+      }, currentDate: date, date: moment(nextsMonth), startDate: startDate, endDate: endDate }));
+  }
 
-function getDateFromCell(c_id) {
-	nc_c=c_id.substring(c_id.indexOf('_')+1);
-	c_index=c_id.substring(1,c_id.indexOf('_'));
-	return(calvalarr[nc_c][c_index]);
-}
+  return React.createElement(
+    'nav',
+    { className: 'calendar--days' },
+    labels.concat(),
+    days.concat()
+  );
+};
 
-var updobj;
-var pchid='';
+var Calendar = function (_React$Component) {
+  _inherits(Calendar, _React$Component);
 
-_calcurrent='';
+  function Calendar(props) {
+    _classCallCheck(this, Calendar);
 
-function lcs(ielem) {
-	updobj=ielem;
-	if (document.getElementById('fc_all')) {		
-		if (pchid!='')
-			f_cps(g_o(pchid));
-		
-		//curioustext='';
-		if (ielem.value!='')
-			for(var tjk=1;tjk<_nc;tjk++) {
-				for(var tj=0;tj<=42;tj++) {
-					//curioustext+=tjk + ':' + tj +'<br>';
-					if (calvalarr[tjk][tj]==ielem.value) {
-						pchid='b' + tj + '_' + tjk;
-						f_hds(g_o(pchid));
-						
-						//scroll calendar
-						g_o('fc_all').scrollLeft=(tjk==(_nc-1))?(tjk-2)*211:(tjk-1)*211;
-						
-						tjk=_nc;
-						break;
-						}
-				}
-			}
-		
-		_calcurrent=parseInt(g_o('fc_all').scrollLeft/211);
-		
-		positioncals();
-	}
-	else { // If not loaded then keep delaying a call every 1 second
-		setTimeout('lcs(updobj)',500);
-	}
-}
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 
-function evtTgt(e)
-{
-	var el;
-	if(e.target)el=e.target;
-	else if(e.srcElement)el=e.srcElement;
-	if(el.nodeType==3)el=el.parentNode; // defeat Safari bug
-	return el;
-}
-function EvtObj(e){if(!e)e=window.event;return e;}
+    _this.state = {
+      date: moment(),
+      startDate: moment().subtract(5, 'day'),
+      endDate: moment().add(3, 'day')
+    };
+    return _this;
+  }
 
-function cs_over(e) {
-	if (evtTgt(EvtObj(e)).id.substring(0,1)=='b') {
-		EvtObj(e).cancelBubble=true;
-		if (verifyStyle('.caldaymouseover'))
-			evtTgt(EvtObj(e)).className='caldaymouseover';
-		else {
-			evtTgt(EvtObj(e)).style.background='#ffbf7a';
-			evtTgt(EvtObj(e)).style.color='#FFFFFF';
-			evtTgt(EvtObj(e)).style.textDecoration='underline';
-			evtTgt(EvtObj(e)).style.cursor='pointer';
-		}
-	}
-}
+  Calendar.prototype.resetDate = function resetDate() {
+    this.setState({
+      date: moment()
+    });
+  };
 
-function cs_out(e) {
-	if (evtTgt(EvtObj(e)).id.substring(0,1)=='b') {
-		EvtObj(e).cancelBubble=true;
-		if (verifyStyle('.caldaynormal'))
-			evtTgt(EvtObj(e)).className='caldaynormal';
-		else
-			f_cps(evtTgt(EvtObj(e)));
-	}
-}
-/*
-function cs_click(e) {
-	if (evtTgt(EvtObj(e)).id.substring(0,1)=='b') {
-		EvtObj(e).cancelBubble=true;
-		updobj.value=getDateFromCell(evtTgt(EvtObj(e)).id);
-		
-		g_o('fc_all').style.visibility='hidden';
-		g_o('b_s').style.visibility='hidden';
-		g_o('b_a').style.visibility='hidden';
-	
-		hss(1,'');
-	}
-}*/
+  Calendar.prototype.changeMonth = function changeMonth(month) {
+    var date = this.state.date;
 
-var _dow=new Array('일','월','화','수','목','금','토');
-var _mn=new Array('1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월');
-var _mnn=new Array('31','28','31','30','31','30','31','31','30','31','30','31');
-var _mnl=new Array('31','29','31','30','31','30','31','31','30','31','30','31');
-var calvalarr=new Array(_nc);
-for(var tj=1;tj<_nc;tj++)
-	calvalarr[tj]=new Array(42);
+    date.month(month);
 
-function f_cps(obj) {
-	if (verifyStyle('.caldaynormal')) {
-		obj.className='caldaynormal';	
-		}
-	else {
-		obj.style.background='#FFFFFF';
-		obj.style.color='#444444';
-		obj.style.textDecoration='none';
-		obj.style.textAlign='center';
-		obj.style.width='30px';
-		obj.style.height='25px';
-	}
-}
+    this.setState(date);
+  };
 
-function f_cpps(obj) {
-	if (verifyStyle('.caldaypast')) {
-		obj.className='caldaypast';
-		}
-	else {
-		obj.style.textDecoration='line-through';
-		obj.style.color='#ABABAB';
-	}
-}
+  Calendar.prototype.changeDate = function changeDate(date) {
+    var _state = this.state;
+    var startDate = _state.startDate;
+    var endDate = _state.endDate;
 
-function f_hds(obj) {
-	if (verifyStyle('.caldayselected'))
-		obj.className='caldayselected';
-	else {
-		obj.style.color='#FFFFFF';
-		obj.style.background='#ABABAB';
-	}
-}
-
-// cn : calendar number
-// prepcalendar handles updating the nth calendar with appropriate values
-var _now=new Date();
-var _sd=_now.getDate();
-function prepcalendar(hd,in_cm,in_cy,cn) {
-	cm=in_cm;
-	cy=in_cy;
-	// Rest of routine works correctly assuming correct cm and cy
-	cm=in_cm+(cn-1);
-	if (cm < 0) {
-		cm=12+cm;
-		cy=cy-1;
-	}
-	if (cm > 11) {
-		cm=cm-12;
-		cy=cy-(-1);
-	}
-	
-	td=new Date();
-	td.setDate(1);
-	td.setFullYear(cy);
-	td.setMonth(cm);
-	cd=td.getDay();
-	
-	if (cd < caldaystart)
-		cd+=7;
-		
-	g_o('mns_' + cn).innerHTML=cy+'년 '+ _mn[cm];
-	marr=((cy%4)==0)?_mnl:_mnn;
-	for(var d=1;d<=42;d++) {
-		if (((d+caldaystart) >= (cd -(-1))) && ((d+caldaystart)<=cd-(-marr[cm]))) {
-			dip=((d-cd+caldaystart < _sd)&&(cm==sccm)&&(cy==sccy));
-			
-			if (dip) {
-				f_cpps(g_o('b'+d+ '_' + cn));
-				g_o('b'+d+ '_' + cn).onmouseover=stub;
-				g_o('b'+d+ '_' + cn).onmouseout=stub;
-				g_o('b'+d+ '_' + cn).onclick=stub;
-			}
-
-			g_o('b'+d+ '_' + cn).innerHTML=d-cd+caldaystart;
-			dd=rightstr('0'+(d-cd+caldaystart),2);
-			mm=rightstr('0'+(cm-(-1)),2);
-			if (calformat==2)
-				calvalarr[cn][d]=''+cy+'-'+mm+'-'+dd;
-			else
-				calvalarr[cn][d]=''+dd+'/'+mm+'/'+cy;
-		}
-		else {
-			g_o('b'+d+ '_' + cn).onmouseover=stub;
-			g_o('b'+d+ '_' + cn).onmouseout=stub;
-			g_o('b'+d+ '_' + cn).onclick=stub; }
-	}
-}
-
-function stub(e) {
-	EvtObj(e).cancelBubble=true;
-}
-
-function rightstr(str, n){
-    if (n <= 0)
-       return "";
-    else if (n > String(str).length)
-       return str;
-    else {
-       var iLen = String(str).length;
-       return String(str).substring(iLen, iLen - n);
+    if (startDate === null || date.isBefore(startDate, 'day') || !startDate.isSame(endDate, 'day')) {
+      startDate = moment(date);
+      endDate = moment(date);
+    } else if (date.isSame(startDate, 'day') && date.isSame(endDate, 'day')) {
+      startDate = null;
+      endDate = null;
+    } else if (date.isAfter(startDate, 'day')) {
+      endDate = moment(date);
     }
-}
 
-function caddm() {
-	if (_calcurrent < (_nc-3)) {
-		_calcurrent++;
-		doscroll('l');
-		g_o('b_s').style.visibility='visible';
-		if (_calcurrent==(_nc-3))
-			g_o('b_a').style.visibility='hidden';	
-	}
-	
-}
+    this.setState({
+      startDate: startDate,
+      endDate: endDate
+    });
+  };
 
-function csubm() {
-	if (_calcurrent>0) {
-		_calcurrent--;
-		doscroll('r');
-		g_o('b_a').style.visibility='visible';
-		if (_calcurrent==0)
-			g_o('b_s').style.visibility='hidden';			
-	}
-}
+  Calendar.prototype.render = function render() {
+    var _this2 = this;
 
-function hss(o,op) {
-	// Hide custom select list above or below
-	if ((op=='above')|(op==''))
-		if (typeof selectListHideAbove!='undefined') {
-			_hsaa=selectListHideAbove.split(',');
-			for(tt=0;tt<_hsaa.length;tt++) {
-				if (g_o(_hsaa[tt]))
-					g_o(_hsaa[tt]).style.visibility=(o==0)?'hidden':'visible';
-			}
-		}
-		
-	if ((op=='below')|(op==''))
-		if (typeof selectListHideBelow!='undefined') {
-			_hsab=selectListHideBelow.split(',');
-			for(tt=0;tt<_hsab.length;tt++) {
-				if (g_o(_hsab[tt]))
-					g_o(_hsab[tt]).style.visibility=(o==0)?'hidden':'visible';
-			}
-		}
-}
+    var _state2 = this.state;
+    var date = _state2.date;
+    var startDate = _state2.startDate;
+    var endDate = _state2.endDate;
 
-function verifyStyle(selector) {
-//    var rules;
-//    var haveRule = false;
-//    if (typeof document.styleSheets != "undefined") {   //is this supported
-//        var cssSheets = document.styleSheets;
-//        outerloop:
-//        for (var i = 0; i < cssSheets.length; i++) {
+    return React.createElement(
+      'div',
+      { className: 'h_calendar' },
+      React.createElement(Heading, { date: date, changeMonth: function changeMonth(month) {
+          return _this2.changeMonth(month);
+        }, resetDate: function resetDate() {
+          return _this2.resetDate();
+        } }),
+      React.createElement(Days, { onClick: function onClick(date) {
+          return _this2.changeDate(date);
+        }, date: date, startDate: startDate, endDate: endDate })
+    );
+  };
 
-             //using IE or FireFox/Standards Compliant
-//            rules =  (typeof cssSheets[i].cssRules != "undefined") ? cssSheets[i].cssRules : cssSheets[i].rules;
+  return Calendar;
+}(React.Component);
 
-//             for (var j = 0; j < rules.length; j++) {
-//                 if (rules[j].selectorText == selector) {
-//                         haveRule = true;
-//                        break outerloop;
-//                 }
-//            }//innerloop
-
-//        }//outer loop
-//    }//endif
-//    return haveRule;
-return false;
-}
-
-function getWinHeight()
-{
-	if(window.innerHeight) return window.innerHeight;
-	if(document.documentElement.clientHeight) return document.documentElement.clientHeight;
-	if(document.body.clientHeight) return document.body.clientHeight;
-	return 0;
-}
-
-function getWinWidth()
-{
-	if(window.innerWidth) return window.innerWidth;
-	if(document.documentElement.clientWidth) return document.documentElement.clientWidth;
-	if(document.body.clientWidth) return document.body.clientWidth;
-	return 0;
-}
-
-function getScrollTop()
-{
-	if(document.documentElement.scrollTop) return document.documentElement.scrollTop;
-	if(document.body.scrollTop) return document.body.scrollTop;
-	if(window.pageYOffset) return window.pageYOffset;
-	return 0;
-}
-
-function getScrollLeft()
-{
-	if(document.documentElement.scrollLeft) return document.documentElement.scrollLeft;
-	if(document.body.scrollLeft) return document.body.scrollLeft;
-	if(window.pageXOffset) return window.pageXOffset;
-	return 0;
-}
+ReactDOM.render(React.createElement(Calendar, null), document.getElementById('h_calendar'));
