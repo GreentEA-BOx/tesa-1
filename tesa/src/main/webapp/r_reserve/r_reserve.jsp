@@ -10,9 +10,35 @@
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../css/r_style.css">
+<!-- +- -->
+<script>
+ $('.btn-num-product-down').on('click', function(e){
+        e.preventDefault();
+        var numProduct = Number($(this).next().val());
+        if(numProduct > 1) $(this).next().val(numProduct - 1);
+    });
 
-<!-- ==========select============= -->
-
+    $('.btn-num-product-up').on('click', function(e){
+        e.preventDefault();
+        var numProduct = Number($(this).prev().val());
+        $(this).prev().val(numProduct + 1);
+    });
+</script>
+<!-- huchoice -->
+<script>
+    $(document).ready(function(){
+        $("#menu>a").click(function(){
+            var submenu = $(this).next("ul");
+            if( submenu.is(":visible") ){
+                submenu.slideUp();
+            }else{
+                submenu.slideDown();
+            }
+        }).mouseover(function(){
+            $(this).next("ul").slideDown();
+        });
+    });
+</script>
 </head>
 <title>좌석 예약</title>
 <!-- Title Page -->
@@ -25,10 +51,9 @@
 		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
 		<li class="reser_li">예약전 확인사항</li>
 	</ul>
-	<hr class="hrtitle" />
 
 	<p>
-		<textarea class="wintextarea">익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
+		<textarea class="wintextarea" readonly>익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
 
 1매 2좌석 이용 가능합니다.
 
@@ -54,9 +79,8 @@
 		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
 		<li class="reser_li">개인정보 수집 및 이용동의</li>
 	</ul>
-	<hr class="hrtitle" />
 	<p>
-		<textarea  class="wintextarea">이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
+		<textarea  class="wintextarea" readonly>이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
 
 1. 개인정보의 수집 및 이용 목적
 공연관람 참가 신청시 본인 확인을 위해 개인정보를 수집하고 있습니다.
@@ -73,24 +97,24 @@
 		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
 		<li class="reser_li">예약 정보</li>
 	</ul>
-	<hr class="hrtitle" />
-	<ul >
+	<ul>
+		<li class="reser_con_li"><p class="reser_con_p">예약자명&nbsp;</p>
+		<p class="reser_date">김영주</p></li>
+		<hr />
 		<li class="reser_con_li"><p class="reser_con_p">공연명&nbsp;</p>
 			<p>
-		        <select class="reser_select">
+		        <select class="reser_select"  onchange="javascript:consert_title(this.options[this.selectedIndex].text)">
 					<option value="0">[공연선택]</option>
 					<option value="1">드라큐라의 사랑</option>
 				</select>
 			</p></li>
 			<hr />
 		<li class="reser_con_li"><p class="reser_con_p">공연일&nbsp;</p>
-			<p class="reser_date">2018년 10월 14일</p></li>
+			<p class="reser_date">2018년 11월 11일</p></li>
 			<hr />
 		<li class="reser_con_li"><p class="reser_con_p">공연시간</p>
 			<p>
-				<!-- <select class="reser_select" id="seldate" onchange="consert_time(this)"> -->
 				<select class="reser_select" id="seldate" onchange="javascript:consert_date(this.options[this.selectedIndex].text)"> 
-				
 					<option value="0">[공연시간]</option>
 					<option value="1">15:30</option>
 					<option value="2">20:30</option>
@@ -99,9 +123,24 @@
 			<hr />
 	</ul>
 	<ul>
-		<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
+		<li id="menu" class="reser_li"><a>인원 선택</a>
+            <ul class="hide">
+                <li>일반 <div class="flex-w bo5 of-hidden margin-5px-auto">
+								<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+									<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
+								</button>
+
+								<input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1">
+
+								<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+									<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
+								</button>
+							</div></li>
+                <li>청소년</li>
+                <li>우대</li>
+            </ul>
+       </li>
 		<li class="reser_li">좌석 선택</li>
-		<hr class="hrtitle" />
 	</ul>
 </section>
 <div class="content">
@@ -116,7 +155,7 @@
 			
 				<tr>
 					<th>공연제목  : </th>
-					<td>드라큐라의 사랑</td>
+					<td id="contitle"></td>
 				</tr>
 				<tr>
 					<th>공연시간  : </th>
@@ -139,7 +178,6 @@
 				<div id="selected-seats"></div>
 			<div style="clear:both"></div>
 	    </div>
-
 	</div>
 </div>
 <section style="margin-left: 3%;"
@@ -155,10 +193,7 @@
 </section>
 </body>
 <!--=====================seats===================================-->
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
-
-			<script type="text/javascript">
+<script type="text/javascript">
 				var price = 1000; //price
 				$(document).ready(function() {
 					var $cart = $('#selected-seats'), //Sitting Area
@@ -234,20 +269,21 @@
 					return total;
 				}
 			</script>
-
 <!--===============================================================================================-->
 <script type="text/javascript" src="../vendor/select2/select2.min.js"></script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(".selection-1").select2({
 		minimumResultsForSearch : 20,
 		dropdownParent : $('#dropDownSelect1')
 	});
-</script>
+</script> -->
+<!-- autoscript -->
 <script>
+function consert_title(value){
+	$('#contitle').empty();
+	$('#contitle').append(value);
+}
 function consert_date(value){
-	alert(value);
-
-	
 	$('#condate').empty();
 	$('#condate').append(value);
 }
