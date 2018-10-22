@@ -239,13 +239,20 @@ textarea{
     padding-top: 2%;
     disable:disable;
 }
-.reser_p{
-	float: right;
-    margin: auto;
-    font-size: 13px;
-    padding-right: 4%;
-    padding-top: 2%;
+#reser_chk{
+	margin-top:20px;
+	margin-left: 44%;
 }
+#reser_chk2{
+	margin-top:20px;
+	margin-left: 56%;
+}
+	
+.chkspan{
+	font-size:13px;
+	margin-top:20px;
+}
+
 input[type=checkbox] {  
 	width:12px;
 	height:12px;
@@ -416,4 +423,28 @@ th{
 }
 .hide>li:nth-of-type(1){
 	padding-top:20px;
+}
+#decreaseQuantity{
+	    border: none;
+      width: 40px;
+    height: 40px;
+}
+#increaseQuantity{
+	    border: none;
+        width: 40px;
+    height: 40px;
+}
+.number{
+	padding-top:14px;
+	padding-left:50px;
+	display:flex;
+}
+.numberUpDown{
+	padding: 8px 20px 0 0;
+}
+#numberUpDown{
+	padding: 8px 20px 0 20px;
+}
+.plma{
+	font-size: 29px;
 }

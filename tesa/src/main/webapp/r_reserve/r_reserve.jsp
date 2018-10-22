@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css"
 	href="../vendor/select2/select2.min.css">
 <link rel="stylesheet" type="text/css" href="../css/r_style.css">
-<!-- +- -->
 <script>
 	$(function() {
 		$('#decreaseQuantity').click(function(e) {
@@ -28,6 +27,7 @@
 				num = 1;
 			}
 			$('#numberUpDown').text(num);
+			$('.numberUpDown').text(num);
 		});
 		$('#increaseQuantity').click(function(e) {
 			e.preventDefault();
@@ -40,8 +40,32 @@
 				num = 5;
 			}
 			$('#numberUpDown').text(num);
+			$('.numberUpDown').text(num);
 		});
 	});
+</script>
+<!-- chk -->
+<script>
+	$(document).ready(function() {
+		$("#reser_chk").click(function() {
+			var submenu = $(this).prev("#reserbefore");
+			if (submenu.is(":visible")) {
+				submenu.slideUp();
+			} else {
+				submenu.slideDown();
+			}
+		})
+		});
+	$(document).ready(function() {
+		$("#reser_chk2").click(function() {
+			var submenu = $(this).prev("#reserafter");
+			if (submenu.is(":visible")) {
+				submenu.slideUp();
+			} else {
+				submenu.slideDown();
+			}
+		})
+		});
 </script>
 <!-- huchoice -->
 <script>
@@ -58,7 +82,16 @@
 		});
 	});
 </script>
+<!-- numbernext -->
+<!-- <script>
+	function numbernext(value) {
+		alert(value);
+		 $('#contitle').empty();
+		$('#contitle').append(value); 
+	}
+</script> -->
 </head>
+
 <title>좌석 예약</title>
 <!-- Title Page -->
 <body class="r_reservebody">
@@ -73,7 +106,7 @@
 		</ul>
 
 		<p>
-			<textarea class="wintextarea" readonly>익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
+			<textarea class="wintextarea" id="reserbefore" readonly>익일 공연만 예약이 가능합니다. (예약시간 : 공연 전일 오후 8:00 ~ 익일 오전 8:00 까지)
 
 1매 2좌석 이용 가능합니다.
 
@@ -90,17 +123,15 @@
 본 예약증은 비매품이며, 판매할 수 없습니다.
 
 신청 시 잘못 입력한 부분에 대한 책임은 TESA STUDIO에서 책임지지 않습니다.</textarea>
-		</p>
-		<p class="reser_p">
-			<input type="checkbox" id="reser_chk">유의 사항을 숙지하였으며, 위의 내용에
-			동의합니다.(필수)
+			<input type="checkbox" id="reser_chk"><span class="chkspan">유의 사항을 숙지하였으며, 위의 내용에
+			동의합니다.(필수)</span>
 		</p>
 		<ul>
 			<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
 			<li class="reser_li">개인정보 수집 및 이용동의</li>
 		</ul>
 		<p>
-			<textarea class="wintextarea" readonly>이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
+			<textarea class="wintextarea" id="reserafter"readonly>이용자 본인은 아래와 같이 개인정보를 수집 및 이용하는 것에 동의합니다.
 
 1. 개인정보의 수집 및 이용 목적
 공연관람 참가 신청시 본인 확인을 위해 개인정보를 수집하고 있습니다.
@@ -109,10 +140,8 @@
 - 이름, 아이디
 
 · 서비스 이용과정이나 사업처리 과정에서 아래와 같은 정보들이 생성되어 수집될 수 있습니다.</textarea>
-		</p>
-		<p class="reser_p">
-			<input type="checkbox" id="reser_chk">개인정보 수집 및 이용에
-			동의합니다.(필수)
+			<input type="checkbox" id="reser_chk2"><span class="chkspan">개인정보 수집 및 이용에
+			동의합니다.(필수)</span>
 		</p>
 		<ul>
 			<!-- ul li들 스퀘어로 바꾸기(첫번째만) -->
@@ -147,13 +176,13 @@
 		</ul>
 		<ul>
 			<li id="menu" class="reser_li"><a>인원 선택</a>
-				<ul class="hide">
+				<ul class="hide r_reli">
 					<li>일반</li>
 					<li>
 						<div class="number">
-							<button id="decreaseQuantity">내림</button>
-							<span id="numberUpDown">1</span>
-							<button id="increaseQuantity">올림</button>
+							<button id="decreaseQuantity"><span class="plma">-</span></button>
+							<span id="numberUpDown">0</span>
+							<button id="increaseQuantity"><span class="plma">+</span></button>
 						</div>
 					</li>
 				</ul></li>
@@ -179,7 +208,11 @@
 							<td id="condate"></td>
 						</tr>
 						<tr>
-							<th>티켓장수 :</th>
+							<th>선택인원 :</th>
+							<td><span class="numberUpDown"></span></td>
+						</tr>
+						<tr>
+							<th>선택가능 :</th>
 							<td><span id="counter"></span></td>
 						</tr>
 						<tr>
@@ -192,7 +225,8 @@
 						</tr>
 					</table>
 				</div>
-				<div id="selected-seats"></div>
+				<div id="selected-seats">
+				</div>
 				<div style="clear: both"></div>
 			</div>
 		</div>
@@ -211,14 +245,11 @@
 </body>
 <!--=====================seats===================================-->
 <script type="text/javascript">
-	var price = 1000; //price
-	$(document)
-			.ready(
-					function() {
+	var price = 5000; //price
+	$(document).ready(function() {
 						var $cart = $('#selected-seats'), //Sitting Area
 						$counter = $('#counter'), //Votes
 						$total = $('#total'); //Total money
-
 						var sc = $('#seat-map')
 								.seatCharts(
 										{
@@ -237,59 +268,45 @@
 											},
 											legend : { //Definition legend
 												node : $('#legend'),
-												items : [
-														[ 'a', 'available',
-																'선택가능' ],
-														[ 'a', 'unavailable',
-																'선택불가' ],
-														[ 'a', 'selected',
-																'선택좌석' ] ]
+												items : [[ 'a', 'available','선택가능' ],
+														[ 'a', 'unavailable','선택불가' ],
+														[ 'a', 'selected','선택좌석' ]]
 											},
 											click : function() { //Click event
 												if (this.status() == 'available') { //optional seat
-													$(
-															'<li style="margin-left: 28%;">'
-																	+ (this.settings.row + 1)
-																	+ '행'
-																	+ this.settings.label
-																	+ '열'
-																	+ '</li>')
-															.attr(
-																	'id',
-																	'cart-item-'
-																			+ this.settings.id)
-															.attr('class',
-																	'con-list2')
-															.data(
-																	'seatId',
-																	this.settings.id)
-															.appendTo($cart);
-
-													$counter
-															.text(sc
-																	.find('selected').length + 1);
-													$total
-															.text(recalculateTotal(sc)
-																	+ price
-																	+ "원");
-
-													return 'selected';
+													var minus = $('#numberUpDown').text()*1;
+													 if(minus <= 0){
+														 alert($(this));
+														$(this).addClass('available');
+														alert("인원을 선택해주세요.");
+													}
+													else{
+														 $('<li style="margin-left: 28%;">'
+																	+ (this.settings.row + 1) + '행'
+																	+ this.settings.label + '열' + '</li>')
+																.attr('id','cart-item-'+ this.settings.id)
+																.attr('class','con-list2')
+																.data('seatId',this.settings.id)
+																.appendTo($cart);
+																/* $counter.text(sc.find('selected').length + 1); */
+																var a = $('#numberUpDown').text()*1;
+																$counter.text(a-(sc.find('selected').length+1));
+																/* alert($('#numberUpDown').val()); */
+																$total.text(recalculateTotal(sc) + price + "원");
+																return 'selected';
+													 }
+													
+													
+													/*  selected 선택된 unavailable선택안된 available선택가능*/
 												} else if (this.status() == 'selected') { //Checked
 													//Update Number
-													$counter
-															.text(sc
-																	.find('selected').length - 1);
+													/* $counter.text(sc.find('selected').length - 1); */
+													var a = $('#numberUpDown').text()*1;
+													$counter.text(a-(sc.find('selected').length-1));
 													//update totalnum
-													$total
-															.text(recalculateTotal(sc)
-																	- price
-																	+ "원");
-
+													$total.text(recalculateTotal(sc) - price + "원");
 													//Delete reservation
-													$(
-															'#cart-item-'
-																	+ this.settings.id)
-															.remove();
+													$('#cart-item-' + this.settings.id).remove();
 													//optional
 													return 'available';
 												} else if (this.status() == 'unavailable') { //sold
@@ -300,12 +317,9 @@
 											}
 										});
 						//sold seat
-						sc.get(
-								[ '1_2', '4_4', '4_5', '6_6', '6_7', '8_5',
-										'8_6', '8_7', '8_8' ]).status(
-								'unavailable');
-
-					});
+						sc.get([ '1_2', '4_4', '4_5', '6_6', '6_7', '8_5',
+								'8_6', '8_7', '8_8' ]).status('unavailable');
+						});
 	//sum total money
 	function recalculateTotal(sc) {
 		var total = 0;
@@ -317,13 +331,8 @@
 </script>
 <!--===============================================================================================-->
 <script type="text/javascript" src="../vendor/select2/select2.min.js"></script>
-<!-- <script type="text/javascript">
-	$(".selection-1").select2({
-		minimumResultsForSearch : 20,
-		dropdownParent : $('#dropDownSelect1')
-	});
-</script> -->
-<!-- autoscript -->
+
+<!-- autoselectscript -->
 <script>
 	function consert_title(value) {
 		$('#contitle').empty();
