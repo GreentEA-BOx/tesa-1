@@ -254,11 +254,16 @@
 								.seatCharts(
 										{
 											map : [ //Seating chart
-											'aaaaaaaa', 'aaaaaaaa', '________',
-													'aaaaaa__', 'aaaaaaaa',
-													'aaaaaaaa', 'aaaaaaaa',
-													'aaaaaaaa', 'aaaaaaaa',
-													'__aaaa__' ],
+											'aaaaaaaa',
+											'aaaaaaaa',
+											'________',
+											'aaaaaa__',
+											'aaaaaaaa',
+											'aaaaaaaa',
+											'aaaaaaaa',
+											'aaaaaaaa',
+											'aaaaaaaa',
+											'__aaaa__' ],
 											naming : {
 												top : false,
 												getLabel : function(character,
@@ -276,9 +281,8 @@
 												if (this.status() == 'available') { //optional seat
 													var minus = $('#numberUpDown').text()*1;
 													 if(minus <= 0){
-														 alert($(this));
-														$(this).addClass('available');
-														alert("인원을 선택해주세요.");
+														alert("인원을 먼저 선택해주세요.");
+														return 'available';
 													}
 													else{
 														 $('<li style="margin-left: 28%;">'
@@ -343,3 +347,15 @@
 		$('#condate').append(value);
 	}
 </script>
+	<!-- String tempPassword = ""; 
+		for(int i=0; i<13; i++) { 
+			int rndVal = (int)(Math.random() * 62); 
+			if(rndVal < 10) {
+				tempPassword += rndVal;
+			} else if(rndVal > 35) {
+				tempPassword += (char)(rndVal + 61); 
+			} else {
+				tempPassword += (char)(rndVal + 55); 
+				} 
+			} 
+		System.out.println("tempPassword : " + tempPassword); -->

@@ -111,13 +111,13 @@
 					</nav>
 				</div>
 				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block">
+					<a href="${pageContext.request.contextPath}/view/join.jsp" class="header-wrapicon1 dis-block">
 						JOIN
 					</a>
 
 					<span class="linedivide1"></span>
 					
-					<a href="#" class="header-wrapicon1 dis-block">
+					<a href="${pageContext.request.contextPath}/view/login.jsp" class="header-wrapicon1 dis-block">
 						Sign In
 					</a>
 				</div>
