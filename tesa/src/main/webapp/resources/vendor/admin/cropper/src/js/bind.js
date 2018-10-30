@@ -1,4 +1,4 @@
-    bind: function () {
+/*    bind: function () {
       var options = this.options;
       var $this = this.$element;
       var $cropper = this.$cropper;
@@ -85,3 +85,4 @@
         $window.off(EVENT_RESIZE, this._resize);
       }
     },
+*/

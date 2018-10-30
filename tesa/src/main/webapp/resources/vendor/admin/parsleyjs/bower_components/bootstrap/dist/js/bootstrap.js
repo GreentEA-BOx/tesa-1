@@ -2,11 +2,11 @@
  * Bootstrap v3.0.3 (http://getbootstrap.com)
  * Copyright 2013 Twitter, Inc.
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
- */
+ 
 
 if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: transition.js v3.0.3
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
@@ -23,7 +23,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -63,7 +63,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: alert.js v3.0.3
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
@@ -80,7 +80,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -162,7 +162,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: button.js v3.0.3
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
@@ -179,7 +179,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -278,7 +278,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: carousel.js v3.0.3
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
@@ -295,7 +295,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -496,7 +496,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: collapse.js v3.0.3
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
@@ -513,7 +513,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -676,7 +676,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: dropdown.js v3.0.3
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
@@ -693,7 +693,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -831,7 +831,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: modal.js v3.0.3
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
@@ -848,7 +848,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -1078,7 +1078,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: tooltip.js v3.0.3
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
@@ -1096,7 +1096,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -1384,7 +1384,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2  } :
            placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2  } :
            placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
-        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width   }
+         placement == 'right'  { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width   }
   }
 
   Tooltip.prototype.getTitle = function () {
@@ -1465,7 +1465,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: popover.js v3.0.3
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
@@ -1482,7 +1482,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -1583,7 +1583,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: scrollspy.js v3.0.3
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
@@ -1600,7 +1600,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -1742,7 +1742,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: tab.js v3.0.3
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
@@ -1759,7 +1759,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -1878,7 +1878,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
 }(jQuery);
 
-/* ========================================================================
+ ========================================================================
  * Bootstrap: affix.js v3.0.3
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
@@ -1895,7 +1895,7 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * ======================================================================== */
+ * ======================================================================== 
 
 
 +function ($) { "use strict";
@@ -2004,3 +2004,4 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
   })
 
 }(jQuery);
+*/

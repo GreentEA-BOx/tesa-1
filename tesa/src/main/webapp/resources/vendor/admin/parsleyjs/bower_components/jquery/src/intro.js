@@ -10,7 +10,7 @@
  * http://jquery.org/license
  *
  * Date: @DATE
- */
+ 
 
 (function( global, factory ) {
 
@@ -42,3 +42,4 @@
 // the stack via arguments.caller.callee and Firefox dies if
 // you try to trace through "use strict" call chains. (#13335)
 //"use strict";
+*/

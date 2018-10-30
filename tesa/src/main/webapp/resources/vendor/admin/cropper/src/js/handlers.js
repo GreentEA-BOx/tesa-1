@@ -1,4 +1,4 @@
-    resize: function () {
+/*    resize: function () {
       var restore = this.options.restore;
       var $container = this.$container;
       var container = this.container;
@@ -203,3 +203,4 @@
         });
       }
     },
+*/

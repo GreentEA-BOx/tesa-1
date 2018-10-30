@@ -1,4 +1,4 @@
-    // Show the crop box manually
+/*    // Show the crop box manually
     crop: function () {
       if (!this.isBuilt || this.isDisabled) {
         return;
@@ -60,12 +60,12 @@
       this.$cropBox.addClass(CLASS_HIDDEN);
     },
 
-    /**
+    *//**
      * Replace the image's src and rebuild the cropper
      *
      * @param {String} url
      * @param {Boolean} onlyColorChanged (optional)
-     */
+     *//*
     replace: function (url, onlyColorChanged) {
       if (!this.isDisabled && url) {
         if (this.isImg) {
@@ -129,12 +129,12 @@
       $this.removeData(NAMESPACE);
     },
 
-    /**
+    *//**
      * Move the canvas with relative offsets
      *
      * @param {Number} offsetX
      * @param {Number} offsetY (optional)
-     */
+     *//*
     move: function (offsetX, offsetY) {
       var canvas = this.canvas;
 
@@ -144,12 +144,12 @@
       );
     },
 
-    /**
+    *//**
      * Move the canvas to an absolute point
      *
      * @param {Number} x
      * @param {Number} y (optional)
-     */
+     *//*
     moveTo: function (x, y) {
       var canvas = this.canvas;
       var isChanged = false;
@@ -179,12 +179,12 @@
       }
     },
 
-    /**
+    *//**
      * Zoom the canvas with a relative ratio
      *
      * @param {Number} ratio
      * @param {jQuery Event} _event (private)
-     */
+     *//*
     zoom: function (ratio, _event) {
       var canvas = this.canvas;
 
@@ -199,12 +199,12 @@
       this.zoomTo(canvas.width * ratio / canvas.naturalWidth, _event);
     },
 
-    /**
+    *//**
      * Zoom the canvas to an absolute ratio
      *
      * @param {Number} ratio
      * @param {jQuery Event} _event (private)
-     */
+     *//*
     zoomTo: function (ratio, _event) {
       var options = this.options;
       var canvas = this.canvas;
@@ -263,21 +263,21 @@
       }
     },
 
-    /**
+    *//**
      * Rotate the canvas with a relative degree
      *
      * @param {Number} degree
-     */
+     *//*
     rotate: function (degree) {
       this.rotateTo((this.image.rotate || 0) + num(degree));
     },
 
-    /**
+    *//**
      * Rotate the canvas to an absolute degree
      * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#rotate()
      *
      * @param {Number} degree
-     */
+     *//*
     rotateTo: function (degree) {
       degree = num(degree);
 
@@ -288,13 +288,13 @@
       }
     },
 
-    /**
+    *//**
      * Scale the image
      * https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function#scale()
      *
      * @param {Number} scaleX
      * @param {Number} scaleY (optional)
-     */
+     *//*
     scale: function (scaleX, scaleY) {
       var image = this.image;
       var isChanged = false;
@@ -324,34 +324,34 @@
       }
     },
 
-    /**
+    *//**
      * Scale the abscissa of the image
      *
      * @param {Number} scaleX
-     */
+     *//*
     scaleX: function (scaleX) {
       var scaleY = this.image.scaleY;
 
       this.scale(scaleX, isNumber(scaleY) ? scaleY : 1);
     },
 
-    /**
+    *//**
      * Scale the ordinate of the image
      *
      * @param {Number} scaleY
-     */
+     *//*
     scaleY: function (scaleY) {
       var scaleX = this.image.scaleX;
 
       this.scale(isNumber(scaleX) ? scaleX : 1, scaleY);
     },
 
-    /**
+    *//**
      * Get the cropped area position and size data (base on the original image)
      *
      * @param {Boolean} isRounded (optional)
      * @return {Object} data
-     */
+     *//*
     getData: function (isRounded) {
       var options = this.options;
       var image = this.image;
@@ -396,11 +396,11 @@
       return data;
     },
 
-    /**
+    *//**
      * Set the cropped area position and size with new data
      *
      * @param {Object} data
-     */
+     *//*
     setData: function (data) {
       var options = this.options;
       var image = this.image;
@@ -462,29 +462,29 @@
       }
     },
 
-    /**
+    *//**
      * Get the container size data
      *
      * @return {Object} data
-     */
+     *//*
     getContainerData: function () {
       return this.isBuilt ? this.container : {};
     },
 
-    /**
+    *//**
      * Get the image position and size data
      *
      * @return {Object} data
-     */
+     *//*
     getImageData: function () {
       return this.isLoaded ? this.image : {};
     },
 
-    /**
+    *//**
      * Get the canvas position and size data
      *
      * @return {Object} data
-     */
+     *//*
     getCanvasData: function () {
       var canvas = this.canvas;
       var data = {};
@@ -505,11 +505,11 @@
       return data;
     },
 
-    /**
+    *//**
      * Set the canvas position and size with new data
      *
      * @param {Object} data
-     */
+     *//*
     setCanvasData: function (data) {
       var canvas = this.canvas;
       var aspectRatio = canvas.aspectRatio;
@@ -539,11 +539,11 @@
       }
     },
 
-    /**
+    *//**
      * Get the crop box position and size data
      *
      * @return {Object} data
-     */
+     *//*
     getCropBoxData: function () {
       var cropBox = this.cropBox;
       var data;
@@ -560,11 +560,11 @@
       return data || {};
     },
 
-    /**
+    *//**
      * Set the crop box position and size with new data
      *
      * @param {Object} data
-     */
+     *//*
     setCropBoxData: function (data) {
       var cropBox = this.cropBox;
       var aspectRatio = this.options.aspectRatio;
@@ -607,12 +607,12 @@
       }
     },
 
-    /**
+    *//**
      * Get a canvas drawn the cropped image
      *
      * @param {Object} options (optional)
      * @return {HTMLCanvasElement} canvas
-     */
+     *//*
     getCroppedCanvas: function (options) {
       var originalWidth;
       var originalHeight;
@@ -734,11 +734,11 @@
       return canvas;
     },
 
-    /**
+    *//**
      * Change the aspect ratio of the crop box
      *
      * @param {Number} aspectRatio
-     */
+     *//*
     setAspectRatio: function (aspectRatio) {
       var options = this.options;
 
@@ -757,11 +757,11 @@
       }
     },
 
-    /**
+    *//**
      * Change the drag mode
      *
      * @param {String} mode (optional)
-     */
+     *//*
     setDragMode: function (mode) {
       var options = this.options;
       var croppable;
@@ -788,3 +788,4 @@
       }
     }
   };
+*/

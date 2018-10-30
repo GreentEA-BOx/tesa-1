@@ -1,4 +1,4 @@
-    initPreview: function () {
+/*    initPreview: function () {
       var crossOrigin = getCrossOrigin(this.crossOrigin);
       var url = crossOrigin ? this.crossOriginUrl : this.url;
       var $clone2;
@@ -16,11 +16,11 @@
           html: $this.html()
         });
 
-        /**
+        *//**
          * Override img element styles
          * Add `display:block` to avoid margin top issue
          * (Occur only when margin-top <= -height)
-         */
+         *//*
         $this.html(
           '<img' + crossOrigin + ' src="' + url + '" style="' +
           'display:block;width:100%;height:auto;' +
@@ -98,3 +98,4 @@
         });
       });
     },
+*/

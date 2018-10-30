@@ -5,8 +5,15 @@
 <configuration>
 
   <typeAliases>
-    <package name="com.tesa.official"/>
-    <package name="com.tesa.official1"/>
+ 	 <package name="tesa.official.bean"/>
+     <package name="tesa.attr.bean"/>    
+    <package name="tesa.res.bean"/>    
+    <package name="tesa.hotel.bean"/>    
+    <package name="tesa.consert.bean"/>    
+    <package name="tesa.bus.bean"/>    
+    <package name="tesa.palace.bean"/>    
+    <package name="tesa.qna.bean"/>    
+    <package name="tesa.qna.bean"/>    
   </typeAliases>
 
 

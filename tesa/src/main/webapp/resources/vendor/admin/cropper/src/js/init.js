@@ -1,4 +1,4 @@
-  Cropper.prototype = {
+/*  Cropper.prototype = {
     constructor: Cropper,
 
     init: function () {
@@ -215,3 +215,4 @@
       this.$clone.remove();
       this.$clone = null;
     },
+*/

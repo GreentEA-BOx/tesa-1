@@ -1,4 +1,4 @@
-    build: function () {
+/*    build: function () {
       var options = this.options;
       var $this = this.$element;
       var $clone = this.$clone;
@@ -116,3 +116,4 @@
       this.$cropper.remove();
       this.$cropper = null;
     },
+*/

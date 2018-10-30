@@ -1,4 +1,4 @@
-const set = (typeof Set === "function") ? new Set() : (function () {
+/*const set = (typeof Set === "function") ? new Set() : (function () {
 	const list = [];
 
 	return {
@@ -65,9 +65,9 @@ function assign(ta, {setOverflowX = true, setOverflowY = true} = {}) {
 			const width = ta.style.width;
 			ta.style.width = '0px';
 			// Force reflow:
-			/* jshint ignore:start */
+			 jshint ignore:start 
 			ta.offsetWidth;
-			/* jshint ignore:end */
+			 jshint ignore:end 
 			ta.style.width = width;
 		}
 
@@ -216,3 +216,4 @@ if (typeof window === 'undefined' || typeof window.getComputedStyle !== 'functio
 }
 
 export default autosize;
+*/

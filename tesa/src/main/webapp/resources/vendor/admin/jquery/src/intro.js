@@ -11,7 +11,7 @@
  *
  * Date: @DATE
  */
-
+/*
 (function( global, factory ) {
 
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
@@ -42,3 +42,4 @@
 // the stack via arguments.caller.callee and Firefox dies if
 // you try to trace through "use strict" call chains. (#13335)
 //"use strict";
+*/

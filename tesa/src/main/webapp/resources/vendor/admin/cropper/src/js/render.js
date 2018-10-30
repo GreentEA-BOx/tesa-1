@@ -1,4 +1,4 @@
-    render: function () {
+/*    render: function () {
       this.initContainer();
       this.initCanvas();
       this.initCropBox();
@@ -464,3 +464,4 @@
         }, this));
       }
     },
+*/
