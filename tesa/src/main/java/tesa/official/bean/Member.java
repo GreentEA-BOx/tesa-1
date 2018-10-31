@@ -69,7 +69,6 @@ public class Member {
 	public void setDel(String del) {
 		this.del = del;
 	}
-	
 
 
 }

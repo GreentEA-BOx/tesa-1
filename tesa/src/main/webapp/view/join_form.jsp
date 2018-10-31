@@ -106,6 +106,7 @@
                         <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">취소</button>
                     </div>
                 </div>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
             </div>
         </div>

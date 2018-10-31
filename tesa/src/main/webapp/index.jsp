@@ -52,7 +52,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.jsp" class="logo">
+				<a href="index" class="logo">
 					<img src="${pageContext.request.contextPath}/images/tesa.png" alt="IMG-LOGO">
 				</a>
 
@@ -117,7 +117,7 @@
 
 					<span class="linedivide1"></span>
 					
-					<a href="${pageContext.request.contextPath}/view/login.jsp" class="header-wrapicon1 dis-block">
+					<a href="login_form" class="header-wrapicon1 dis-block">
 						Sign In
 					</a>
 				</div>
