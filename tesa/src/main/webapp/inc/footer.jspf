@@ -180,6 +180,7 @@
    <script src="${pageContext.request.contextPath}/js/h_magnific-popup-options.js"></script>
    <!-- Main -->
    <script src="${pageContext.request.contextPath}/js/h_main.js"></script>
+   <script src="${pageContext.request.contextPath}/js/official.js"></script>
    <!--===============================================================================================-->
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 	<script src="${pageContext.request.contextPath}/js/attr_main.js"></script>

@@ -15,19 +15,14 @@ public class Member_dao {
 	private SqlSession session;
 	
 	//회원 정보 입력
-    public Member insertUser(Member member) throws Exception {
-        System.out.println("회원등록완료 !!!");
-        System.out.println("//////////////////////////////////");
+    public Member insertUser(Member member) {
         System.out.println("회원등록완료 !!!");
         return session.selectOne("tesa.member.p_in_member", member);
     }
-
-	public Member getID(String id) {
-		System.out.println("MemberDao > " + id);
-		return session.selectOne("tesa.member.getid", id);
-	}
 	public Integer login(Member member) {
-		System.out.println(member.getId());
 		return session.selectOne("tesa.member.login", member);
+	}
+	public Integer idcheck(String id) {
+		return session.selectOne("tesa.member.idcheck", id);
 	}
 }

@@ -6,12 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="tesa.member">
 	<select id="p_in_member" statementType="CALLABLE">
 		{
-			call P_IN_MEMBER(#{id},#{pw}, #{name}, #{phone}, #{email})
+			call P_MEMBER_IN(#{id},#{pw}, #{name}, #{phone}, #{email})
 		}
 	</select>
 	
-	<select id="getid" resultType="member">
-		select * from member where m_id=#{id}
+	<select id="idcheck" resultType="java.lang.Integer">
+		select count(*) from member where m_id=#{id}
 	</select>
 	
 	<select id="login" resultType="java.lang.Integer">

@@ -9,8 +9,22 @@
     <!-- Uncomment and your base-package here:
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
-
-
+     <bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="587" />
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="username" value="tesastudio2@gmail.com" />
+        <property name="password" value="tesa123!@#" />
+        
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+         
+    </bean>
+     
+  
     <mvc:annotation-driven />
     <!-- 오라클 접속정보 -->
 	<bean id="dataSource"
@@ -39,6 +53,15 @@
 		<constructor-arg name="sqlSessionFactory"
 			ref="sqlSessionFactory"></constructor-arg>
 	</bean>
+	
+		<!-- INTERCEPTOR -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**" />
+			<bean class="tesa.official.intercepter.Interceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"/>
