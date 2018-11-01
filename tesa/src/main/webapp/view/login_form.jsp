@@ -14,9 +14,14 @@
 				<p><input type="text" class="joininput2" placeholder="아이디" name="id" id="id" title="아이디" maxlength="20" /></p>
 				<p><input type="password" class="joininput2" placeholder="비밀번호"  name="pw" id="pw" title="비밀번호"  maxlength="30"/></p>
 						<c:set var="count" value="${count}" />
+						<c:set var="emailcnt" value="${emailcnt}" />
 						<div style="color:red; font-weight:bold; margin-bottom:3%;"class="t-center">
 						<c:if test="${count eq 0}">
 						아이디, 비밀번호 오류
+						</c:if></div>
+						<div style="color:purple; font-weight:bold; margin-bottom:3%;"class="t-center">
+						<c:if test="${emailcnt eq 0}">
+						이메일 인증후 로그인 해주세요
 						</c:if></div>
 				<div class="loginUtil">
 					<p class="check"><input type="checkbox" id="idsave" name="idsave" title="아이디 저장" value="Y" class="notRequired"  />

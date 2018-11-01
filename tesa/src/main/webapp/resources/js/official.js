@@ -10,7 +10,6 @@
 			        type:'post',
 			        data:{id:id},
 			        success:function(data){
-			        	alert(data);
 			            if($.trim(data)==0){
 			                $('#chkMsg').html("<p style='COLOR: blue; margin-bottom:10px;margin-left:5px'>사용가능한 아이디 입니다.</p>");                
 			                $(".in_member").removeAttr("disabled");

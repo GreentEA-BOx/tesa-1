@@ -7,8 +7,26 @@ public class Member {
 	private String phone;
 	private String email;
 	private String del;
+	private String authCode;
+	private int userAuth;
 	
 	
+	public String getAuthCode() {
+		return authCode;
+	}
+
+	public void setAuthCode(String authCode) {
+		this.authCode = authCode;
+	}
+
+	public int getUserAuth() {
+		return userAuth;
+	}
+
+	public void setUserAuth(int userAuth) {
+		this.userAuth = userAuth;
+	}
+
 	public Member() {
 		super();
 	}
@@ -69,6 +87,8 @@ public class Member {
 	public void setDel(String del) {
 		this.del = del;
 	}
+
+	
 
 
 }

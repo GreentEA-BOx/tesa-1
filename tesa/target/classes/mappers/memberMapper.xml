@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="tesa.member">
 	<select id="p_in_member" statementType="CALLABLE">
 		{
-			call P_MEMBER_IN(#{id},#{pw}, #{name}, #{phone}, #{email})
+			call P_MEMBER_IN(#{id},#{pw},#{name},#{phone},#{email})
 		}
 	</select>
 	
@@ -16,5 +16,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="login" resultType="java.lang.Integer">
 		select count(*) from member where m_id=#{id} and m_pw=#{pw}
+	</select>
+	
+	<update id="createAuthKey">
+		update Member set authCode = #{authCode} where m_email = #{email}
+	</update>
+	<update id="userAuth">
+		update Member set userauth=1 where m_email = #{email}
+	</update>
+	<select id="emailcnt" resultType="java.lang.Integer">
+		select userauth from member where m_id=#{id} and m_pw=#{pw}
 	</select>
 </mapper>
