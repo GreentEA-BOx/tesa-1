@@ -50,12 +50,14 @@
 		<!-- Header desktop -->
 		<div class="container-menu-header">
 
+				
 			<div class="wrap_header">
 				<!-- Logo -->
+			<a href="manage">　　</a>
 				<a href="index" class="logo">
 					<img src="${pageContext.request.contextPath}/images/tesa.png" alt="IMG-LOGO">
 				</a>
-
+			
 				<!-- Menu -->
 				<div class="wrap_menu">
 					<nav class="menu">

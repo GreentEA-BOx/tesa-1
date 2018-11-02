@@ -19,6 +19,7 @@
 .con-cardbtn2 {border-radius: 70px; font-size:15px; margin-bottom:5%; font-weight:bold; border:2px solid #e65540; background:#fff;display:inline-block;}
 .con-hash{float:left;font-weight:bold; font-size:15px; margin-top:5%;}
 .con-sub > a {margin-left:3%;}
+.margin-top16px{margin-top: 16px;}
 .con-sub > a:nth-of-type(1){font-weight:bold;border-bottom:4px solid #e65540; color:#e65540;}
 .con-sub{text-align:center; margin-bottom:4%; }
 .sizefullb {width: 110px;height: 110px;}
@@ -29,6 +30,10 @@
 .sizefullbbbbbb {width: 88px;height:32px;border:2px solid #e65540;font-size:13px;margin-right:5%;}
 .con-list{margin-top:13%; margin-left:25%;}
 .applyDiv{width: 120%;padding-right: 180px;}
+.applyDiv2{width: 90%; padding-left: 12%;}
+.margin-top{margin-top: 15px;}
+.margin-top2{    margin-left: 5px;
+    margin-top: 9px;}
 .tableNo{display:flex;}
 .titi{font-size:22px;padding-top: 7%;}
 .spanclass{padding-right:5px;}
@@ -81,6 +86,10 @@ option{height:20px;}
 .tit3{padding-left:50px;}
 .chkboxright{float:right;}
 .btnArea{margin-top: 5%;text-align:center;}
+.joinbtn{
+	    margin-left: 10px;
+    margin-top: 7px;
+}
 .r_rebtn{
 	backgroung:gray;
 	align:center;
@@ -303,6 +312,16 @@ th{
     font-family: 'NotoSans-Light', '맑은 고딕', 'Malgun Gothic', sans-serif;
     margin-right: 5px;
 }
+.joinus{
+	border: 1px solid gray;
+	width: 250px;
+    height: 52px;
+    padding: 0 20px;
+    line-height: 46px;
+    font-size: 16px;
+    font-family: 'NotoSans-Light', '맑은 고딕', 'Malgun Gothic', sans-serif;
+    margin-right: 5px;
+}
 .joininput2{
 	border: 1px solid gray;
 	width: 500px;
@@ -315,7 +334,7 @@ th{
     margin-bottom:5%;
 }
 .joinselect{
-	width: 138px;
+	width: 160px;
     height: 52px;
     padding: 0 20px;
     line-height: 46px;

@@ -27,8 +27,8 @@
 					<p class="check"><input type="checkbox" id="idsave" name="idsave" title="아이디 저장" value="Y" class="notRequired"  />
 					<label for="idsave">아이디 저장</label></p>
 					<div class="findArea">
-						<a  onclick="location.href='view/idsearch.jsp'">아이디 찾기</a>
-						<a  onclick="location.href='view/pwsearch.jsp'">비밀번호 찾기</a>
+						<a href="idsearch">아이디 찾기</a>
+						<a href="pwsearch">비밀번호 찾기</a>
 					</div>
 				</div>
 			</div>

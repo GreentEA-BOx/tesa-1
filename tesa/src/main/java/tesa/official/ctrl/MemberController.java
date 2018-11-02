@@ -27,8 +27,8 @@ public class MemberController {
 	}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(Model m, HttpServletRequest r, Member member) {
-		member.setId(r.getParameter("id"));
-		member.setPw(r.getParameter("pw"));
+		member.setM_id(r.getParameter("id"));
+		member.setM_pw(r.getParameter("pw"));
 		int count = service.login(member);
 		if(count == 0) {
 			m.addAttribute("count",count);
@@ -39,7 +39,6 @@ public class MemberController {
 			System.out.println("emailcnt>>" + emailcnt);
 			if(emailcnt == 0) {
 				m.addAttribute("emailcnt",emailcnt);
-				System.out.println("이메일 인증후 로그인 해주세요");
 				return "view/login_form";
 			}else {
 				m.addAttribute(emailcnt);
@@ -69,10 +68,10 @@ public class MemberController {
 		String pw = r.getParameter("pw");
 		String name = r.getParameter("name");
 		String email = r.getParameter("email1") + "@" + r.getParameter("email2");
-		String phone = r.getParameter("phone1") + r.getParameter("phone2");
-		System.out.println(id+pw+name+email+phone);
+		String tel = r.getParameter("phone1") + r.getParameter("phone2");
+		System.out.println(id+pw+name+email+tel);
 		try {
-			service.create(new Member(id,pw,name,phone,email));
+			service.create(new Member(id,pw,name,tel,email));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -91,6 +90,59 @@ public class MemberController {
 		model.addAttribute("email", email);
 		return "view/emailsucc";
 	}
+	@RequestMapping(value="/pwsearchemail", method=RequestMethod.GET)
+	public String pwsearchemail(String id, String email, String name, Model m) {
+		m.addAttribute("id",id);
+		m.addAttribute("email",email);
+		m.addAttribute("name",name);
+		return "view/pwupdate";
+	}
+	@RequestMapping(value="/pwup", method=RequestMethod.POST)
+	public String pwup(Member member, Model m, HttpServletRequest r) {
+		service.imsipw(member);
+		return "view/login_form";
+	}
+	@RequestMapping(value="/idsearch", method=RequestMethod.GET)
+	public String idsearch() {
+		return "view/idsearch";
+	}
 	
-
+	@RequestMapping(value="/idsearch", method=RequestMethod.POST)
+	public String idsearch(Model m, HttpServletRequest r) {
+		String name = r.getParameter("searchname");
+		String email = r.getParameter("email1") + "@" + r.getParameter("email2");
+		String idc = service.idsearch(new Member(name,email));
+		m.addAttribute("idc",idc);
+		return "view/idsearch";
+	}
+	@RequestMapping(value="/pwsearch", method=RequestMethod.GET)
+	public String pwsearch() {
+		return "view/pwsearch";
+	}
+	@RequestMapping(value="/pwsearch", method=RequestMethod.POST)
+	public String pwsearch(Model m, HttpServletRequest r) {
+		System.out.println("pwsearch탐");
+		String id = r.getParameter("searchid");
+		String name = r.getParameter("searchname");
+		String email = r.getParameter("email1") + "@" + r.getParameter("email2");
+		System.out.println("pwsearch name email>" +id + name + email);
+		try {
+			service.pwsearch(new Member(id,name,email));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "view/pwsearch";
+	}
+	
+	@RequestMapping(value="/emailcheck" , method = RequestMethod.POST)
+	public @ResponseBody String emailcheck(HttpServletRequest r) {
+		String email = r.getParameter("email");
+		System.out.println(email);
+		int cnt = service.emailcheck(email);
+		return String.valueOf(cnt);
+	}
+	
+	
+	
 }

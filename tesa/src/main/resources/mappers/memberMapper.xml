@@ -6,25 +6,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="tesa.member">
 	<select id="p_in_member" statementType="CALLABLE">
 		{
-			call P_MEMBER_IN(#{id},#{pw},#{name},#{phone},#{email})
+			call P_MEMBER_IN(#{m_id},#{m_pw},#{m_name},#{m_tel},#{m_email})
 		}
 	</select>
 	
 	<select id="idcheck" resultType="java.lang.Integer">
-		select count(*) from member where m_id=#{id}
+		select count(*) from member where m_id=#{m_id}
 	</select>
 	
 	<select id="login" resultType="java.lang.Integer">
-		select count(*) from member where m_id=#{id} and m_pw=#{pw}
+		select count(*) from member where m_id=#{m_id} and m_pw=#{m_pw}
 	</select>
 	
 	<update id="createAuthKey">
-		update Member set authCode = #{authCode} where m_email = #{email}
+		update Member set authCode = #{authCode} where m_email = #{m_email}
 	</update>
 	<update id="userAuth">
-		update Member set userauth=1 where m_email = #{email}
+		update Member set userauth=1 where m_email = #{m_email}
 	</update>
 	<select id="emailcnt" resultType="java.lang.Integer">
-		select userauth from member where m_id=#{id} and m_pw=#{pw}
+		select userauth from member where m_id=#{m_id} and m_pw=#{m_pw}
 	</select>
+	<select id="idsearch" resultType="java.lang.String">
+		select m_id from member where m_name=#{m_name} and m_email=#{m_email}
+	</select>
+	<select id="pwsearch" resultType="java.lang.String">
+		select m_id from member where m_name=#{m_name} and m_email=#{m_email}
+	</select>
+	<update id="imsipw">
+		update Member set m_pw = #{m_pw}  where m_name=#{m_name} and m_id=#{m_id} and m_email=#{m_email}
+	</update>
+	<select id="emailcheck" resultType="java.lang.Integer">
+		select count(*) from member where m_email=#{email}
+	</select>
+	
+	
 </mapper>

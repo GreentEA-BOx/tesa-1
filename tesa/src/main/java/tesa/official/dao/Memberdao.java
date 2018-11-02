@@ -9,16 +9,11 @@ import tesa.official.bean.Member;
 
 
 @Repository
-public class Member_dao {
+public class Memberdao {
 	
 	@Inject
 	private SqlSession session;
 	
-	//회원 정보 입력
-   /* public Member insertUser(Member member) {
-        System.out.println("회원등록완료 !!!");
-        return session.selectOne("tesa.member.p_in_member", member);
-    }*/
 	public Integer login(Member member) {
 		return session.selectOne("tesa.member.login", member);
 	}
@@ -32,9 +27,8 @@ public class Member_dao {
 
 	public void createAuthKey(String email, String authCode) throws Exception {
 		Member member = new Member();
-		System.out.println("user_authCode>" + authCode);
 		member.setAuthCode(authCode);
-		member.setEmail(email);
+		member.setM_email(email);
 		session.selectOne("tesa.member.createAuthKey", member);
 	}
 	public void userAuth(String email) throws Exception {
@@ -43,4 +37,17 @@ public class Member_dao {
 	public int emailcnt(Member member) {
 		return session.selectOne("tesa.member.emailcnt", member);
 	}
+	public String idsearch(Member member) {
+		return session.selectOne("tesa.member.idsearch", member);
+	}
+	public String pwsearch(Member member) {
+		return session.selectOne("tesa.member.pwsearch", member);
+	}
+	public void imsipw(Member member) {
+		session.update("tesa.member.imsipw",member);
+	}
+	public int emailcheck(String email) {
+		return session.selectOne("tesa.member.emailcheck", email);
+	}
+	
 }

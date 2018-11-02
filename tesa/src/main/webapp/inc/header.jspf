@@ -112,13 +112,13 @@
 
 				<!-- Header Icon -->
 				<div class="header-icons2">
-					<a href="join_form" class="header-wrapicon1 dis-block">
+					<a href="/tesa/join_form" class="header-wrapicon1 dis-block">
 						JOIN
 					</a>
 
 					<span class="linedivide1"></span>
 					
-					<a href="login_form" class="header-wrapicon1 dis-block">
+					<a href="/tesa/login_form" class="header-wrapicon1 dis-block">
 						Sign In
 					</a>
 				</div>
