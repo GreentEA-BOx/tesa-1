@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tesa.admin">
+	<select id="se_member" resultType="Member">
+      select m_code, m_id, m_name, m_tel, m_email, m_del from member order by m_code desc
+   </select>
+</mapper>
