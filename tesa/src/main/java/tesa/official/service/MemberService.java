@@ -41,7 +41,7 @@ public class MemberService {
 		MailHandler sendMail = new MailHandler(mailSender);
 		sendMail.setSubject("[TESA STUDIO 이메일 인증]");
 		sendMail.setText(new StringBuffer().append("<h1>메일인증</h1>")
-				.append("<a href='http://192.168.0.3:8080/tesa/emailConfirm?email=").append(member.getEmail())
+				.append("<a href='http://192.168.1.80:8080/tesa/emailConfirm?email=").append(member.getEmail())
 				.append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		sendMail.setFrom("tesa@studio.com", "TESA");
 		System.out.println("memberservice member.getEmail() >" + member.getEmail());
