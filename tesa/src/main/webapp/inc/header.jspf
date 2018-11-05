@@ -73,20 +73,13 @@
 											<li><a href="${pageContext.request.contextPath}/view/attr_map.jsp">map</a></li>
 										</ul>
 									</li>
-									<li><a href="${pageContext.request.contextPath}/view/sam1.jsp">Leisure</a>
-										<ul class="sub_menu">
-											<li><a href="${pageContext.request.contextPath}/view/yys_sub_1.jsp">Leisure 소개</a></li>
-											<li><a href="${pageContext.request.contextPath}/view/yys_sub_2.jsp">Leisure 예약</a></li>
-											<li><a href="home-03.html">Homepage V3</a></li>
-										</ul>
-									</li>
 								</ul>
 							</li>
 
 							<li>
 								<a href="javascript:void(0)">Viewing</a>
 								<ul class="sub_menu">
-									<li><a href="${pageContext.request.contextPath}/view/r_show.jsp">Concert</a></li>
+									<li><a href="consert">Concert</a></li>
 									<li><a href="${pageContext.request.contextPath}/view/palace.jsp">Palace</a></li>
 								</ul>
 							</li>

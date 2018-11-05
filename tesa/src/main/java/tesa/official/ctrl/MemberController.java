@@ -138,7 +138,6 @@ public class MemberController {
 	@RequestMapping(value="/emailcheck" , method = RequestMethod.POST)
 	public @ResponseBody String emailcheck(HttpServletRequest r) {
 		String email = r.getParameter("email");
-		System.out.println(email);
 		int cnt = service.emailcheck(email);
 		return String.valueOf(cnt);
 	}

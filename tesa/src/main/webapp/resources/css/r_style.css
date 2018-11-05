@@ -193,6 +193,8 @@ option{height:20px;}
 	line-height:26px;
 	font-weight:bold;
 	color:black;
+	    width: 170px;
+    padding-right: 31px;
 }
 .cardtitle{
 	margin-bottom:30%;

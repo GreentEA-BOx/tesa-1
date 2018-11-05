@@ -85,7 +85,7 @@
 							<li>
 								<a href="javascript:void(0)">Viewing</a>
 								<ul class="sub_menu">
-									<li><a href="${pageContext.request.contextPath}/view/r_show.jsp">Concert</a>
+									<li><a href="consert">Concert</a>
 										
 									</li>
 									<li><a href="${pageContext.request.contextPath}/view/palace.jsp">Palace</a>
