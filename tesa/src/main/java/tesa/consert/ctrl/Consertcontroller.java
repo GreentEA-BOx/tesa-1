@@ -8,6 +8,7 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,27 +43,18 @@ public class Consertcontroller {
 	
 	@RequestMapping(value="/c_detail/{no}", method=RequestMethod.GET)
 	public String getc_detail(@PathVariable Integer no,Model m) {
-		if (Objects.isNull(no)) {
-			no = 1;
-		}
-		System.out.println("getC"+ service.getcontime(no) );
 		m.addAttribute("getTime",service.getcontime(no));
 		m.addAttribute("cdelist",service.getc_detail(no));
 		return "view/c_detail";
 	}
 	@RequestMapping(value="/c_reserve/{no}", method=RequestMethod.GET)
 	public String getc_reserve(@PathVariable Integer no,Model m) {
-		if (Objects.isNull(no)) {
-			no = 1;
-		}
 		m.addAttribute("cdelist",service.getc_detail(no));
 		return "view/c_reserve";
 	}
 	@RequestMapping(value="/c_re_detail/{no}", method=RequestMethod.GET)
-	public String getc_re_detail(@PathVariable Integer no,Model m) {
-		if (Objects.isNull(no)) {
-			no = 1;
-		}
+	public String getc_re_detail(HttpSession session, @PathVariable Integer no,Model m) {
+		m.addAttribute("member",service.getmember(session.getAttribute("id")));
 		m.addAttribute("getTime",service.getcontime(no));
 		m.addAttribute("cdelist",service.getc_detail(no));
 		return "r_reserve/r_reserve";

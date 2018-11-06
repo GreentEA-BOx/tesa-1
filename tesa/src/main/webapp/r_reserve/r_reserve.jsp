@@ -37,9 +37,9 @@
 			var num = parseInt(stat, 10);
 			num++;
 
-			if (num > 5) {
+			if (num > 3) {
 				alert('아이디 하나당 최대 3장입니다.');
-				num = 5;
+				num = 3;
 			}
 			$('#numberUpDown').text(num);
 			$('.numberUpDown').text(num);
@@ -143,11 +143,11 @@
 		</ul>
 		<ul>
 			<li class="reser_con_li"><p class="reser_con_p">예약자명&nbsp;</p>
-				<p class="reser_date">김영주</p></li>
+				<p class="reser_date">${member.m_name}</p></li>
 			<hr />
 			<li class="reser_con_li"><p class="reser_con_p">공연명&nbsp;</p>
 				<p>
-					<select class="reser_select"
+					<select class="reser_select" id="titlecode"
 						onchange="javascript:consert_title(this.options[this.selectedIndex].text)">
 						<option value="0">[공연선택]</option>
 						<option value="${cdelist.C_CODE}">${cdelist.C_TITLE}</option>
@@ -222,8 +222,7 @@
 						</tr>
 					</table>
 				</div>
-				<div id="selected-seats">
-				</div>
+				<div id="selected-seats"></div>
 				<div style="clear: both"></div>
 			</div>
 		</div>
@@ -232,7 +231,7 @@
 		class="bg-title-page p-t-50 p-b-50 flex-col-c-m">
 		<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 padding-left31">
 			<button
-				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color" onclick="c_resave()">
+				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color" onclick="javascript:c_resave()">
 				신청</button>
 			<button
 				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4">
@@ -247,17 +246,12 @@
 						var $cart = $('#selected-seats'), //Sitting Area
 						$counter = $('#counter'), //Votes
 						$total = $('#total'); //Total money
-						var sc = $('#seat-map')
-								.seatCharts(
-										{
+						var sc = $('#seat-map').seatCharts({
 											map : [ //Seating chart
 											'aaaaaaaa',
 											'aaaaaaaa',
 											'________',
 											'aaaaaa__',
-											'aaaaaaaa',
-											'aaaaaaaa',
-											'aaaaaaaa',
 											'aaaaaaaa',
 											'aaaaaaaa',
 											'__aaaa__' ],
@@ -346,8 +340,37 @@
 </script>
 <script>
 	function c_resave(){
+		var checkbox1 = document.getElementById('reser_chk');
+		var checkbox2 = document.getElementById('reser_chk2');
+		var chk1 = checkbox1.getAttribute("checked");
+		var chk2 = checkbox2.getAttribute("checked");
+		if(chk1 == null ){
+			alert("예약전 확인사항 동의해주세요");
+		}else if(chk2 == null){
+			alert("개인정보 수집 및 이용동의 동의해주세요");
+		}
+		
 		var titlecode = $('.reser_select').val();
-				
+		var contime = $('#seldate').val();
+		var seat = $('#selected-seats').text();
+		var seatset = null;
+		if(seat.length < 5){
+			seatset =  seat.replace('행', '_').replace('열','');
+		} else if(seat.length > 5 && seat.length < 9){
+			seatset1 = seat.substring(0,4).replace('행', '_').replace('열','');
+			seatset2 = seat.substring(4,8).replace('행', '_').replace('열','');
+		}else{
+			seatset1 = seat.substring(0,4).replace('행', '_').replace('열','');
+			seatset2 = seat.substring(4,8).replace('행', '_').replace('열','');
+			seatset3 = seat.substring(8,12).replace('행', '_').replace('열','');
+		} 
+		if(titlecode == 0){
+			alert("공연 제목을 선택해 주세요.");
+			document.titlecode.focus();
+		}else if(contime == 0){
+			alert("시간을 선택해 주세요.");
+			document.seldate.focus();
+		}
 	}
 </script>
 	

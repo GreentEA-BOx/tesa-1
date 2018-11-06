@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import tesa.consert.dao.ConsertDao;
+import tesa.official.bean.Member;
 
 @Service
 public class ConsertService {
@@ -30,6 +31,10 @@ public class ConsertService {
 	}
 	public List<Map<String,Object>> getcontime(int no) {
 		return dao.getcontime(no);
+	}
+
+	public Member getmember(Object object) {
+		return dao.getmember(object);
 	}
 
 }

@@ -15,26 +15,13 @@ import tesa.official.dao.Memberdao;
 
 @Service
 public class MemberService {
-
 	private static final Logger logger = LoggerFactory.getLogger(MemberService.class);
-
-	@Inject
-	private Memberdao dao;
-
-	/*
-	 * public void doService(Member member){ dao.insertUser(member); }
-	 */
-	public Integer login(Member member) {
-		return dao.login(member);
-	}
-
-	public Integer idcheck(String id) {
-		return dao.idcheck(id);
-	}
-
 	@Inject
 	private JavaMailSender mailSender;
-
+	@Inject
+	private Memberdao dao;
+	public Integer login(Member member) {return dao.login(member);}
+	public Integer idcheck(String id) {return dao.idcheck(id);}
 	@Transactional
 	public void create(Member member) throws Exception {
 		dao.insertUser(member);
@@ -47,8 +34,7 @@ public class MemberService {
 				.append("&key=").append(key).append("' target='_blenk'>이메일 인증 확인</a>").toString());
 		sendMail.setFrom("tesa@studio.com", "TESA");
 		sendMail.setTo(member.getM_email());
-		sendMail.send();
-	}
+		sendMail.send();}
 	@Transactional
 	public void pwsearch(Member member) throws Exception {
 	/*	String pw = dao.pwsearch(member);*/
@@ -68,7 +54,6 @@ public class MemberService {
 		        break;
 		    }
 		}
-		System.out.println(temp);
 		String imsipw = ""+temp;
 		member.setM_pw(imsipw);
 		dao.imsipw(member);
@@ -82,28 +67,10 @@ public class MemberService {
 		sendMail.setTo(member.getM_email());
 		sendMail.send();
 	}
-	
-
-	public void userAuth(String Email) throws Exception {
-		dao.userAuth(Email);
-	}
-
-	public int emailcnt(Member member) {
-		return dao.emailcnt(member);
-	}
-	public String idsearch(Member member) {
-		return dao.idsearch(member);
-	}
-
-	public void imsipw(Member member) {
-		dao.imsipw(member);
-	}
-
-	public int emailcheck(String email) {
-		return dao.emailcheck(email);
-	}
-
-	public String m_name(Member member) {
-		return dao.m_name(member);
-	}
+	public void userAuth(String Email) throws Exception {dao.userAuth(Email);}
+	public int emailcnt(Member member) {return dao.emailcnt(member);}
+	public String idsearch(Member member) {return dao.idsearch(member);}
+	public void imsipw(Member member) {dao.imsipw(member);}
+	public int emailcheck(String email) {return dao.emailcheck(email);}
+	public String m_name(Member member) {return dao.m_name(member);}
 }

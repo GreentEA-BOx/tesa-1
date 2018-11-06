@@ -32,8 +32,8 @@ $(function (){
 $('.datebtn').click(function(){
 	var today = new Date();
 	var yyyy = today.getFullYear();
-	var text12 = $(this).text();
-	var res = text12.substring(6);
+	var text = $(this).text();
+	var res = text.substring(6);
 	var replace = res.replace('/', '-');
 	var result = (yyyy+'-' + replace);
 	location.href = '/tesa/consert/'+result;

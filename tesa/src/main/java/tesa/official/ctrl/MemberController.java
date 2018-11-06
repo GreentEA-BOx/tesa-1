@@ -32,7 +32,6 @@ public class MemberController {
 	}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(HttpSession session,Model m, HttpServletRequest r, Member member) {
-		System.out.println(session.getId());
 		member.setM_id(r.getParameter("id"));
 		member.setM_pw(r.getParameter("pw"));
 		int count = service.login(member);
@@ -47,8 +46,8 @@ public class MemberController {
 			}else {
 				String name = service.m_name(member);
 				member.setM_name(name);
-				/*session.setAttribute("member", m);*/
-		session.setAttribute("name", member.getM_name());
+				session.setAttribute("name", member.getM_name());
+				session.setAttribute("id", member.getM_id());
 				m.addAttribute(emailcnt);
 				return "index";
 			}

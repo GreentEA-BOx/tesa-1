@@ -117,8 +117,7 @@
 							<a href="login_form" class="header-wrapicon1 dis-block">로그인</a>
 						</c:when>
 						<c:otherwise>
-							${sessionScope.name}님 환영합니다.
-						
+							${sessionScope.name}(${sessionScope.id})님 환영합니다.
 							<div class="header-icons">
 					<div class="header-wrapicon1">
 						<img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">

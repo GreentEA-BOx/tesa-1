@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import tesa.official.bean.Member;
+
 @Repository
 public class ConsertDao {
 	@Inject
@@ -26,5 +28,8 @@ public class ConsertDao {
 	}
 	public List<Map<String, Object>> getcontime(int no) {
 		return session.selectList("tesa.consert.con_sel_time",no);
+	}
+	public Member getmember(Object object) {
+		return session.selectOne("tesa.consert.getmember",object);
 	}
 }
