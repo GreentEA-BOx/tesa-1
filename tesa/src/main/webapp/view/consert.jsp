@@ -15,6 +15,7 @@
 <!-- Cart -->
 <section class="cart bgwhite p-t-50 p-b-100">
 	<div class="container">
+	<input type="hidden" id="hiddendate" value="${date}"> 
 		<div class="flex-w flex-m w-full-sm con-date">
 			<div class="size10 trans-0-4 m-t-10 m-b-10">
 				<!-- Button -->
@@ -76,12 +77,20 @@
 						<p class="con-title">${m.C_TITLE}</p>
 						<p class="con-content">${m.C_CONTENT}</p>
 						<div class="con-times p-t-20">
-							<p>
+							<div class="con-times2">
+								<p>
 								<span class="con-subject">공연 시간</span>
-								<span class="con-time">
-									 ${m.STARTTIME} ~ ${m.ENDTIME}
+								</p>
+								<p>
+								<c:forEach items="${getTime}" var="m1">
+								<c:if test="${m1.C_CODE ==  m.C_CODE}">
+								<span class="con-time con-time2">
+									${m1.STARTTIME} ~ ${m1.ENDTIME}
 									 </span>
-							</p>
+									 </c:if>
+									 </c:forEach>
+								</p>
+							</div>
 						</div>
 						<div class="con-times">
 							<p>
@@ -91,19 +100,17 @@
 						<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw">
 							<button
 								class="flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4"
-								onclick="conreseat'">좌석예약</button>
+								onclick='location.href="c_reserve/${m.C_CODE}"'>좌석예약</button>
 						</div>
 						<!-- <div class="con-hash">
 							<p>
 								#<a>드라큘라</a>&nbsp;#<a>응 노잼</a>
 							</p>
 						</div> -->
+						<input type="hidden" id="m_code" value="${m.C_CODE}">
 					</div> <!-- <a href="javascript:void(0)" class="con-detail t-center text-white">상세보기</a> -->
-					<a href="c_detail/${m.C_CODE}" class="con-detail t-center text-white">상세보기</a>
+					<a href="/tesa/c_detail/${m.C_CODE}" class="con-detail t-center text-white">상세보기</a>
 				</li>
 			</ul>
 	</c:forEach>
-		</div>
-		<div class="margin-top2">※위 일정은 공연 사정에 따라 변경 또는 취소될 수 있습니다.</div>
-	</div>
-</section>
+  

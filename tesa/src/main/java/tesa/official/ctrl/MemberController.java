@@ -25,22 +25,30 @@ public class MemberController {
 	public String login_from() {
 		return "view/login_form";
 	}
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "index";
+	}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(Model m, HttpServletRequest r, Member member) {
+	public String login(HttpSession session,Model m, HttpServletRequest r, Member member) {
+		System.out.println(session.getId());
 		member.setM_id(r.getParameter("id"));
 		member.setM_pw(r.getParameter("pw"));
 		int count = service.login(member);
 		if(count == 0) {
 			m.addAttribute("count",count);
 			return "view/login_form";
-					
 		}else {
 			int emailcnt = service.emailcnt(member);
-			System.out.println("emailcnt>>" + emailcnt);
 			if(emailcnt == 0) {
 				m.addAttribute("emailcnt",emailcnt);
 				return "view/login_form";
 			}else {
+				String name = service.m_name(member);
+				member.setM_name(name);
+				/*session.setAttribute("member", new Member().setM_id(r.getParameter("name")));*/
+			/*	session.setAttribute("name", member.getM_name());*/
 				m.addAttribute(emailcnt);
 				return "index";
 			}

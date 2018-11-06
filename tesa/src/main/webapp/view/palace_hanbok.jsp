@@ -85,23 +85,14 @@
 									<!-- Select2 -->
 									<select class="selection-1" name="time">
 										<option>9:00</option>
-										<option>9:30</option>
-										<option>10:00</option>
-										<option>10:30</option>
-										<option>11:00</option>
-										<option>11:30</option>
+							            <option>10:00</option>
+									    <option>11:00</option>
 										<option>12:00</option>
-										<option>12:30</option>
 										<option>13:00</option>
-										<option>13:30</option>
 										<option>14:00</option>
-										<option>14:30</option>
 										<option>15:00</option>
-										<option>15:30</option>
 										<option>16:00</option>
-										<option>16:30</option>
 										<option>17:00</option>
-										<option>17:30</option>
 										<option>18:00</option>
 									</select>
 								</div>
@@ -190,7 +181,22 @@
 									</select>
 								</div>
 							</div>
-
+							
+							<div class="col-md-4">
+								<!-- fee -->
+								<span class="txt9">
+									입장료 : 
+								</span>
+								<span class="txt9" id="sss">
+									0
+								</span>
+								<span class="txt9">
+									원 
+								</span>
+						
+								</div>
+							
+						
 						</div>
 
 						

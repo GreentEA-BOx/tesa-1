@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+.con-times2:after{content:'';display:block;clear:both}
+.con-time2 {display:block}
+.con-times2 p{float:left}
 .con-items{width:100%}
 .con-item {position:relative;border:1px solid #eee; height:379px;}
 .con-item1 {position:relative;}
@@ -193,7 +196,7 @@ option{height:20px;}
 	line-height:26px;
 	font-weight:bold;
 	color:black;
-	    width: 170px;
+	width: 172px;
     padding-right: 31px;
 }
 .cardtitle{

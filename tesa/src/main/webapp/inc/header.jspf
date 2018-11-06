@@ -56,7 +56,7 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index" class="logo">
+				<a href="/tesa/index" class="logo">
 					<img src="${pageContext.request.contextPath}/images/tesa.png" alt="IMG-LOGO">
 				</a>
 
@@ -67,9 +67,9 @@
 							<li>
 								<a href="javascript:void(0)">Enjoying</a>
 								<ul class="sub_menu">
-									<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">Attraction</a>
+									<li><a href="attr_list">Attraction</a>
 										<ul class="sub_menu">
-											<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">attrection</a></li>
+											<li><a href="attr_list">attrection</a></li>
 											<li><a href="${pageContext.request.contextPath}/view/attr_map.jsp">map</a></li>
 										</ul>
 									</li>
@@ -79,7 +79,7 @@
 							<li>
 								<a href="javascript:void(0)">Viewing</a>
 								<ul class="sub_menu">
-									<li><a href="consert">Concert</a></li>
+									<li><a href="/tesa/consert">Concert</a></li>
 									<li><a href="${pageContext.request.contextPath}/view/palace.jsp">Palace</a></li>
 								</ul>
 							</li>
@@ -89,7 +89,7 @@
 							</li>
 
 							<li>
-								<a href="${pageContext.request.contextPath}/view/d_dining.jsp">Dining</a>
+								<a href="${pageContext.request.contextPath}/dn_res_list">Dining</a>
 							</li>
 
 							<li>

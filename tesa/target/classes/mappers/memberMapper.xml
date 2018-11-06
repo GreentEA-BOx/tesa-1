@@ -18,6 +18,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from member where m_id=#{m_id} and m_pw=#{m_pw}
 	</select>
 	
+	<select id="m_name" resultType="java.lang.String">
+		select m_name from member where m_id=#{m_id} and m_pw=#{m_pw}
+	</select>
+	
 	<update id="createAuthKey">
 		update Member set authCode = #{authCode} where m_email = #{m_email}
 	</update>

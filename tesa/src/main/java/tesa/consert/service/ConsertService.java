@@ -25,4 +25,11 @@ public class ConsertService {
 		return dao.getc_detail(no);
 	}
 
+	public List<Map<String,Object>> getcontime() {
+		return dao.getcontime();
+	}
+	public List<Map<String,Object>> getcontime(int no) {
+		return dao.getcontime(no);
+	}
+
 }

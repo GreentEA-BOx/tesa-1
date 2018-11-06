@@ -1,9 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <script>
+   function payDetail(){
+	   var selectOption = $("#selectMethod option:selected").val();
+	    
+	   if(selectOption=='o_card')
+	   {
+	   $('#bank').css("display", "none");
+	   $('#card').css("display", "block");
+	   $('#blank').css("display", "none");
+	   }
+	   else
+	   {
+	   $('#bank').css("display", " block");
+	   $('#card').css("display", "none");
+	   $('#blank').css("display", "none");
+	   }
+	   }
+   
+  
+   
+   </script>
       
-      <script>
-     
-      </script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +35,7 @@
 <!-- Title Page -->
 	 
 	
-	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/9b089f95-b4c5-4b80-a8c5-781c3d98516d2.jpg); min-height:428px">
+	<section class="bg-title-page flex-c-m p-t-120 p-b-120 p-l-15 p-r-15 sub-bus text-white" style="background-image: url(../images/palace/5b0e429af320a96377541.jpg); min-height:428px">
 		<h2 class="tit6 t-center">
 			
 		</h2>
@@ -93,11 +111,11 @@
 
 								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23">
 									<!-- Select2 -->
-									<select class="selection-1" name="p_method">
+									<select class="selection-1" name="p_method" id="selectMethod" onchange="payDetail()">
 									    <option>--결제방법--</option>
-										<option id='o_bank'>무통장입금</option>
-										<option id='o_bank'>계좌이체</option>
-										<option id='o_card'>카드결제</option>
+										<option value="o_bank">무통장입금</option>
+										<option value="o_bank">계좌이체</option>
+										<option value="o_card">카드결제</option>
 									</select>
 								</div>
 							</div>
@@ -107,10 +125,18 @@
 								<span class="txt9">
 									Payment Detail
 								</span>
-
-								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23" id="bank">
+								
+								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23" id="blank">
 									<!-- Select2 -->
-									<select class="selection-1" name="p_detail" id="paybank">
+									<select class="selection-1" name="p_detail" id="blank">
+									    <option>----</option>
+										
+									</select>
+									</div>
+
+								<div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23" id="bank" style="display:none">
+									<!-- Select2 -->
+									<select class="selection-1" name="p_detail" id="bank">
 									    <option>--은행--</option>
 										<option>국민은행</option>
 										<option>우리은행</option>
@@ -120,24 +146,40 @@
 									</div>
 									
 								 	 <div class="wrap-inputpeople size11 bg-white bo16 bo-rad-10 p-t-13 p-l-15 p-r-15 m-t-3 m-b-23"  style="display:none" id="card">
-									Select2
-									<select class="selection-1" name="p_detail" id="paycard">
-									    <option>--은행--</option>
-										<option>국민카드</option>
-										<option>우리카드</option>
-										<option>하나카드</option>
+									<select class="selection-1" name="p_detail" id="card">
+									    <option>--카드--</option>
+										<option>현대카드</option>
+										<option>삼성카드</option>
+										<option>신한카드</option>
 									</select>
+									
 									</div>
-							</div>
-
-						</div> 
-
+									
+									</div>
+                          
+                           </div> 
+	                            <div class="col-md-4">
+								<!-- fee -->
+								<span class="txt9">
+									입장료 : 
+								</span>
+								<span class="txt9" id="pay">
+									<%=request.getParameter("pay")%>
+								</span>
+								<span class="txt9">
+									원 
+								</span>
+								</div>
 						
 					<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
-							onclick="location.href='palace_hanbok_com.jsp'">
+							onclick="location.href='palace_res_com.jsp'">
 								Submit
+							</button>
+							<button type="submit" class="btn3 flex-c-m size13 txt11 p-l-10 p-r-10 text-white trans-0-4"
+							onclick="location.href='palace_res_com.jsp'">
+								나중에 결제
 							</button>
 						</div>
 				</div>
@@ -149,51 +191,31 @@
 			<div class="info-reservation p-t-40 p-b-70">
 				<div class="w-full-md p-t-40">
 					<h4 class="txt5 m-b-18">
-						한복 예시
+						단체해설 예약시 주의사항
 					</h4>
-					<p>남자(한복) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;남자(개량한복) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;여자(한복) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;여자(개량한복)  </p>
-					
-                    <img src="../images/palace/hanbok/sodamhanbok_544.jpg">
-                    <img src="../images/palace/hanbok/536_shop1_239841.jpg">
-                    
-					<img src="../images/palace/hanbok/593a9a3063a95.jpg">
-                    <img src="../images/palace/hanbok/013001000020.jpg">
-				</div>
-
-				<div class="w-full-md p-t-40">
-					<h4 class="txt5 m-b-18">
-						무료한복대여 예약시 주의사항
-					</h4>
-					
-					<p>
-						- 한복대여점에서 확인절차 뒤 안내를 받으시면 됩니다.
-					</p>
 
 					<p>
-						- 마련한 한복 중에서 무작위로 준비 해놓기 때문에 받으시는 한복 색상과 스타일은 사진과 다를 수 있습니다.
+						- 해설은 불특정 다수의 관람객을 대상으로 이루어지므로 이해가 부족한 초등학교 저학년 및 미취학 아동의 단체 해설 예약은 불가함을 알려드립니다.
 					</p>
 					
 					<p>
-						- 퇴장시 다시 한복대여점에 방문하신 뒤 반납하시면 됩니다.
+						- 10인 미만 개인 관람객은 별도의 예약 없이 해설에 참여하실 수 있습니다.
 					</p>
-					
 					<p>
-						- 1인 1복장이 원칙입니다.
+						- 10인 이상의 단체는 예약이 필요하며 한 회당 30명까지 예약이 가능합니다.
 					</p>
-					
 					<p>
-						- 고의적인 훼손 및 분실시 벌금이 있습니다.(10만원)
+						- 단체해설예약은 별도해설이 아니며, 예약자와 개별적으로 참여하는 관람객이 함께 해설을 받습니다.
 					</p>
-				
 				</div>
-				
+
 				<div class="w-full-md p-t-40">
 					<h4 class="txt5 m-b-18">
 						연락처
 					</h4>
 
 					<p>
-						한복대여점 : 02-xxxx-xxxx
+						LHS : 010-xxxx-xxxx
 					</p>
 				</div>
 

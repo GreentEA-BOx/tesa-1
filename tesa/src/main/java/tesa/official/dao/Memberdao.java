@@ -49,5 +49,8 @@ public class Memberdao {
 	public int emailcheck(String email) {
 		return session.selectOne("tesa.member.emailcheck", email);
 	}
+	public String m_name(Member member) {
+		return session.selectOne("tesa.member.m_name", member);
+	}
 	
 }

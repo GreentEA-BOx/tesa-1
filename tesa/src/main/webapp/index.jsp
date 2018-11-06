@@ -65,20 +65,14 @@
 							<li>
 								<a href="javascript:void(0)">Enjoying</a>
 								<ul class="sub_menu">
-									<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">Attraction</a>
+									<li><a href="attr_list">Attraction</a>
 										<ul class="sub_menu">
-											<li><a href="${pageContext.request.contextPath}/view/attrection.jsp">attrection</a></li>
+											<li><a href="attr_list">attrection</a></li>
 											<li><a href="${pageContext.request.contextPath}/view/attr_map.jsp">map</a></li>
 											<li><a href="${pageContext.request.contextPath}/view/attr_deteil.jsp">attr_deteil</a></li>
 										</ul>
 									</li>
-									<li><a href="${pageContext.request.contextPath}/view/sam1.jsp">Leisure</a>
-										<ul class="sub_menu">
-											<li><a href="${pageContext.request.contextPath}/view/yys_sub_1.jsp">Leisure 소개</a></li>
-											<li><a href="${pageContext.request.contextPath}/view/yys_sub_2.jsp">Leisure 예약</a></li>
-											<li><a href="home-03.html">Homepage V3</a></li>
-										</ul>
-									</li>
+									
 								</ul>
 							</li>
 
@@ -99,7 +93,7 @@
 							</li>
 
 							<li>
-								<a href="${pageContext.request.contextPath}/view/d_dining.jsp">Dining</a>
+								<a href="${pageContext.request.contextPath}/dn_res_list">Dining</a>
 							</li>
 
 							<li>
@@ -113,18 +107,19 @@
 					</nav>
 				</div>
 				<div class="header-icons">
-					<a href="join_form" class="header-wrapicon1 dis-block">
-						JOIN
-					</a>
-
-					<span class="linedivide1"></span>
-					
-					<a href="login_form" class="header-wrapicon1 dis-block">
-						Sign In
-					</a>
-				</div>
-				<!-- Header Icon -->
-				<div class="header-icons">
+				<c:choose>
+						<c:when test="${empty sessionScope.member}">
+							<!-- <li><a href="/tesa/login.on" style="width:100px;">LOGIN(CUSTOMER</a>
+							    <a href="/non/admin_login_form.on" style="width:100px;">|ADMIN)</a></li>
+							<li>/</li> -->
+							<a href="join_form" class="header-wrapicon1 dis-block">회원가입</a>
+							<span class="linedivide1"></span>
+							<a href="login_form" class="header-wrapicon1 dis-block">로그인</a>
+						</c:when>
+						<c:otherwise>
+							${sessionScope.name}님 환영합니다.
+							<a href="/tesa/logout">로그아웃</a>
+							<div class="header-icons">
 					<div class="header-wrapicon1">
 						<img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
 					
@@ -201,6 +196,19 @@
 						</div>
 					</div>
 				</div>
+							
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<!-- <div class="header-icons">
+					<a href="join_form" class="header-wrapicon1 dis-block">회원가입</a>
+
+					<span class="linedivide1"></span>
+					
+					<a href="login_form" class="header-wrapicon1 dis-block">로그인</a>
+				</div> -->
+				<!-- Header Icon -->
+				
 			</div>
 		</div>
 

@@ -21,4 +21,10 @@ public class ConsertDao {
 	public List<Map<String, Object>> getconsert(String redate) {
 		return session.selectList("tesa.consert.getconsertno",redate);
 	}
+	public List<Map<String, Object>> getcontime() {
+		return session.selectList("tesa.consert.getcontime");
+	}
+	public List<Map<String, Object>> getcontime(int no) {
+		return session.selectList("tesa.consert.con_sel_time",no);
+	}
 }

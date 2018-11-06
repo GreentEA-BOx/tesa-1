@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tesa.restaurant">
+
+	<select id="selDn_res" resultType="Restaurant">
+     	SELECT DN_RES_NAME,DN_RES_IMAGE FROM DN_RES
+    </select>
+    
+	<select id="selDn_res_cate1" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=1
+    </select>
+   
+   	<select id="selDn_res_cate2" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=2
+    </select>
+    
+    <select id="selDn_res_cate3" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=3
+    </select>
+    
+    <select id="selDn_res_cate4" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=4
+    </select>
+    
+    <select id="selDn_res_cate5" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=5
+    </select>
+    
+    <select id="selDn_res_cate6" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=6
+    </select>
+    
+    <select id="selDn_res_cate7" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=7
+    </select>
+    
+    <select id="selDn_res_cate8" resultType="Restaurant">
+     	SELECT DN_C_CODE, DN_RES_NAME, DN_RES_IMAGE FROM DN_RES WHERE DN_C_CODE=8
+    </select>
+    
+     <select id="selDn_res_search" resultType="Restaurant">
+		SELECT DN_RES_NAME,DN_RES_IMAGE FROM DN_RES WHERE DN_RES_NAME LIKE #{r} ORDER BY DN_RES_NAME DESC
+</select>
+   
+</mapper>

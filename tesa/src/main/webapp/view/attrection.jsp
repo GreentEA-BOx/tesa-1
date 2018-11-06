@@ -10,7 +10,7 @@
 		<div class="sec-title p-b-60">
 			<h3 class="m-text5 t-center">attrection main</h3>
 		</div>
-	<div class="container" style="width:50%">
+	<div class="container p-b-20" style="width:50%">
 		<div class="row">
 			<div class="rs2-select3 bo4 of-hidden attr-size1 m-t-5 m-b-5 m-r-10">
 				<select class="selection-1" name="sorting">
@@ -55,199 +55,33 @@
 		<div class="wrap-slick2">
 			<div class="slick2 slick-initialized slick-slider">
 
-
-				<div class="slick-list draggable" style="padding: 20px;">
-
-					<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
+<!-- 블록1 -->
+				<div class="slick-list draggable">
+				<c:forEach items="${attrlist}" var="attr">
+				<input type= "hidden" value="${attr.at_attr_code}" name="code">
+					<div class="item-slick2 p-l-15 p-r-15 p-b-20 slick-slide slick-active"
 						data-slick-index="1" aria-hidden="false" tabindex="0"
 						style="width: 290px;">
 						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
+					<a href="attr_d_list?code=${attr.at_attr_code}" class="block2-name dis-block t-center m-text14 p-b-7"
 									tabindex="0">
 						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
 							<div
 								class="block2-img wrap-pic-w of-hidden pos-relative ">
 								 <img
-									src="../images/attr/attr1.png" alt="IMG-PRODUCT">
-								
-
+									src="${pageContext.request.contextPath}/images/attr/${attr.at_attr_img_main}" alt="IMG-PRODUCT">
 							</div>
 
 							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
 								
-									<h3 style="font-weight: bold;">거울미로</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 키디존
+									<h3 style="font-weight: bold;">${attr.at_attr_name}</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : ${attr.at_attr_position}
 								</span>
 							</div>
 						</div>
 						</a>
 					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr2.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">대관람차</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 매직아일랜드
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr3.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">귀신의집</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 어트렉션 3층
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr4.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">도깨비바람</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 매직아일랜드
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-					
-				</div>				<div class="slick-list draggable" style="padding: 20px;">
-
-					<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr5.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">롤러코스터</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 매직아일랜드
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr6.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">모노레일</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 어드벤처 2층
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr7.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">범퍼카</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 키디존
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-										<div class="item-slick2 p-l-15 p-r-15 slick-slide slick-active"
-						data-slick-index="1" aria-hidden="false" tabindex="0"
-						style="width: 290px;">
-						<!-- Block2 -->
-					<a href="attr_deteil.jsp" class="block2-name dis-block t-center m-text14 p-b-7"
-									tabindex="0">
-						<div class="block2 addr_border attr-item con-tc hov-img-zoom">
-							<div
-								class="block2-img wrap-pic-w of-hidden pos-relative ">
-								 <img
-									src="../images/attr/attr9.png" alt="IMG-PRODUCT">
-								
-
-							</div>
-
-							<div class="block2-txt p-t-20" style="padding-bottom: 10px;">
-								
-									<h3 style="font-weight: bold;">자이로드롭</h4>  <span class="block2-price s-text8 p-r-5"> 위치 : 매직아일랜드
-								</span>
-							</div>
-						</div>
-						</a>
-					</div>
-					
+				</c:forEach>	
 				</div>
-
 			</div>
 		</div>
 

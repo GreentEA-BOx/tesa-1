@@ -105,10 +105,6 @@
 	<context:component-scan base-package="tesa.palace.dao"></context:component-scan>
 	<context:component-scan base-package="tesa.palace.service"></context:component-scan>
 	
-	<context:component-scan base-package="tesa.qna.ctrl"></context:component-scan>
-	<context:component-scan base-package="tesa.qna.dao"></context:component-scan>
-	<context:component-scan base-package="tesa.qna.service"></context:component-scan>
-	
 	<context:component-scan base-package="tesa.res.ctrl"></context:component-scan>
 	<context:component-scan base-package="tesa.res.dao"></context:component-scan>
 	<context:component-scan base-package="tesa.res.service"></context:component-scan>

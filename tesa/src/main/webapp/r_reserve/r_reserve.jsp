@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <head>
 <!--===============================================================================================-->
 <link href='//fonts.googleapis.com/css?family=Kotta+One'
@@ -7,14 +9,14 @@
 <link
 	href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
 	rel='stylesheet' type='text/css'>
-<link href="../css/r_css/style.css" rel="stylesheet" type="text/css"
+<link href="${pageContext.request.contextPath}/css/r_css/style.css" rel="stylesheet" type="text/css"
 	media="all" />
-<script src="../js/r_js/jquery-1.11.0.min.js"></script>
-<script src="../js/r_js/jquery.seat-charts.js"></script>
+<script src="${pageContext.request.contextPath}/js/r_js/jquery-1.11.0.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/r_js/jquery.seat-charts.js"></script>
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
-	href="../vendor/select2/select2.min.css">
-<link rel="stylesheet" type="text/css" href="../css/r_style.css">
+	href="${pageContext.request.contextPath}/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/r_style.css">
 <script>
 	$(function() {
 		$('#decreaseQuantity').click(function(e) {
@@ -82,14 +84,6 @@
 		});
 	});
 </script>
-<!-- numbernext -->
-<!-- <script>
-	function numbernext(value) {
-		alert(value);
-		 $('#contitle').empty();
-		$('#contitle').append(value); 
-	}
-</script> -->
 </head>
 
 <title>좌석 예약</title>
@@ -156,20 +150,21 @@
 					<select class="reser_select"
 						onchange="javascript:consert_title(this.options[this.selectedIndex].text)">
 						<option value="0">[공연선택]</option>
-						<option value="1">드라큐라의 사랑</option>
+						<option value="${cdelist.C_CODE}">${cdelist.C_TITLE}</option>
 					</select>
 				</p></li>
 			<hr />
 			<li class="reser_con_li"><p class="reser_con_p">공연일&nbsp;</p>
-				<p class="reser_date">2018년 11월 11일</p></li>
+			<c:set var="now" value="<%=new java.util.Date()%>" />
+			<c:set var="sysYear"><fmt:formatDate value="${now}" pattern="yyyy년 MM월 dd일" /></c:set> 
+				<p class="reser_date"><c:out value="${sysYear}"/></p></li>
 			<hr />
 			<li class="reser_con_li"><p class="reser_con_p">공연시간</p>
 				<p>
 					<select class="reser_select" id="seldate"
 						onchange="javascript:consert_date(this.options[this.selectedIndex].text)">
-						<option value="0">[공연시간]</option>
-						<option value="1">15:30</option>
-						<option value="2">20:30</option>
+						<option value="0" selected>[공연시간]</option>
+						<option value="${cdelist.STARTTIME}">${cdelist.STARTTIME}</option>
 					</select>
 				</p></li>
 			<hr />
@@ -334,7 +329,7 @@
 	}
 </script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="../vendor/select2/select2.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/vendor/select2/select2.min.js"></script>
 
 <!-- autoselectscript -->
 <script>

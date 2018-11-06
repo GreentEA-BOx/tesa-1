@@ -4,6 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="tesa.consert">
+
 	<select id="getconsert" resultType="java.util.Map">
 		select * from consert_main_view order by c_code desc
    </select> 
@@ -17,4 +18,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <select id="getc_detail" resultType="java.util.Map">
 		select * from consert_detail_view where c_code = #{no}
    </select> 
+     <select id="con_sel_time" resultType="java.util.Map">
+		SELECT c_t_code,c_code, to_char(c_stime,'HH24:MI') starttime,to_char(c_etime,'HH24:MI') endtime,c_r_time from c_time where c_code = #{no}
+   </select> 
+   
+   <select id="getcontime" resultType="java.util.Map">
+		SELECT c_t_code,c_code, to_char(c_stime,'HH24:MI') starttime,to_char(c_etime,'HH24:MI') endtime,c_r_time from c_time
+   </select> 
+   
 </mapper>

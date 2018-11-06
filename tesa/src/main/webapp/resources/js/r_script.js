@@ -19,6 +19,10 @@ while(value < 7) {
 	}
 	today = mm+'/'+ dd;
 	$('#datebtn'+value).append(today);
+	if($('#hiddendate').val() == today){
+		$('#datebtn1').removeClass('color');
+		$('#datebtn'+value).addClass('color');
+	}
 	value++;
 }
 })
@@ -32,11 +36,16 @@ $('.datebtn').click(function(){
 	var res = text12.substring(6);
 	var replace = res.replace('/', '-');
 	var result = (yyyy+'-' + replace);
-	$.ajax({
-		url :  'consert/' + result,
+	location.href = '/tesa/consert/'+result;
+	$('.datebtn').removeClass('color');
+	$(this).addClass('color');
+	/*$.ajax({
+		url :  '/tesa/consert/' + result,
 		type : 'get',
 		data : {result : result},
 		success : function(data) {
+			alert(data);
+			console.log(data);
 			$('.row').empty();
 			$('.row').append("<c:forEach items='${clist}' var='m'><ul class='con-items'><li class='con-item'><p class='con-img'>" +
 					"<img src='${pageContext.request.contextPath}/images/${m.C_I_THUMBNAIL}'></p>" +
@@ -44,12 +53,12 @@ $('.datebtn').click(function(){
 					"<p><span class='con-subject'>공연 시간</span><span class='con-time'> ${m.STARTTIME} ~ ${m.ENDTIME}</span></p></div><div class='con-times'>" +
 					"<p><span class='con-subject'>공연 장소</span><span class='con-time'>${m.C_M_MAP}</span></p></div>" +
 					"<div class='flex-w flex-m w-full-sm m-t-10 m-b-10 btnw'><button class='flex-c-m sizefullbb con-tc con-rad2 hov1 s-text1 trans-0-4' onclick='conreseat'>좌석예약</button></div>" +
-					"</div> <a href='c_detail/${m.C_CODE}' class='con-detail t-center text-white'>상세보기</a></li></ul></c:forEach>");
+					"</div><a href='c_detail/${m.C_CODE}' class='con-detail t-center text-white'>상세보기</a></li></ul></c:forEach>");
 		},
 		error : function() {
 			alert("에러입니다");
 		}
-	});
+	});*/
 }) 
 });
 	

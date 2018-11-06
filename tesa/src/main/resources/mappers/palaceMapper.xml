@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tesa.palace">
+	<select id="sel_worker" resultType="java.util.Map">
+	select * from view_pa_worker
+	</select>
+	
+	<select id="sel_reserv" resultType="java.util.Map">
+	select * from view_pa_reserv
+	</select>
+</mapper>

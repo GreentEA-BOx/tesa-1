@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tesa.attraction">
+
+
+
+<select id ="attr_sel_v" resultType="Attr_sel_v">
+select * from at_attr_v
+</select>
+
+<select id ="attr_d_sel_v" resultType="Attr_d_sel_v">
+select * from at_attr_d_v where at_attr_code = #{a_code}
+</select>
+
+</mapper>

@@ -8,7 +8,7 @@
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m">
 		<h5 style="margin-bottom: 2%" class="l-text5 t-center">${cdelist.C_TITLE}</h5>
-		<h5 class="l-text6 t-center">${cdelist.C_CONTENT}</h5>
+		<h5 class="l-text6 t-center">${cdelist.C_CONTENT} </h5>
 		<!-- <div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw btn2">
 			<label class="l-texth">#</label>
 			Button
@@ -55,7 +55,7 @@
 						참여신청</button>
 					<!-- Button -->
 					<button
-						class="flex-c-m sizefullbbbb con-tc con-cardbtn hov1 s-text1 trans-0-4 btn2 dis-inline" onclick="r_re()">
+						class="flex-c-m sizefullbbbb con-tc con-cardbtn hov1 s-text1 trans-0-4 btn2 dis-inline" onclick="location.href='/tesa/c_reserve/${cdelist.C_CODE}'">
 						스테이지 좌석예약</button>
 						</div>
 		※ 가든 스테이지 좌석 예약 시 무대 가까이에서 공연을 즐길 수 있습니다
@@ -79,7 +79,9 @@
 		<div class="card dis-inline-block">
 		<img class="cardimg" src="${pageContext.request.contextPath}/images/r_icon3.png">
 		<p class="cardtitle">공연시간</p>
-		<p class="carddate">${cdelist.STARTTIME}~${cdelist.ENDTIME}</p>
+		<c:forEach var="m" items="${getTime}">
+		<p class="carddate">${m.STARTTIME}~${m.ENDTIME}</p>
+		</c:forEach>
 		</div>
 		</div>
 	</section>
@@ -87,19 +89,8 @@
 		<h5 style="margin-bottom: 2%" class="l-texthh t-center">공연 장소</h5>
 			<img src="${pageContext.request.contextPath}/images/${cdelist.C_M_IMAGE}">
 			<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 btnw">
-			<button class="flex-c-m sizefullbbbb con-tc con-cardbtn2 hov1 s-text1 trans-0-4 con-list" onclick="location.href='/tesa/consert'">
+			<button class="flex-c-m sizefullbbbb con-tc con-cardbtn2 hov1 s-text1 trans-0-4 con-list" onclick="location.href='/tesa/consert/'">
 						목록</button>
 					<!-- Button -->
 					</div>
 	</section>
-
-	<script>
-		function r_list(){
-			location.href="r_show.jsp";
-		}
-	</script>
-	<script>
-		function r_re(){
-			location.href="r_re.jsp";
-		}
-	</script>

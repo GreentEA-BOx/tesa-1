@@ -2,9 +2,12 @@ package tesa.consert.ctrl;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,13 +28,16 @@ public class Consertcontroller {
 	    Calendar c1 = Calendar.getInstance();
 		String redate = date.format(c1.getTime());
 		m.addAttribute("clist",service.getconsert(redate));
+		m.addAttribute("getTime",service.getcontime());
 		return "view/consert";
 	}
 	@RequestMapping(value="/consert/{date}", method=RequestMethod.GET)
-	public void consertdate(Model m,@PathVariable String date) {
+	public  String consertdate(Model m,@PathVariable String date,HttpServletRequest r) {
 		String redate = date.replace('-', '/');
 		m.addAttribute("clist",service.getconsert(redate));
-		/*return "view/consert";*/
+		redate = date.substring(5).replace('-', '/');
+		m.addAttribute("date" ,redate);
+		return "view/consert";
 	}
 	
 	@RequestMapping(value="/c_detail/{no}", method=RequestMethod.GET)
@@ -39,8 +45,28 @@ public class Consertcontroller {
 		if (Objects.isNull(no)) {
 			no = 1;
 		}
+		System.out.println("getC"+ service.getcontime(no) );
+		m.addAttribute("getTime",service.getcontime(no));
 		m.addAttribute("cdelist",service.getc_detail(no));
 		return "view/c_detail";
+	}
+	@RequestMapping(value="/c_reserve/{no}", method=RequestMethod.GET)
+	public String getc_reserve(@PathVariable Integer no,Model m) {
+		System.out.println("c_reserve no>>" + no);
+		if (Objects.isNull(no)) {
+			no = 1;
+		}
+		m.addAttribute("cdelist",service.getc_detail(no));
+		return "view/c_reserve";
+	}
+	@RequestMapping(value="/c_re_detail/{no}", method=RequestMethod.GET)
+	public String getc_re_detail(@PathVariable Integer no,Model m) {
+		System.out.println("/c_re_detail/{no}" +no);
+		if (Objects.isNull(no)) {
+			no = 1;
+		}
+		m.addAttribute("cdelist",service.getc_detail(no));
+		return "r_reserve/r_reserve";
 	}
 	
 }

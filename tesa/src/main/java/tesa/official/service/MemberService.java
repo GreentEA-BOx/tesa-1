@@ -102,4 +102,8 @@ public class MemberService {
 	public int emailcheck(String email) {
 		return dao.emailcheck(email);
 	}
+
+	public String m_name(Member member) {
+		return dao.m_name(member);
+	}
 }
