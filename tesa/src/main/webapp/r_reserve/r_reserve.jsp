@@ -164,7 +164,9 @@
 					<select class="reser_select" id="seldate"
 						onchange="javascript:consert_date(this.options[this.selectedIndex].text)">
 						<option value="0" selected>[공연시간]</option>
-						<option value="${cdelist.STARTTIME}">${cdelist.STARTTIME}</option>
+						<c:forEach var="m" items="${getTime}">
+						<option value="${m.STARTTIME}">${m.STARTTIME}</option>
+						</c:forEach>
 					</select>
 				</p></li>
 			<hr />
@@ -230,7 +232,7 @@
 		class="bg-title-page p-t-50 p-b-50 flex-col-c-m">
 		<div class="flex-w flex-m w-full-sm m-t-10 m-b-10 padding-left31">
 			<button
-				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color">
+				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4 color" onclick="c_resave()">
 				신청</button>
 			<button
 				class="flex-c-m sizefullbbbbbb con-tc con-rad2 hov1 s-text1 trans-0-4">
@@ -340,6 +342,12 @@
 	function consert_date(value) {
 		$('#condate').empty();
 		$('#condate').append(value);
+	}
+</script>
+<script>
+	function c_resave(){
+		var titlecode = $('.reser_select').val();
+				
 	}
 </script>
 	

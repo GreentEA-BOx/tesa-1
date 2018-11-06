@@ -108,7 +108,7 @@
 				</div>
 				<div class="header-icons">
 				<c:choose>
-						<c:when test="${empty sessionScope.member}">
+						<c:when test="${empty sessionScope.name}">
 							<!-- <li><a href="/tesa/login.on" style="width:100px;">LOGIN(CUSTOMER</a>
 							    <a href="/non/admin_login_form.on" style="width:100px;">|ADMIN)</a></li>
 							<li>/</li> -->
@@ -118,7 +118,7 @@
 						</c:when>
 						<c:otherwise>
 							${sessionScope.name}님 환영합니다.
-							<a href="/tesa/logout">로그아웃</a>
+						
 							<div class="header-icons">
 					<div class="header-wrapicon1">
 						<img src="images/icons/icon-header-01.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
@@ -188,9 +188,7 @@
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
+										<a href="/tesa/logout">로그아웃</a>
 								</div>
 							</div>
 						</div>

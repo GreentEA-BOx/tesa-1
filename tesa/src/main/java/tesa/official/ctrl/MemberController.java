@@ -47,8 +47,8 @@ public class MemberController {
 			}else {
 				String name = service.m_name(member);
 				member.setM_name(name);
-				/*session.setAttribute("member", new Member().setM_id(r.getParameter("name")));*/
-			/*	session.setAttribute("name", member.getM_name());*/
+				/*session.setAttribute("member", m);*/
+		session.setAttribute("name", member.getM_name());
 				m.addAttribute(emailcnt);
 				return "index";
 			}

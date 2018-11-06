@@ -52,7 +52,6 @@ public class Consertcontroller {
 	}
 	@RequestMapping(value="/c_reserve/{no}", method=RequestMethod.GET)
 	public String getc_reserve(@PathVariable Integer no,Model m) {
-		System.out.println("c_reserve no>>" + no);
 		if (Objects.isNull(no)) {
 			no = 1;
 		}
@@ -61,10 +60,10 @@ public class Consertcontroller {
 	}
 	@RequestMapping(value="/c_re_detail/{no}", method=RequestMethod.GET)
 	public String getc_re_detail(@PathVariable Integer no,Model m) {
-		System.out.println("/c_re_detail/{no}" +no);
 		if (Objects.isNull(no)) {
 			no = 1;
 		}
+		m.addAttribute("getTime",service.getcontime(no));
 		m.addAttribute("cdelist",service.getc_detail(no));
 		return "r_reserve/r_reserve";
 	}
